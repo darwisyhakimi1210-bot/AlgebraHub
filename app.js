@@ -213,35 +213,9 @@ function renderHome() {
   `;
 }
 
-// The blank "owl mascot" slot. Per the design brief, it stays blank by
-// default — clicking it lets you drop in your own mascot image, which is
-// saved to localStorage so it's still there next time you open the page.
+// The owl mascot — always shows the owl image, no upload functionality
 function renderOwlSlot() {
-  const saved = localStorage.getItem("algebrahub-owl-mascot");
-  if (saved) {
-    return `
-      <label class="owl-slot" title="Click to replace">
-        <img src="${saved}" alt="Owl mascot">
-        <input type="file" accept="image/*" onchange="handleOwlUpload(this)">
-      </label>`;
-  }
-  return `
-    <label class="owl-slot" title="Click to upload">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B6A8DE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-      <span class="owl-slot-text">Drop your owl mascot here</span>
-      <input type="file" accept="image/*" onchange="handleOwlUpload(this)">
-    </label>`;
-}
-
-function handleOwlUpload(input) {
-  const file = input.files && input.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    localStorage.setItem("algebrahub-owl-mascot", reader.result);
-    render();
-  };
-  reader.readAsDataURL(file);
+  return `<img src="image/owl.png" alt="Owl mascot" style="width:350px;height:350px;object-fit:contain;">`;
 }
 
 // ---------------------------------------------------------------------------
