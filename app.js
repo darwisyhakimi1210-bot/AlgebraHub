@@ -14,73 +14,112 @@
 
 const DATA = {
   linear: {
-    title: 'Linear Equations',
-    tag: 'y = mx + b',
-    intro: 'A linear equation graphs as a straight line. In slope-intercept form, m is the slope (how steep the line is) and b is the y-intercept (where it crosses the y-axis).',
-    formula: 'y = mx + b',
+    title: "Linear Equations",
+    tag: "y = mx + b",
+    intro:
+      "A linear equation graphs as a straight line. In slope-intercept form, m is the slope (how steep the line is) and b is the y-intercept (where it crosses the y-axis).",
+    formula: "y = mx + b",
     concepts: [
-      { n: '1', title: 'Slope (m)', body: 'The rate of change — rise over run between any two points on the line.' },
-      { n: '2', title: 'Y-intercept (b)', body: 'The value of y when x = 0; where the line crosses the vertical axis.' },
-      { n: '3', title: 'Graphing', body: 'Plot the y-intercept, then use the slope to find a second point and draw the line.' },
+      {
+        n: "1",
+        title: "Slope (m)",
+        body: "The rate of change — rise over run between any two points on the line.",
+      },
+      {
+        n: "2",
+        title: "Y-intercept (b)",
+        body: "The value of y when x = 0; where the line crosses the vertical axis.",
+      },
+      {
+        n: "3",
+        title: "Graphing",
+        body: "Plot the y-intercept, then use the slope to find a second point and draw the line.",
+      },
     ],
-    exampleQ: 'Find the slope of the line through (1, 2) and (3, 8).',
+    exampleQ: "Find the slope of the line through (1, 2) and (3, 8).",
     exampleSteps: [
-      { label: 'Step 1', text: 'm = (y₂ − y₁) / (x₂ − x₁)' },
-      { label: 'Step 2', text: 'm = (8 − 2) / (3 − 1) = 6 / 2' },
-      { label: 'Answer', text: 'm = 3' },
+      { label: "Step 1", text: "m = (y₂ − y₁) / (x₂ − x₁)" },
+      { label: "Step 2", text: "m = (8 − 2) / (3 − 1) = 6 / 2" },
+      { label: "Answer", text: "m = 3" },
     ],
-    question: 'What is the slope of the line y = 4x − 7?',
-    opts: ['−7', '4', '7', '−4'],
-    icon: '📈',
-    iconClass: 'purple-bg',
+    question: "What is the slope of the line y = 4x − 7?",
+    opts: ["−7", "4", "7", "−4"],
+    icon: "📈",
+    iconClass: "purple-bg",
   },
   quadratic: {
-    title: 'Quadratic Functions',
-    tag: 'ax² + bx + c',
-    intro: 'A quadratic function graphs as a parabola — a symmetric U-shaped curve. Its solutions (roots) are where the curve crosses the x-axis.',
-    formula: 'x = (−b ± √(b² − 4ac)) / 2a',
+    title: "Quadratic Functions",
+    tag: "ax² + bx + c",
+    intro:
+      "A quadratic function graphs as a parabola — a symmetric U-shaped curve. Its solutions (roots) are where the curve crosses the x-axis.",
+    formula: "x = (−b ± √(b² − 4ac)) / 2a",
     concepts: [
-      { n: '1', title: 'Parabola', body: 'The U-shaped graph; it opens up when a > 0 and down when a < 0.' },
-      { n: '2', title: 'Vertex', body: 'The highest or lowest turning point of the parabola.' },
-      { n: '3', title: 'Roots', body: 'The x-values where the function equals zero — found by factoring or the quadratic formula.' },
+      {
+        n: "1",
+        title: "Parabola",
+        body: "The U-shaped graph; it opens up when a > 0 and down when a < 0.",
+      },
+      {
+        n: "2",
+        title: "Vertex",
+        body: "The highest or lowest turning point of the parabola.",
+      },
+      {
+        n: "3",
+        title: "Roots",
+        body: "The x-values where the function equals zero — found by factoring or the quadratic formula.",
+      },
     ],
-    exampleQ: 'Solve x² − 5x + 6 = 0 by factoring.',
+    exampleQ: "Solve x² − 5x + 6 = 0 by factoring.",
     exampleSteps: [
-      { label: 'Step 1', text: 'Factor: (x − 2)(x − 3) = 0' },
-      { label: 'Step 2', text: 'Set each factor to zero' },
-      { label: 'Answer', text: 'x = 2 or x = 3' },
+      { label: "Step 1", text: "Factor: (x − 2)(x − 3) = 0" },
+      { label: "Step 2", text: "Set each factor to zero" },
+      { label: "Answer", text: "x = 2 or x = 3" },
     ],
-    question: 'How many real roots does x² − 5x + 6 = 0 have?',
-    opts: ['0', '1', '2', '3'],
-    icon: '⌣',
-    iconClass: 'gold-bg',
+    question: "How many real roots does x² − 5x + 6 = 0 have?",
+    opts: ["0", "1", "2", "3"],
+    icon: "⌣",
+    iconClass: "gold-bg",
   },
   system: {
-    title: 'System of Equations',
-    tag: '{ x , y }',
-    intro: 'A system of equations is two or more equations sharing the same variables. The solution is the point where their lines intersect — found by substitution or elimination.',
-    formula: 'Solve for x and y together',
+    title: "System of Equations",
+    tag: "{ x , y }",
+    intro:
+      "A system of equations is two or more equations sharing the same variables. The solution is the point where their lines intersect — found by substitution or elimination.",
+    formula: "Solve for x and y together",
     concepts: [
-      { n: '1', title: 'Substitution', body: 'Solve one equation for a variable, then substitute it into the other.' },
-      { n: '2', title: 'Elimination', body: 'Add or subtract the equations to cancel one variable.' },
-      { n: '3', title: 'Solution point', body: 'The (x, y) pair that satisfies both equations at once.' },
+      {
+        n: "1",
+        title: "Substitution",
+        body: "Solve one equation for a variable, then substitute it into the other.",
+      },
+      {
+        n: "2",
+        title: "Elimination",
+        body: "Add or subtract the equations to cancel one variable.",
+      },
+      {
+        n: "3",
+        title: "Solution point",
+        body: "The (x, y) pair that satisfies both equations at once.",
+      },
     ],
-    exampleQ: 'Solve: x + y = 5 and x − y = 1.',
+    exampleQ: "Solve: x + y = 5 and x − y = 1.",
     exampleSteps: [
-      { label: 'Step 1', text: 'Add equations: 2x = 6' },
-      { label: 'Step 2', text: 'x = 3, then 3 + y = 5' },
-      { label: 'Answer', text: 'x = 3, y = 2' },
+      { label: "Step 1", text: "Add equations: 2x = 6" },
+      { label: "Step 2", text: "x = 3, then 3 + y = 5" },
+      { label: "Answer", text: "x = 3, y = 2" },
     ],
-    question: 'Solve: x + y = 5, x − y = 1. What is x?',
-    opts: ['2', '3', '4', '5'],
-    icon: '{ }',
-    iconClass: 'green-bg',
+    question: "Solve: x + y = 5, x − y = 1. What is x?",
+    opts: ["2", "3", "4", "5"],
+    icon: "{ }",
+    iconClass: "green-bg",
   },
 };
 
 const state = {
-  view: 'home',    // home | learning | lesson | practice | quiz | game | dragdrop | wordmatch
-  topic: 'linear',  // linear | quadratic | system
+  view: "home", // home | learning | lesson | practice | quiz | game | dragdrop | wordmatch
+  topic: "linear", // linear | quadratic | system
 };
 
 const App = {
@@ -88,20 +127,26 @@ const App = {
     state.view = view;
     if (topic) state.topic = topic;
     render();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 
 // Small inline icon set (same strokes as the original design) ---------------
 const ICONS = {
   home: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>',
-  learning: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3H10a2 2 0 0 1 2 2v15a1.5 1.5 0 0 0-1.5-1.5H2z"/><path d="M22 5.5A2.5 2.5 0 0 0 19.5 3H14a2 2 0 0 0-2 2v15a1.5 1.5 0 0 1 1.5-1.5H22z"/></svg>',
-  practice: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m8.5 13 2 2 4-4.5"/></svg>',
+  learning:
+    '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3H10a2 2 0 0 1 2 2v15a1.5 1.5 0 0 0-1.5-1.5H2z"/><path d="M22 5.5A2.5 2.5 0 0 0 19.5 3H14a2 2 0 0 0-2 2v15a1.5 1.5 0 0 1 1.5-1.5H22z"/></svg>',
+  practice:
+    '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m8.5 13 2 2 4-4.5"/></svg>',
   game: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.5h2M8 8.5v2"/><circle cx="15.5" cy="9" r="0.6" fill="currentColor"/><circle cx="17" cy="11" r="0.6" fill="currentColor"/><path d="M5.5 7h11a3.5 3.5 0 0 1 3.4 4.3l-1 4.5A2.6 2.6 0 0 1 14.6 16l-1.4-1.5h-2.4L9.4 16a2.6 2.6 0 0 1-4.3-0.2l-1-4.5A3.5 3.5 0 0 1 5.5 7z"/></svg>',
-  arrowRight: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-  arrowLeft: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
-  bigArrowRight: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-  trophy: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M6 4h12v5a6 6 0 0 1-12 0z"/><path d="M9 16h6M10 20h4M12 16v4"/></svg>',
+  arrowRight:
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  arrowLeft:
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+  bigArrowRight:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  trophy:
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M6 4h12v5a6 6 0 0 1-12 0z"/><path d="M9 16h6M10 20h4M12 16v4"/></svg>',
 };
 
 // ---------------------------------------------------------------------------
@@ -112,11 +157,11 @@ function renderNav() {
   const isActive = (names) => names.includes(v);
 
   const navBtn = (label, icon, view, activeWhen) => `
-    <button class="nav-btn ${isActive(activeWhen) ? 'active' : ''}" onclick="App.go('${view}')">
+    <button class="nav-btn ${isActive(activeWhen) ? "active" : ""}" onclick="App.go('${view}')">
       ${icon} ${label}
     </button>`;
 
-  document.getElementById('navbar').innerHTML = `
+  document.getElementById("navbar").innerHTML = `
     <button class="nav-brand" onclick="App.go('home')">
       <div class="nav-brand-icon">
         <img src="image/svg.png" width="40" height="40" alt="AlgebraHub">
@@ -126,10 +171,10 @@ function renderNav() {
         <div class="nav-brand-tagline">Learn Algebra The Fun Way</div>
       </div>
     </button>
-    ${navBtn('Home', ICONS.home, 'home', ['home'])}
-    ${navBtn('Learning Material', ICONS.learning, 'learning', ['learning', 'lesson'])}
-    ${navBtn('Practice', ICONS.practice, 'practice', ['practice', 'quiz'])}
-    ${navBtn('Game', ICONS.game, 'game', ['game', 'dragdrop', 'wordmatch'])}
+    ${navBtn("Home", ICONS.home, "home", ["home"])}
+    ${navBtn("Learning Material", ICONS.learning, "learning", ["learning", "lesson"])}
+    ${navBtn("Practice", ICONS.practice, "practice", ["practice", "quiz"])}
+    ${navBtn("Game", ICONS.game, "game", ["game", "dragdrop", "wordmatch"])}
   `;
 }
 
@@ -164,23 +209,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="quick-links">
-      <button class="quick-card" onclick="App.go('learning')">
-        <div class="quick-card-icon purple-bg">${ICONS.learning.replace('currentColor', '#7C3AED')}</div>
-        <div class="quick-card-title">Learning Material</div>
-        <div class="quick-card-desc">Step-by-step lessons across three core algebra topics.</div>
-      </button>
-      <button class="quick-card" onclick="App.go('practice')">
-        <div class="quick-card-icon gold-bg">${ICONS.practice.replace('currentColor', '#F59E0B')}</div>
-        <div class="quick-card-title">Practice</div>
-        <div class="quick-card-desc">Multiple-choice quizzes to test what you've learned.</div>
-      </button>
-      <button class="quick-card" onclick="App.go('game')">
-        <div class="quick-card-icon green-bg">${ICONS.game.replace(/currentColor/g, '#1F9D55')}</div>
-        <div class="quick-card-title">Games</div>
-        <div class="quick-card-desc">Drag &amp; drop and word match — learn while you play.</div>
-      </button>
-    </section>
+   
   `;
 }
 
@@ -188,7 +217,7 @@ function renderHome() {
 // default — clicking it lets you drop in your own mascot image, which is
 // saved to localStorage so it's still there next time you open the page.
 function renderOwlSlot() {
-  const saved = localStorage.getItem('algebrahub-owl-mascot');
+  const saved = localStorage.getItem("algebrahub-owl-mascot");
   if (saved) {
     return `
       <label class="owl-slot" title="Click to replace">
@@ -209,7 +238,7 @@ function handleOwlUpload(input) {
   if (!file) return;
   const reader = new FileReader();
   reader.onload = () => {
-    localStorage.setItem('algebrahub-owl-mascot', reader.result);
+    localStorage.setItem("algebrahub-owl-mascot", reader.result);
     render();
   };
   reader.readAsDataURL(file);
@@ -255,20 +284,28 @@ function renderLearning() {
 
 function renderLesson() {
   const t = DATA[state.topic];
-  const concepts = t.concepts.map(c => `
+  const concepts = t.concepts
+    .map(
+      (c) => `
     <div class="concept-item">
       <div class="concept-num">${c.n}</div>
       <div>
         <div class="concept-title">${c.title}</div>
         <div class="concept-body">${c.body}</div>
       </div>
-    </div>`).join('');
+    </div>`,
+    )
+    .join("");
 
-  const steps = t.exampleSteps.map(s => `
+  const steps = t.exampleSteps
+    .map(
+      (s) => `
     <div class="example-step">
       <span class="example-step-label">${s.label}</span>
       <span>${s.text}</span>
-    </div>`).join('');
+    </div>`,
+    )
+    .join("");
 
   return `
     <div class="lesson-page">
@@ -334,12 +371,16 @@ function renderPractice() {
 // (quizzes are static mockups; only navigation is fully clickable).
 function renderQuiz() {
   const t = DATA[state.topic];
-  const letters = ['A', 'B', 'C', 'D'];
-  const options = t.opts.map((opt, i) => `
-    <div class="quiz-option ${i === 1 ? 'selected' : ''}">
+  const letters = ["A", "B", "C", "D"];
+  const options = t.opts
+    .map(
+      (opt, i) => `
+    <div class="quiz-option ${i === 1 ? "selected" : ""}">
       <div class="quiz-option-letter">${letters[i]}</div>
       <div class="quiz-option-text">${opt}</div>
-    </div>`).join('');
+    </div>`,
+    )
+    .join("");
 
   return `
     <div class="quiz-page">
@@ -497,7 +538,9 @@ function render() {
     wordmatch: renderWordMatch,
   };
 
-  document.getElementById('app').innerHTML = (renderers[state.view] || renderHome)();
+  document.getElementById("app").innerHTML = (
+    renderers[state.view] || renderHome
+  )();
 }
 
 render();
