@@ -140,7 +140,7 @@ button { font: inherit; }
   z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 24px 64px;
+  padding: 32px 24px 60px;
 }
 
 /* =========================================================
@@ -331,7 +331,7 @@ button { font: inherit; }
 .section-heading p { font-size: 17px; color: var(--text-muted); margin: 8px 0 0; }
 
 /* =========================================================
-   Topic cards (Learning Material landing)
+   Topic cards (Lesson landing)
    ========================================================= */
 .topics-grid {
   display: grid;

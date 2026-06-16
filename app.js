@@ -172,7 +172,7 @@ function renderNav() {
       </div>
     </button>
     ${navBtn("Home", ICONS.home, "home", ["home"])}
-    ${navBtn("Learning Material", ICONS.learning, "learning", ["learning", "lesson"])}
+    ${navBtn("Lesson", ICONS.learning, "learning", ["learning", "lesson"])}
     ${navBtn("Practice", ICONS.practice, "practice", ["practice", "quiz"])}
     ${navBtn("Game", ICONS.game, "game", ["game", "dragdrop", "wordmatch"])}
   `;
@@ -215,7 +215,7 @@ function renderHome() {
 
 // The owl mascot — always shows the owl image, no upload functionality
 function renderOwlSlot() {
-  return `<img src="image/owl.png" alt="Owl mascot" style="width:350px;height:350px;object-fit:contain;">`;
+  return `<img src="image/owl.png" alt="Owl mascot" style="width:300px;height:300px;object-fit:contain;">`;
 }
 
 // ---------------------------------------------------------------------------
@@ -224,7 +224,7 @@ function renderOwlSlot() {
 function renderLearning() {
   return `
     <div class="section-heading">
-      <h1>Learning <span class="p">Materials</span></h1>
+      <h1>Lessons</h1>
       <p>Pick a topic and learn algebra step by step.</p>
     </div>
     <div class="topics-grid">

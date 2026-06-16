@@ -24,9 +24,9 @@ with sync_playwright() as p:
     page.screenshot(path=f"{SHOTS}/01_home.png", full_page=True)
     results.append(("home", page.title()))
 
-    # --- Learning Material -> a lesson topic -> back ---
-    page.click("text=Learning Material")
-    page.wait_for_selector("text=Learning Materials")
+    # --- Lesson -> a lesson topic -> back ---
+    page.click("text=Lesson")
+    page.wait_for_selector("text=Lessons")
     page.screenshot(path=f"{SHOTS}/02_learning_landing.png", full_page=True)
 
     page.click("text=Linear Equations")
@@ -34,7 +34,7 @@ with sync_playwright() as p:
     page.screenshot(path=f"{SHOTS}/03_lesson_linear.png", full_page=True)
 
     page.click("text=Back to topics")
-    page.wait_for_selector("text=Learning Materials")
+    page.wait_for_selector("text=Lessons")
 
     # --- Practice -> a quiz topic -> back ---
     page.click(".nav-btn:has-text('Practice')")
