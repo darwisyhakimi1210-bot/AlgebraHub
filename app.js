@@ -184,6 +184,12 @@ function renderNav() {
 function renderHome() {
   return `
     <section class="hero">
+      <div class="hero-art">
+        <div class="hero-art-glow"></div>
+        <div class="owl-frame">
+          ${renderOwlSlot()}
+        </div>
+      </div>
       <div>
         <div class="hero-eyebrow">Selamat Datang ke</div>
         <div class="hero-title"><span class="p">Algebra</span><span class="g">Hub!</span></div>
@@ -201,12 +207,6 @@ function renderHome() {
           </button>
         </div>
       </div>
-      <div class="hero-art">
-        <div class="hero-art-glow"></div>
-        <div class="owl-frame">
-          ${renderOwlSlot()}
-        </div>
-      </div>
     </section>
 
 
@@ -215,7 +215,7 @@ function renderHome() {
 
 // The owl mascot — always shows the owl image, no upload functionality
 function renderOwlSlot() {
-  return `<img src="image/owl.png" alt="Owl mascot" style="width:300px;height:300px;object-fit:contain;">`;
+  return `<img src="image/owl.png" alt="Owl mascot" style="width:400px;height:400px;object-fit:cover;">`;
 }
 
 // ---------------------------------------------------------------------------
@@ -315,7 +315,7 @@ function renderLesson() {
 function renderPractice() {
   return `
     <div class="section-heading">
-      <h1><span class="p">Kuiz</span> Latihan</h1>
+      <h1><span class="p"></span> Latihan</h1>
       <p>Soalan pilihan berganda untuk menguji kemahiran anda.</p>
     </div>
     <div class="topics-grid">
@@ -360,7 +360,7 @@ function renderQuiz() {
     <div class="quiz-page">
       <button class="back-btn" onclick="App.go('practice')">${ICONS.arrowLeft} Keluar kuiz</button>
       <div class="quiz-header-row">
-        <div class="quiz-header-title">Kuiz ${t.title}</div>
+        <div class="quiz-header-title">${t.title}</div>
         <div class="quiz-header-count">Soalan 3 daripada 10</div>
       </div>
       <div class="progress-track"><div class="progress-fill"></div></div>
