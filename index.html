@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlgebraHub - Belajar Algebra dengan Cara Menyenangkan</title>
+<title>AlgebraHub</title>
+<link rel="icon" href="image/favicon.svg" type="image/svg">
 
 <!-- Google Fonts: Fredoka for headings/brand, Nunito for body text -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +40,16 @@
   <!-- CONTENT (re-rendered by app.js depending on the current view) -->
   <main id="app"></main>
 
-  <script src="app.js"></script>
-
   <!-- Background music (loop, starts paused — user presses play) -->
   <audio id="bg-music" src="sound/music_bg.mp3" loop preload="auto"></audio>
+
+  <!-- Owl welcome greeting — MUST be before app.js so getElementById finds it -->
+  <audio id="welcome-audio" src="sound/welcome.wav" preload="auto"></audio>
+  <audio id="belajar-audio" src="sound/belajar.wav" preload="auto"></audio>
+  <audio id="latihan-audio" src="sound/latihan.wav" preload="auto"></audio>
+  <audio id="main-audio" src="sound/main.wav" preload="auto"></audio>
+
+  <script src="app.js"></script>
 
   <!-- Floating music control widget -->
   <div class="music-player" id="musicPlayer">
@@ -82,6 +89,13 @@
     };
     // Sync initial volume
     MusicPlayer.audio.volume = 0.5;
+    // Try autoplay — works if user has previously interacted with the site
+    MusicPlayer.audio.play().then(() => {
+      document.getElementById('iconPlay').style.display  = 'none';
+      document.getElementById('iconPause').style.display = '';
+    }).catch(() => {
+      // Browser blocked autoplay — play button stays visible for user to click
+    });
   </script>
 </body>
 </html>

@@ -122,8 +122,18 @@ const state = {
   topic: "linear", // linear | quadratic | system
 };
 
+
 const App = {
   go(view, topic) {
+    // stop greeting if user leaves home page
+    if (view !== 'home') {
+      const audio = document.getElementById('welcome-audio');
+      if (audio) { audio.pause(); audio.currentTime = 0; audio.onended = null; }
+      const wrap = document.getElementById('owlWrap');
+      if (wrap) wrap.classList.remove('speaking');
+      const bubble = document.getElementById('owlBubble');
+      if (bubble) { bubble.classList.remove('show', 'bobbing'); bubble.classList.add('hide'); }
+    }
     state.view = view;
     if (topic) state.topic = topic;
     render();
@@ -164,7 +174,7 @@ function renderNav() {
   document.getElementById("navbar").innerHTML = `
     <button class="nav-brand" onclick="App.go('home')">
       <div class="nav-brand-icon">
-        <img src="image/svg.png" width="40" height="40" alt="AlgebraHub">
+        <img src="image/svg.png" width="90" height="70" alt="AlgebraHub">
       </div>
       <div class="nav-brand-text">
         <div class="nav-brand-title"><span class="p">Algebra</span><span class="g">Hub</span></div>
@@ -195,7 +205,7 @@ function renderHome() {
         <div class="hero-title"><span class="p">Algebra</span><span class="g">Hub!</span></div>
         <div class="hero-underline"></div>
         <div class="hero-subtitle">Belajar Algebra dengan Cara Menyenangkan!</div>
-        <p class="hero-desc">Terokai pelajaran interaktif, aktiviti menarik dan kuiz seru untuk menguasasi Algebra langkah demi langkah.</p>
+        <p class="hero-desc">Terokai pelajaran yang interaktif, aktiviti dan kuiz menarik untuk menguasasi Algebra langkah demi langkah.</p>
         <div class="hero-actions">
           <button class="btn btn-purple" onclick="App.go('learning')">
             Mula Belajar
@@ -213,9 +223,85 @@ function renderHome() {
   `;
 }
 
-// The owl mascot — always shows the owl image, no upload functionality
+// The owl mascot with speech bubble greeting
 function renderOwlSlot() {
-  return `<img src="image/owl.png" alt="Owl mascot" style="width:400px;height:400px;object-fit:cover;">`;
+  return `
+    <div class="owl-speaking-wrap" id="owlWrap">
+      <div class="owl-ring"></div>
+      <div class="owl-ring"></div>
+      <div class="owl-ring"></div>
+      <div class="owl-bubble" id="owlBubble">
+        <div class="owl-bubble-header">
+          <span class="owl-bubble-dot"></span>
+          Algi 🦉
+        </div>
+        <div class="owl-bubble-text" id="owlBubbleText"></div>
+      </div>
+      <img src="image/owl.png" alt="Maskot Algi" class="owl-img" style="width:400px;height:400px;object-fit:cover;position:relative;z-index:1;">
+    </div>
+  `;
+}
+
+function initOwlGreeting() {
+  const bubble = document.getElementById('owlBubble');
+  const textEl = document.getElementById('owlBubbleText');
+  if (!bubble || !textEl) return;
+
+  // show invite bubble — user must click it to hear the greeting
+  textEl.innerHTML = 'Siapakah saya! 👋<span class="owl-tap-hint">Klik untuk dengar!</span>';
+  bubble.classList.add('show');
+  setTimeout(() => bubble.classList.add('bobbing'), 500);
+  bubble.addEventListener('click', playGreeting, { once: true });
+}
+
+function playGreeting() {
+  const wrap   = document.getElementById('owlWrap');
+  const bubble = document.getElementById('owlBubble');
+  const textEl = document.getElementById('owlBubbleText');
+  const audio  = document.getElementById('welcome-audio');
+  if (!wrap || !bubble || !textEl || !audio) return;
+
+  bubble.classList.remove('bobbing');
+
+  const message = 'Hi, saya Algi! Selamat datang ke AlgebraHub!';
+
+  const cleanup = () => {
+    audio.onended = null;
+    const w = document.getElementById('owlWrap');
+    const b = document.getElementById('owlBubble');
+    if (!w || !b) return;
+    w.classList.remove('speaking');
+    setTimeout(() => { b.classList.remove('show'); b.classList.add('hide'); }, 1800);
+  };
+
+  wrap.classList.add('speaking');
+
+  let i = 0;
+  textEl.innerHTML = '<span class="owl-cursor"></span>';
+  const type = () => {
+    const el = document.getElementById('owlBubbleText');
+    if (!el) return;
+    if (i < message.length) {
+      el.innerHTML = message.slice(0, ++i) + '<span class="owl-cursor"></span>';
+      setTimeout(type, 45);
+    } else {
+      setTimeout(() => {
+        const el2 = document.getElementById('owlBubbleText');
+        if (el2) el2.innerHTML = message;
+      }, 500);
+    }
+  };
+  setTimeout(type, 300);
+
+  // user clicked = guaranteed interaction, so audio.play() will never be blocked
+  audio.currentTime = 0;
+  audio.onended = cleanup;
+  audio.play().catch(() => {});
+
+  // fallback: close bubble after 8s if audio never fires onended
+  setTimeout(() => {
+    if (document.getElementById('owlWrap')?.classList.contains('speaking')) cleanup();
+  }, 8000);
 }
 
 // ---------------------------------------------------------------------------
@@ -253,7 +339,58 @@ function renderLearning() {
         </div>
       </button>
     </div>
+
+    <!-- Small owl mascot fixed bottom-left -->
+    <div class="learn-owl-wrap" id="learnOwlWrap">
+      <div class="learn-owl-base">
+        <img src="image/owl.png" class="learn-owl-img owl-img" alt="Algi">
+      </div>
+      <div class="learn-owl-bubble" id="learnOwlBubble">
+        <div class="learn-owl-bubble-header">
+          <span class="owl-bubble-dot"></span>
+          Algi 🦉
+        </div>
+        <div class="learn-owl-bubble-text" id="learnOwlText"></div>
+      </div>
+    </div>
   `;
+}
+
+function initPageOwl(message, audioId) {
+  const bubble = document.getElementById('learnOwlBubble');
+  const textEl = document.getElementById('learnOwlText');
+  const audio  = document.getElementById(audioId);
+  if (!bubble || !textEl || !audio) return;
+
+  bubble.classList.add('show');
+
+  let i = 0;
+  textEl.innerHTML = '<span class="owl-cursor"></span>';
+  const type = () => {
+    const el = document.getElementById('learnOwlText');
+    if (!el) return;
+    if (i < message.length) {
+      el.innerHTML = message.slice(0, ++i) + '<span class="owl-cursor"></span>';
+      setTimeout(type, 45);
+    } else {
+      setTimeout(() => {
+        const el2 = document.getElementById('learnOwlText');
+        if (el2) el2.innerHTML = message;
+      }, 500);
+    }
+  };
+  setTimeout(type, 300);
+
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+}
+
+function initLearningOwl() {
+  initPageOwl('Jom Belajar! Pilih Topik Yang anda minat!', 'belajar-audio');
+}
+
+function initPracticeOwl() {
+  initPageOwl('Sukakan Cabaran ? Jom buat latihan!', 'latihan-audio');
 }
 
 function renderLesson() {
@@ -338,6 +475,20 @@ function renderPractice() {
         <div class="pill-badge">Mula kuiz</div>
       </button>
     </div>
+
+    <!-- Small owl mascot fixed bottom-left -->
+    <div class="learn-owl-wrap" id="learnOwlWrap">
+      <div class="learn-owl-base">
+        <img src="image/owl.png" class="learn-owl-img owl-img" alt="Algi">
+      </div>
+      <div class="learn-owl-bubble" id="learnOwlBubble">
+        <div class="learn-owl-bubble-header">
+          <span class="owl-bubble-dot"></span>
+          Algi 🦉
+        </div>
+        <div class="learn-owl-bubble-text" id="learnOwlText"></div>
+      </div>
+    </div>
   `;
 }
 
@@ -417,7 +568,25 @@ function renderGame() {
         </div>
       </button>
     </div>
+
+    <!-- Small owl mascot fixed bottom-left -->
+    <div class="learn-owl-wrap" id="learnOwlWrap">
+      <div class="learn-owl-base">
+        <img src="image/owl.png" class="learn-owl-img owl-img" alt="Algi">
+      </div>
+      <div class="learn-owl-bubble" id="learnOwlBubble">
+        <div class="learn-owl-bubble-header">
+          <span class="owl-bubble-dot"></span>
+          Algi 🦉
+        </div>
+        <div class="learn-owl-bubble-text" id="learnOwlText"></div>
+      </div>
+    </div>
   `;
+}
+
+function initGameOwl() {
+  initPageOwl('Sudahkah anda bersedia? Jom kita bermain.', 'main-audio');
 }
 
 // Preview mockup: interactions are illustrative, matching the design intent.
@@ -515,6 +684,19 @@ function render() {
   document.getElementById("app").innerHTML = (
     renderers[state.view] || renderHome
   )();
+
+  if (state.view === 'home') {
+    setTimeout(initOwlGreeting, 200);
+  }
+  if (state.view === 'learning') {
+    setTimeout(initLearningOwl, 300);
+  }
+  if (state.view === 'practice') {
+    setTimeout(initPracticeOwl, 300);
+  }
+  if (state.view === 'game') {
+    setTimeout(initGameOwl, 300);
+  }
 }
 
 render();
