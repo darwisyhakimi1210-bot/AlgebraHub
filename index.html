@@ -49,6 +49,35 @@
   <audio id="latihan-audio" src="sound/latihan.wav" preload="auto"></audio>
   <audio id="main-audio" src="sound/main.wav" preload="auto"></audio>
 
+  <!-- Chatbot Launcher — bookmark tab on the right edge -->
+  <button class="chat-launcher-btn" id="chatLauncher" onclick="ChatBot.toggle()" title="Tanya Algi tentang Algebra">
+    <span id="chatLauncherIcon">🦉</span>
+    <span class="chat-launcher-label" id="chatLauncherLabel">Tanya Algi</span>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window hidden" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <span class="chat-header-owl">🦉</span>
+        <div>
+          <div class="chat-header-name">Algi</div>
+          <div class="chat-header-status">Pembantu AlgebraHub</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" onclick="ChatBot.toggle()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text"
+        placeholder="Tanya soalan algebra…"
+        onkeydown="if(event.key==='Enter')ChatBot.send()">
+      <button class="chat-send-btn" onclick="ChatBot.send()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 
   <!-- Floating music control widget -->
