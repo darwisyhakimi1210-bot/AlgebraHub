@@ -16,6 +16,7 @@
 const DATA = {
   ungkapan: {
     title: "Ungkapan Algebra",
+    bab: "Bab 5",
     tag: "ax + b",
     intro:
       "Ungkapan algebra ialah gabungan pemboleh ubah (huruf), pekali (nombor di hadapan pemboleh ubah) dan pemalar. Operasi seperti tambah, tolak, dan kembangkan kurungan boleh dilakukan ke atas ungkapan algebra.",
@@ -50,6 +51,7 @@ const DATA = {
   },
   rumus: {
     title: "Rumus Algebra",
+    bab: "Bab 3",
     tag: "S = ...",
     intro:
       "Rumus algebra ialah persamaan yang menghubungkan beberapa pemboleh ubah. Perkara rumus ialah pemboleh ubah yang bersendirian di satu sisi dengan pekali 1. Menukar perkara rumus bermaksud mengasingkan pemboleh ubah berbeza sebagai subjek baharu.",
@@ -84,6 +86,7 @@ const DATA = {
   },
   linear: {
     title: "Garis Lurus",
+    bab: "Bab 9",
     tag: "y = mx + c",
     intro:
       "Persamaan garis lurus ialah y = mx + c, di mana m ialah kecerunan dan c ialah pintasan-y. Kecerunan diukur sebagai jarak mencancang dibahagi jarak mengufuk antara dua titik pada garis.",
@@ -118,6 +121,7 @@ const DATA = {
   },
   ketaksamaan: {
     title: "Ketaksamaan Linear",
+    bab: "Bab 6",
     tag: "a < x < b",
     intro:
       "Ketaksamaan linear menunjukkan julat nilai yang mungkin bagi pemboleh ubah. Diselesaikan dengan kaedah 'pindah' — sama seperti persamaan linear — tetapi ada 1 peraturan istimewa: tanda TERBALIK apabila darab atau bahagi dengan nombor NEGATIF.",
@@ -152,6 +156,7 @@ const DATA = {
   },
   indeks: {
     title: "Indeks",
+    bab: "Bab 1",
     tag: "aᵐ × aⁿ",
     intro:
       "Indeks (atau kuasa) menunjukkan bilangan kali sesuatu nombor (asas) didarab dengan dirinya sendiri. Hukum-hukum indeks membolehkan kita memudahkan ungkapan berkuasa dengan cepat dan tepat.",
@@ -186,6 +191,7 @@ const DATA = {
   },
   quadratic: {
     title: "Fungsi Kuadratik",
+    bab: "Bab 1",
     tag: "ax² + bx + c",
     intro:
       "Fungsi kuadratik ialah f(x) = ax² + bx + c di mana a ≠ 0. Grafnya berbentuk parabola. Nilai a menentukan bentuk graf, nilai b menentukan kedudukan paksi simetri, dan nilai c menentukan pintasan-y.",
@@ -220,6 +226,7 @@ const DATA = {
   },
   fungsi: {
     title: "Fungsi dan Graf",
+    bab: "Bab 1",
     tag: "f(x), f⁻¹(x)",
     intro:
       "Fungsi ialah pemetaan khas — setiap objek dalam domain mempunyai TEPAT SATU imej dalam kodomain. Jenis-jenis fungsi termasuk linear, kuadratik, kubik, dan salingan. Fungsi gubahan dan songsang merupakan kemahiran lanjutan.",
@@ -254,6 +261,7 @@ const DATA = {
   },
   system: {
     title: "Persamaan Linear Serentak",
+    bab: "—",
     tag: "{ x , y }",
     intro:
       "Persamaan linear serentak ialah dua persamaan yang mempunyai dua pemboleh ubah (x dan y). Terdapat 3 kaedah penyelesaian: kaedah penghapusan, kaedah penggantian, dan kalkulator (EQN, Unknowns 2).",
@@ -288,6 +296,7 @@ const DATA = {
   },
   ubahan: {
     title: "Ubahan",
+    bab: "Bab 1",
     tag: "y ∝ x",
     intro:
       "Ubahan menghuraikan bagaimana satu kuantiti berubah apabila kuantiti lain berubah. k ialah PEMALAR — nilainya tetap dan tidak berubah. Terdapat empat jenis: langsung, songsang, tercantum, dan bergabung.",
@@ -322,6 +331,7 @@ const DATA = {
   },
   matriks: {
     title: "Matriks",
+    bab: "Bab 2",
     tag: "[A][B]",
     intro:
       "Matriks ialah susunan nombor dalam baris dan lajur. Peringkat matriks ditulis sebagai m × n (m = bilangan baris, n = bilangan lajur). Matriks digunakan untuk menyelesaikan persamaan linear serentak dengan lebih cekap.",
@@ -354,6 +364,77 @@ const DATA = {
     icon: "[]",
     iconClass: "red-bg",
   },
+  persamaan_linear: {
+    title: "Persamaan Linear",
+    bab: "Bab 6",
+    tag: "ax = b",
+    intro:
+      "Persamaan linear dalam satu pemboleh ubah diselesaikan dengan kaedah pindah — guna operasi songsang pada kedua-dua belah sehingga pemboleh ubah bersendirian di sebelah kiri.",
+    formula: "ax + b = c  →  x = (c − b) / a",
+    concepts: [
+      {
+        n: "1",
+        title: "Persamaan Linear Mudah",
+        body: "Bentuk paling mudah: x + 5 = 12. Selesaikan dengan menolak nilai yang sama dari kedua-dua belah. x = 12 − 5 = 7.",
+      },
+      {
+        n: "2",
+        title: "Anu Bercabang & Dua Langkah",
+        body: "Persamaan dua langkah seperti 3x − 4 = 11. Mula-mula pindah pemalar (±), kemudian pindah pekali (× ÷). x = (11 + 4) / 3 = 5.",
+      },
+      {
+        n: "3",
+        title: "Persamaan Dengan Kurungan",
+        body: "Kembangkan kurungan dahulu, atau darab kedua-dua belah dengan penyebut pecahan. Contoh: 2(x − 3) = 10 → 2x − 6 = 10 → x = 8.",
+      },
+    ],
+    exampleQ: "Selesaikan 5x − 7 = 23.",
+    exampleSteps: [
+      { label: "Langkah 1", text: "Tambah 7 pada kedua-dua belah: 5x = 30" },
+      { label: "Langkah 2", text: "Bahagikan dengan 5: x = 6" },
+      { label: "Jawapan", text: "x = 6" },
+    ],
+    question: "Selesaikan 4x + 3 = 19.",
+    opts: ["x = 3", "x = 4", "x = 5", "x = 6"],
+    icon: "ax=c",
+    iconClass: "blue-bg",
+  },
+  pemfaktoran: {
+    title: "Pemfaktoran & Pecahan Algebra",
+    bab: "Bab 2",
+    tag: "FST, 1/x",
+    intro:
+      "Pemfaktoran ialah proses mencari faktor ungkapan. Pecahan algebra pula menggunakan prinsip yang sama seperti pecahan nombor — keluar masuk faktor sepunya untuk mudahkan.",
+    formula: "ab + ac = a(b + c)   |   (a/b) ÷ (c/d) = ad / bc",
+    concepts: [
+      {
+        n: "1",
+        title: "Faktor Sepunya Terbesar (FST)",
+        body: "Cari nombor atau pemboleh ubah terbesar yang boleh membahagikan semua sebutan. Contoh: 6x² + 9x → FST = 3x. Faktorkan: 3x(2x + 3).",
+      },
+      {
+        n: "2",
+        title: "Pemfaktoran Kuadratik",
+        body: "Untuk ax² + bx + c, cari dua nombor yang darab = ac dan tambah = b. Tulis semula, kemudian kumpulkan dan faktorkan. Contoh: x² − 7x + 12 = (x − 3)(x − 4).",
+      },
+      {
+        n: "3",
+        title: "Pecahan Algebra — Tambah & Tolak",
+        body: "Cari LCM penyebut, darab untuk samakan, kemudian gabungkan pengangka. Contoh: 2/(x+1) + 3/(x+2) = [2(x+2) + 3(x+1)] / [(x+1)(x+2)].",
+      },
+    ],
+    exampleQ: "Faktorkan x² − 7x + 12.",
+    exampleSteps: [
+      { label: "Langkah 1", text: "Cari dua nombor: darab = 12, tambah = −7 → (−3) dan (−4)" },
+      { label: "Langkah 2", text: "Tulis: x² − 3x − 4x + 12" },
+      { label: "Langkah 3", text: "Kumpulan: x(x − 3) − 4(x − 3) = (x − 3)(x − 4)" },
+      { label: "Jawapan", text: "(x − 3)(x − 4) = 0  →  x = 3 atau x = 4" },
+    ],
+    question: "Faktorkan x² − 5x + 6.",
+    opts: ["(x − 1)(x − 6)", "(x − 2)(x − 3)", "(x + 2)(x + 3)", "(x − 3)(x + 2)"],
+    icon: "FST",
+    iconClass: "blue-bg",
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -361,34 +442,44 @@ const DATA = {
 // ---------------------------------------------------------------------------
 const TINGKATAN_DATA = [
   {
-    id: "12",
-    label: "Tingkatan 1 & 2",
-    subtitle: "Asas Algebra",
-    banner: "ax + b",
+    id: "1",
+    label: "Ungkapan Algebra & Persamaan Linear",
+    subtitle: "Bab 5 & 6",
+    banner: "Tingkatan 1",
     colorClass: "blue",
-    topics: ["ungkapan", "rumus"],
+    topics: ["ungkapan", "persamaan_linear"],
+  },
+  {
+    id: "2",
+    label: "Pemfaktoran Algebra & Rumus Algebra",
+    subtitle: "Bab 2 & 3",
+    banner: "Tingkatan 2",
+    colorClass: "blue",
+    topics: ["pemfaktoran", "rumus"],
   },
   {
     id: "3",
-    label: "Tingkatan 3",
-    subtitle: "Garis Lurus & Indeks",
-    banner: "y = mx + c",
+    label: "Indeks & Garis Lurus",
+    subtitle: "Bab 1 & 9",
+    banner: "Tingkatan 3",
     colorClass: "green",
-    topics: ["linear", "ketaksamaan", "indeks"],
+    topics: ["indeks", "linear"],
   },
   {
     id: "4",
-    label: "Tingkatan 4",
-    subtitle: "Topik Utama SPM",
-    banner: "ax² + bx + c",
+    label: "Fungsi dan Persamaan Kuadratik & Ketaksamaan Linear",
+    subtitle: "Bab 1 & 6",
+    banner: "Tingkatan 4",
     colorClass: "purple",
-    topics: ["quadratic", "fungsi", "system"],
+    // Bab 1 = Fungsi & Persamaan Kuadratik (both `quadratic` & `fungsi`)
+    // Bab 6 = Ketaksamaan Linear
+    topics: [ "fungsi", "ketaksamaan"],
   },
   {
     id: "5",
-    label: "Tingkatan 5",
-    subtitle: "Ubahahan & Matriks",
-    banner: "y ∝ x",
+    label: "Ubahahan & Matriks",
+    subtitle: "Bab 1 & 2",
+    banner: "Tingkatan 5",
     colorClass: "red",
     topics: ["ubahan", "matriks"],
   },
@@ -398,16 +489,18 @@ const TINGKATAN_DATA = [
 // VIDEO DATA — fill in YouTube embed URLs when ready (null = coming soon)
 // ---------------------------------------------------------------------------
 const VIDEO_DATA = {
-  ungkapan:    null,
-  rumus:       null,
-  linear:      null,
-  ketaksamaan: null,
-  indeks:      null,
-  quadratic:   null,
-  fungsi:      null,
-  system:      null,
-  ubahan:      null,
-  matriks:     null,
+  ungkapan:        null,
+  persamaan_linear: null,
+  pemfaktoran:     null,
+  rumus:           null,
+  linear:          null,
+  ketaksamaan:     null,
+  indeks:          null,
+  quadratic:       null,
+  fungsi:          null,
+  system:          null,
+  ubahan:          null,
+  matriks:         null,
 };
 
 // ---------------------------------------------------------------------------
@@ -421,15 +514,29 @@ const state = {
 
 const App = {
   go(view, param) {
-    // stop welcome greeting when leaving home
-    if (view !== "home") {
-      const audio = document.getElementById("welcome-audio");
-      if (audio) { audio.pause(); audio.currentTime = 0; audio.onended = null; }
-      const wrap = document.getElementById("owlWrap");
-      if (wrap) wrap.classList.remove("speaking");
-      const bubble = document.getElementById("owlBubble");
-      if (bubble) { bubble.classList.remove("show", "bobbing"); bubble.classList.add("hide"); }
-    }
+    // Stop ALL owl voice audios on every navigation.
+    // Without this, the previous page's voice keeps playing until it finishes
+    // (e.g. you click "Latihan" while "Pelajaran" voice is still playing).
+    ["welcome-audio", "belajar-audio", "latihan-audio", "main-audio"].forEach((id) => {
+      const audio = document.getElementById(id);
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.onended = null;
+      }
+    });
+
+    // Hide the home page's owl speech bubble + speaking animation
+    const wrap = document.getElementById("owlWrap");
+    if (wrap) wrap.classList.remove("speaking");
+    const bubble = document.getElementById("owlBubble");
+    if (bubble) { bubble.classList.remove("show", "bobbing"); bubble.classList.add("hide"); }
+
+    // Hide any page-level owl bubbles (learning / topics / practice / game)
+    document.querySelectorAll(".learn-owl-bubble").forEach((b) => {
+      b.classList.remove("show", "bobbing");
+      b.classList.add("hide");
+    });
 
     state.view = view;
 
@@ -656,10 +763,15 @@ function renderTopics() {
   const cards = tData.topics.map(key => {
     const d = DATA[key];
     const shortDesc = d.intro.length > 90 ? d.intro.slice(0, 90) + "…" : d.intro;
+    // Bab badge — only show if the topic has a real "Bab X" (skip "—" placeholders)
+    const babBadge = d.bab && d.bab !== "—"
+      ? `<div class="topic-card-bab">${d.bab}</div>`
+      : "";
     return `
       <button class="topic-card" onclick="App.go('lesson', '${key}')">
         <div class="topic-card-banner ${key}">${d.tag}</div>
         <div class="topic-card-body">
+          ${babBadge}
           <div class="topic-card-title">${d.title}</div>
           <div class="topic-card-desc">${shortDesc}</div>
           <div class="topic-card-link">Mula pelajaran ${ICONS.arrowRight}</div>
@@ -698,6 +810,7 @@ function initPageOwl(message, audioId) {
   const audio  = document.getElementById(audioId);
   if (!bubble || !textEl || !audio) return;
 
+  bubble.classList.remove("hide");
   bubble.classList.add("show");
 
   let i = 0;

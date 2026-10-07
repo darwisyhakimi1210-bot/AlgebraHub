@@ -118,13 +118,8 @@
     };
     // Sync initial volume
     MusicPlayer.audio.volume = 0.5;
-    // Try autoplay — works if user has previously interacted with the site
-    MusicPlayer.audio.play().then(() => {
-      document.getElementById('iconPlay').style.display  = 'none';
-      document.getElementById('iconPause').style.display = '';
-    }).catch(() => {
-      // Browser blocked autoplay — play button stays visible for user to click
-    });
+    // Background music does NOT auto-play — user must click the play button
+    // on the "Muzik Latar" widget to start it.
   </script>
 </body>
 </html>
