@@ -991,6 +991,99 @@ const QUIZ_QUESTIONS = {
 };
 
 // ---------------------------------------------------------------------------
+// ROCKET MISSION — algebra question bank by difficulty
+// ---------------------------------------------------------------------------
+const ROCKET_QUESTIONS = {
+  // Level 1 — Beginner Orbit: simplifying, like terms, basic substitution
+  1: [
+    { q: "3x + 2x = ?", opts: ["5x","6x","5","5x²"], ans: 0, exp: "3x dan 2x ialah sebutan serupa. Tambah pekali: 3+2=5. Jadi 5x." },
+    { q: "4y − 2y = ?", opts: ["2y","6y","2","2y²"], ans: 0, exp: "4y tolak 2y = 2y (sebutan serupa)." },
+    { q: "5 + 3 = ?", opts: ["8","15","2","53"], ans: 0, exp: "5 + 3 = 8 (nombor biasa)." },
+    { q: "7x − 3x = ?", opts: ["4x","10x","4","3x"], ans: 0, exp: "7x − 3x = 4x." },
+    { q: "2 × 3x = ?", opts: ["6x","5x","6","3x"], ans: 0, exp: "2 × 3x = 6x." },
+    { q: "x + x + x = ?", opts: ["3x","3","x³","1x"], ans: 0, exp: "x + x + x = 3x." },
+    { q: "8y ÷ 2 = ?", opts: ["4y","6y","4","10y"], ans: 0, exp: "8y ÷ 2 = 4y." },
+    { q: "Jika x = 4, cari 2x.", opts: ["8","6","2","4"], ans: 0, exp: "2x = 2 × 4 = 8." },
+    { q: "6 + 4 = ?", opts: ["10","2","24","64"], ans: 0, exp: "6 + 4 = 10." },
+    { q: "5x + x = ?", opts: ["6x","5x²","5","4x"], ans: 0, exp: "5x + x = 6x." },
+    { q: "9 − 3 = ?", opts: ["6","12","3","27"], ans: 0, exp: "9 − 3 = 6." },
+    { q: "4 × 2x = ?", opts: ["8x","6x","8","2x"], ans: 0, exp: "4 × 2x = 8x." },
+    { q: "7y − y = ?", opts: ["6y","8y","7","6"], ans: 0, exp: "7y − y = 6y." },
+    { q: "Jika a = 3, cari 2a + 1.", opts: ["7","8","6","9"], ans: 0, exp: "2a + 1 = 2(3) + 1 = 6 + 1 = 7." },
+    { q: "10x ÷ 5 = ?", opts: ["2x","5x","2","15x"], ans: 0, exp: "10x ÷ 5 = 2x." },
+  ],
+  // Level 2 — Planet Explorer: linear equations, expanding brackets
+  2: [
+    { q: "2x + 4 = 10. Cari x.", opts: ["3","2","5","4"], ans: 0, exp: "2x + 4 = 10 → 2x = 6 → x = 3." },
+    { q: "Kembangkan 3(x + 2).", opts: ["3x + 6","3x + 2","3x − 6","x + 6"], ans: 0, exp: "3(x + 2) = 3x + 6 (darab setiap sebutan)." },
+    { q: "x + 5 = 12. Cari x.", opts: ["7","17","6","5"], ans: 0, exp: "x + 5 = 12 → x = 12 − 5 = 7." },
+    { q: "Kembangkan 2(3x − 4).", opts: ["6x − 8","6x + 8","5x − 4","6x − 4"], ans: 0, exp: "2(3x − 4) = 6x − 8." },
+    { q: "5x − 3 = 22. Cari x.", opts: ["5","25","4","6"], ans: 0, exp: "5x − 3 = 22 → 5x = 25 → x = 5." },
+    { q: "Faktorkan 6x + 9.", opts: ["3(2x+3)","3(2x−3)","6(x+9)","2(3x+4)"], ans: 0, exp: "FST = 3. Jadi 6x + 9 = 3(2x + 3)." },
+    { q: "3(x − 1) = 12. Cari x.", opts: ["5","4","3","6"], ans: 0, exp: "3(x − 1) = 12 → x − 1 = 4 → x = 5." },
+    { q: "4x + 6 = 30. Cari x.", opts: ["6","7","5","8"], ans: 0, exp: "4x + 6 = 30 → 4x = 24 → x = 6." },
+    { q: "Kembangkan −2(x + 3).", opts: ["−2x − 6","−2x + 6","2x − 6","−2x + 3"], ans: 0, exp: "−2(x + 3) = −2x − 6." },
+    { q: "x − 7 = 3. Cari x.", opts: ["10","4","−4","7"], ans: 0, exp: "x − 7 = 3 → x = 3 + 7 = 10." },
+    { q: "Faktorkan 8x + 12.", opts: ["4(2x+3)","2(4x+6)","8(x+1)","4(2x−3)"], ans: 0, exp: "FST = 4. Jadi 8x + 12 = 4(2x + 3)." },
+    { q: "2x + 8 = 20. Cari x.", opts: ["6","10","5","4"], ans: 0, exp: "2x + 8 = 20 → 2x = 12 → x = 6." },
+    { q: "Kembangkan 5(2x − 1).", opts: ["10x − 5","10x + 5","7x − 1","10x − 1"], ans: 0, exp: "5(2x − 1) = 10x − 5." },
+    { q: "3x = 15. Cari x.", opts: ["5","18","3","12"], ans: 0, exp: "3x = 15 → x = 15 ÷ 3 = 5." },
+    { q: "x/3 = 4. Cari x.", opts: ["12","7","3","1/3"], ans: 0, exp: "x/3 = 4 → x = 4 × 3 = 12." },
+  ],
+  // Level 3 — Galactic Challenge: harder equations, factorisation, fractions
+  3: [
+    { q: "2(x + 3) = 18. Cari x.", opts: ["6","7","5","9"], ans: 0, exp: "2(x+3)=18 → x+3=9 → x=6." },
+    { q: "Faktorkan x² − 9.", opts: ["(x−3)(x+3)","(x−9)(x+1)","(x−3)²","(x+3)²"], ans: 0, exp: "x² − 9 = (x−3)(x+3) — beza kuasa dua." },
+    { q: "3x + 7 = 22. Cari x.", opts: ["5","15","6","4"], ans: 0, exp: "3x + 7 = 22 → 3x = 15 → x = 5." },
+    { q: "Faktorkan x² + 5x + 6.", opts: ["(x+2)(x+3)","(x+1)(x+5)","(x−2)(x−3)","(x+6)(x−1)"], ans: 0, exp: "x²+5x+6: dua nombor darab=6, tambah=5 → (x+2)(x+3)." },
+    { q: "(2x + 4)/2 = 7. Cari x.", opts: ["5","3","7","2"], ans: 0, exp: "(2x+4)/2=7 → 2x+4=14 → 2x=10 → x=5." },
+    { q: "Faktorkan x² − 4x − 12.", opts: ["(x−6)(x+2)","(x−3)(x+4)","(x+6)(x−2)","(x−2)(x+6)"], ans: 0, exp: "x²−4x−12: dua nombor darab=−12, tambah=−4 → (x−6)(x+2)." },
+    { q: "4x − 3 = 2x + 9. Cari x.", opts: ["6","4","5","3"], ans: 0, exp: "4x−3=2x+9 → 2x=12 → x=6." },
+    { q: "Faktorkan 2x² + 6x.", opts: ["2x(x+3)","2(x²+3x)","x(2x+6)","(2x+3)(x+2)"], ans: 0, exp: "FST = 2x. Jadi 2x²+6x = 2x(x+3)." },
+    { q: "5(x − 2) = 3x + 10. Cari x.", opts: ["10","5","8","6"], ans: 0, exp: "5x−10=3x+10 → 2x=20 → x=10." },
+    { q: "Faktorkan x² + 7x + 12.", opts: ["(x+3)(x+4)","(x+2)(x+5)","(x+1)(x+12)","(x+6)(x+2)"], ans: 0, exp: "x²+7x+12: dua nombor darab=12, tambah=7 → (x+3)(x+4)." },
+    { q: "3(x + 4) = 2(x + 8). Cari x.", opts: ["4","8","2","6"], ans: 0, exp: "3x+12=2x+16 → x=4." },
+    { q: "Faktorkan 12x² − 8x.", opts: ["4x(3x−2)","4(3x²−2x)","2x(6x−4)","8x(x−1)"], ans: 0, exp: "FST = 4x. Jadi 12x²−8x = 4x(3x−2)." },
+    { q: "(x+3)/2 = 5. Cari x.", opts: ["7","10","3","5"], ans: 0, exp: "(x+3)/2=5 → x+3=10 → x=7." },
+    { q: "Faktorkan x² − 25.", opts: ["(x−5)(x+5)","(x−25)(x+1)","(x−5)²","(x+5)²"], ans: 0, exp: "x²−25 = (x−5)(x+5) — beza kuasa dua." },
+    { q: "4x + 1 = 3x + 8. Cari x.", opts: ["7","3","5","4"], ans: 0, exp: "4x+1=3x+8 → x=7." },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// SPEED RACE — algebra question bank
+// ---------------------------------------------------------------------------
+const RACE_QUESTIONS = [
+  // Easy
+  { q: "3x + 2x = ?", opts: ["5x","6x","5","5x²"], ans: 0, exp: "Tambah pekali: 3+2=5. Jadi 5x." },
+  { q: "4y − 2y = ?", opts: ["2y","6y","2","2y²"], ans: 0, exp: "4y − 2y = 2y." },
+  { q: "2 × 4x = ?", opts: ["8x","6x","8","2x"], ans: 0, exp: "2 × 4x = 8x." },
+  { q: "Jika x = 5, cari 2x.", opts: ["10","7","12","6"], ans: 0, exp: "2x = 2 × 5 = 10." },
+  { q: "9 − 4 = ?", opts: ["5","13","36","2"], ans: 0, exp: "9 − 4 = 5." },
+  { q: "x + x = ?", opts: ["2x","x²","2","x"], ans: 0, exp: "x + x = 2x." },
+  { q: "8 ÷ 2 = ?", opts: ["4","10","16","6"], ans: 0, exp: "8 ÷ 2 = 4." },
+  { q: "3 × 3 = ?", opts: ["9","6","27","12"], ans: 0, exp: "3 × 3 = 9." },
+  // Medium
+  { q: "2x + 4 = 10. x = ?", opts: ["3","5","7","2"], ans: 0, exp: "2x+4=10 → 2x=6 → x=3." },
+  { q: "3(x + 2) = ?", opts: ["3x+6","3x+2","x+6","3x−6"], ans: 0, exp: "3(x+2) = 3x+6." },
+  { q: "x + 7 = 15. x = ?", opts: ["8","22","6","7"], ans: 0, exp: "x+7=15 → x=8." },
+  { q: "5x − 3 = 22. x = ?", opts: ["5","19","4","25"], ans: 0, exp: "5x−3=22 → 5x=25 → x=5." },
+  { q: "Faktorkan 6x + 9.", opts: ["3(2x+3)","3(2x−3)","6(x+9)","2(3x+4)"], ans: 0, exp: "FST=3 → 3(2x+3)." },
+  { q: "3(x − 1) = 12. x = ?", opts: ["5","4","3","13"], ans: 0, exp: "3(x−1)=12 → x−1=4 → x=5." },
+  { q: "4x + 6 = 30. x = ?", opts: ["6","7","5","36"], ans: 0, exp: "4x+6=30 → 4x=24 → x=6." },
+  { q: "Faktorkan 8x + 12.", opts: ["4(2x+3)","2(4x+6)","8(x+1)","4(2x−3)"], ans: 0, exp: "FST=4 → 4(2x+3)." },
+  // Hard
+  { q: "2(x + 3) = 18. x = ?", opts: ["6","5","9","7"], ans: 0, exp: "2(x+3)=18 → x+3=9 → x=6." },
+  { q: "Faktorkan x² − 9.", opts: ["(x−3)(x+3)","(x−9)(x+1)","(x−3)²","(x+3)²"], ans: 0, exp: "x²−9 = (x−3)(x+3)." },
+  { q: "3x + 7 = 22. x = ?", opts: ["5","29","15","3"], ans: 0, exp: "3x+7=22 → 3x=15 → x=5." },
+  { q: "Faktorkan x²+5x+6.", opts: ["(x+2)(x+3)","(x+1)(x+5)","(x−2)(x−3)","(x+6)(x−1)"], ans: 0, exp: "x²+5x+6 = (x+2)(x+3)." },
+  { q: "(2x+4)/2 = 7. x = ?", opts: ["5","3","7","10"], ans: 0, exp: "(2x+4)/2=7 → 2x+4=14 → 2x=10 → x=5." },
+  { q: "Faktorkan x²−4x−12.", opts: ["(x−6)(x+2)","(x−3)(x+4)","(x+6)(x−2)","(x−2)(x+6)"], ans: 0, exp: "x²−4x−12 = (x−6)(x+2)." },
+  { q: "4x − 3 = 2x + 9. x = ?", opts: ["6","4","5","3"], ans: 0, exp: "4x−3=2x+9 → 2x=12 → x=6." },
+  { q: "5(x − 2) = 3x + 10. x = ?", opts: ["10","5","8","6"], ans: 0, exp: "5x−10=3x+10 → 2x=20 → x=10." },
+];
+
+// ---------------------------------------------------------------------------
 // APP STATE
 // ---------------------------------------------------------------------------
 const state = {
@@ -1866,6 +1959,8 @@ const GameState = {
   dragdrop: { score: 0, matched: 0, total: 0, items: [], selected: null },
   wordmatch: { score: 0, matched: 0, total: 0, items: [], selTerm: null, selDef: null },
   bubblepop: { score: 0, qIndex: 0, questions: [], selected: null, answered: false },
+  rocket: { phase: 'menu', mission: 1, questions: [], current: 0, score: 0, lives: 3, streak: 0, maxStreak: 0, fuel: 0, answers: [], startTime: null, questionsDone: 0, correctCount: 0, wrongCount: 0 },
+  speedrace: { phase: 'menu', mode: 'time', questions: [], current: 0, score: 0, combo: 0, maxCombo: 0, mistakes: 3, answers: [], timeLeft: 60, startTime: null, qDone: 0, correctCount: 0, speed: 0 },
 };
 
 // ---------------------------------------------------------------------------
@@ -1911,6 +2006,26 @@ function renderGame() {
         <div class="game-card-body">
           <div class="game-card-title">Bubble Pop</div>
           <div class="game-card-desc">Pasang jawapan yang betul untuk memecahkan gelembung!</div>
+        </div>
+      </button>
+      <button class="game-card" onclick="initRocketMenu();App.go('rocket')">
+        <div class="game-card-banner rocket-banner">
+          <div class="game-banner-icon">🚀</div>
+          <div class="game-banner-label">ROCKET</div>
+        </div>
+        <div class="game-card-body">
+          <div class="game-card-title">Rocket Algebra Mission</div>
+          <div class="game-card-desc">Jawab soalan algebra untuk melancarkan roket dan jelajahi planet!</div>
+        </div>
+      </button>
+      <button class="game-card" onclick="initSpeedRaceMenu();App.go('speedrace')">
+        <div class="game-card-banner speedrace-banner">
+          <div class="game-banner-icon">🏎️</div>
+          <div class="game-banner-label">RACE</div>
+        </div>
+        <div class="game-card-body">
+          <div class="game-card-title">Algebra Speed Race</div>
+          <div class="game-card-desc">Selesaikan soalan algebra untuk memecut kereta lumba!</div>
         </div>
       </button>
     </div>
@@ -2298,6 +2413,8 @@ function render() {
     wordmatch: renderWordMatch,
     bubblepop: renderBubblePop,
     scoreboard: renderScoreBoard,
+    rocket:    renderRocket,
+    speedrace: renderSpeedRace,
   };
 
   document.getElementById("app").innerHTML = (
@@ -2312,6 +2429,583 @@ function render() {
   if (state.view === "topics")   setTimeout(initLearningOwl,  300);
   if (state.view === "practice") setTimeout(initPracticeOwl,  300);
   if (state.view === "game")     setTimeout(initGameOwl,      300);
+}
+
+// ===========================================================================
+// ROCKET ALGEBRA MISSION
+// ===========================================================================
+
+// Load saved progress
+function rocketLoadProgress() {
+  try {
+    return JSON.parse(localStorage.getItem('algebraHub.rocket')) || { unlocked: [1], bestScores: {} };
+  } catch { return { unlocked: [1], bestScores: {} }; }
+}
+function rocketSaveProgress(data) {
+  try { localStorage.setItem('algebraHub.rocket', JSON.stringify(data)); } catch {}
+}
+
+function initRocketMenu() {
+  GameState.rocket = { phase: 'menu', mission: 1, questions: [], current: 0, score: 0, lives: 3, streak: 0, maxStreak: 0, fuel: 0, answers: [], startTime: null, questionsDone: 0, correctCount: 0, wrongCount: 0 };
+}
+
+function initRocketMission(level) {
+  const pool = ROCKET_QUESTIONS[level] || [];
+  const picked = gShuffle(pool).slice(0, 7);
+  GameState.rocket = {
+    phase: 'playing', mission: level, questions: picked,
+    current: 0, score: 0, lives: 3, streak: 0, maxStreak: 0,
+    fuel: 0, answers: new Array(picked.length).fill(null),
+    startTime: Date.now(), questionsDone: 0, correctCount: 0, wrongCount: 0
+  };
+  document.getElementById("app").innerHTML = renderRocket();
+}
+
+function renderRocket() {
+  const gs = GameState.rocket;
+  const prog = rocketLoadProgress();
+
+  // MENU
+  if (gs.phase === 'menu') {
+    return `
+    <div class="rocket-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="rocket-menu">
+        <div class="rocket-stars-bg" aria-hidden="true"></div>
+        <div class="rocket-title-wrap">
+          <div class="rocket-rocket-anim" aria-hidden="true">
+            <svg class="rocket-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+              <path class="rocket-body" d="M30 5 L45 40 L45 70 L30 80 L15 70 L15 40 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+              <path d="M15 40 L5 60 L15 55 Z" fill="#CBD5E1"/>
+              <path d="M45 40 L55 60 L45 55 Z" fill="#CBD5E1"/>
+              <rect x="22" y="35" width="16" height="12" rx="3" fill="#7C3AED" opacity="0.8"/>
+              <rect x="25" y="38" width="10" height="6" rx="2" fill="#C4B5FD"/>
+              <path class="rocket-fin" d="M20 70 L10 90 L20 80 Z" fill="#EF4444"/>
+              <path class="rocket-fin" d="M40 70 L50 90 L40 80 Z" fill="#EF4444"/>
+              <ellipse class="rocket-flame" cx="30" cy="82" rx="8" ry="14" fill="#F97316" opacity="0.9">
+                <animate attributeName="ry" values="14;10;14" dur="0.15s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.9;0.6;0.9" dur="0.15s" repeatCount="indefinite"/>
+              </ellipse>
+              <ellipse cx="30" cy="82" rx="4" ry="8" fill="#FCD34D">
+                <animate attributeName="ry" values="8;5;8" dur="0.15s" repeatCount="indefinite"/>
+              </ellipse>
+            </svg>
+          </div>
+          <h1 class="rocket-game-title">Rocket Algebra Mission</h1>
+          <p class="rocket-game-subtitle">Jawab soalan algebra untuk melancarkan roket dan jelajahi planet!</p>
+        </div>
+        <div class="rocket-missions">
+          ${[1,2,3].map(lvl => {
+            const unlocked = prog.unlocked.includes(lvl);
+            const best = prog.bestScores[lvl] || 0;
+            const names = ['Beginner Orbit', 'Planet Explorer', 'Galactic Challenge'];
+            const colors = ['#10B981','#3B82F6','#8B5CF6'];
+            const icons = ['🪐','🌍','🚀'];
+            return `
+            <button class="rocket-mission-btn ${!unlocked ? 'locked' : ''}"
+              ${!unlocked ? 'disabled' : `onclick="initRocketMission(${lvl})"`}
+              style="--mc:${colors[lvl-1]}">
+              <div class="rocket-mission-icon">${icons[lvl-1]}</div>
+              <div class="rocket-mission-info">
+                <div class="rocket-mission-name">Mission ${lvl}</div>
+                <div class="rocket-mission-title">${names[lvl-1]}</div>
+                ${unlocked ? `<div class="rocket-mission-best">🏆 Tertinggi: ${best}</div>` : '<div class="rocket-mission-locked">🔒 Kunci</div>'}
+              </div>
+            </button>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // PLAYING
+  if (gs.phase === 'playing') {
+    const q = gs.questions[gs.current];
+    const pct = Math.round((gs.current / gs.questions.length) * 100);
+    const letters = ['A', 'B', 'C', 'D'];
+    const selected = gs.answers[gs.current];
+    const answered = selected !== null;
+
+    const optionsHTML = q.opts.map((opt, i) => {
+      let cls = 'rocket-opt';
+      if (answered) {
+        if (i === q.ans) cls += ' rocket-opt-correct';
+        else if (i === selected) cls += ' rocket-opt-wrong';
+        else cls += ' rocket-opt-dim';
+      }
+      return `<button class="${cls}" ${answered ? 'disabled' : `onclick="rocketSelect(${i})"`}>
+        <span class="rocket-opt-letter">${letters[i]}</span>
+        <span class="rocket-opt-text">${opt}</span>
+      </button>`;
+    }).join('');
+
+    const missionNames = ['Beginner Orbit', 'Planet Explorer', 'Galactic Challenge'];
+    const hearts = Array(3).fill(0).map((_, i) => i < gs.lives ? '❤️' : '🖤').join('');
+    const streakStars = '⭐'.repeat(Math.min(gs.streak, 5));
+
+    return `
+    <div class="rocket-game-page">
+      <div class="rocket-hud">
+        <button class="rocket-hud-back" onclick="rocketExit()">${ICONS.arrowLeft}</button>
+        <div class="rocket-hud-info">
+          <div class="rocket-hud-mission">Mission ${gs.mission}: ${missionNames[gs.mission-1]}</div>
+          <div class="rocket-hud-progress">Soalan ${gs.current + 1} / ${gs.questions.length}</div>
+        </div>
+        <div class="rocket-hud-stats">
+          <span class="rocket-hud-hearts">${hearts}</span>
+          <span class="rocket-hud-score">⭐ ${gs.score}</span>
+          ${gs.streak > 0 ? `<span class="rocket-hud-streak">${streakStars} x${gs.streak}</span>` : ''}
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background: var(--purple)"></div></div>
+
+      <div class="rocket-game-area">
+        <div class="rocket-scene">
+          <div class="rocket-fuel-bar">
+            <div class="rocket-fuel-label">⛽ Roket Bahan Api</div>
+            <div class="rocket-fuel-track">
+              <div class="rocket-fuel-fill" style="width:${gs.fuel}%"></div>
+            </div>
+          </div>
+          <div class="rocket-rocket-scene" style="bottom:${10 + gs.fuel * 0.4}%">
+            <svg class="rocket-svg-small" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 5 L45 40 L45 70 L30 80 L15 70 L15 40 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+              <rect x="22" y="35" width="16" height="12" rx="3" fill="#7C3AED" opacity="0.8"/>
+              <rect x="25" y="38" width="10" height="6" rx="2" fill="#C4B5FD"/>
+              <path d="M20 70 L10 90 L20 80 Z" fill="#EF4444"/>
+              <path d="M40 70 L50 90 L40 80 Z" fill="#EF4444"/>
+              <ellipse class="rocket-flame-scene" cx="30" cy="82" rx="8" ry="${10 + gs.streak * 2}" fill="#F97316" opacity="0.9">
+                <animate attributeName="ry" values="${10 + gs.streak*2};${7 + gs.streak};${10 + gs.streak*2}" dur="0.2s" repeatCount="indefinite"/>
+              </ellipse>
+              <ellipse cx="30" cy="82" rx="4" ry="${5 + gs.streak}" fill="#FCD34D">
+                <animate attributeName="ry" values="${5 + gs.streak};${3 + gs.streak};${5 + gs.streak}" dur="0.2s" repeatCount="indefinite"/>
+              </ellipse>
+            </svg>
+          </div>
+          <div class="rocket-stars-field" aria-hidden="true">
+            ${Array(12).fill(0).map((_,i) => `<div class="star" style="--sx:${5+i*8}%;--sy:${10+i*7}%;--sd:${0.3+i*0.05}s"></div>`).join('')}
+          </div>
+        </div>
+
+        <div class="rocket-question-area">
+          <div class="rocket-q-card">
+            <div class="rocket-q-text">${q.q}</div>
+            <div class="rocket-options">${optionsHTML}</div>
+            ${answered ? `<div class="rocket-feedback-wrap">
+              ${selected === q.ans
+                ? `<div class="rocket-feedback rocket-fb-correct">✅ Betul! +${100 + gs.streak * 25}</div>`
+                : `<div class="rocket-feedback rocket-fb-wrong">❌ ${q.exp}</div>`}
+              <button class="rocket-next-btn" onclick="rocketNext()">
+                ${gs.current < gs.questions.length - 1 ? 'Soalan Seterusnya →' : 'Lihat Keputusan 🎉'}
+              </button>
+            </div>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // LOST
+  if (gs.phase === 'lost') {
+    return `
+    <div class="rocket-game-page">
+      <div class="rocket-end-screen rocket-lost">
+        <div class="rocket-end-emoji">💥</div>
+        <h2>Mission Gagal!</h2>
+        <p>Roket kehabisan bahan api...</p>
+        <div class="rocket-end-stats">
+          <div class="rocket-stat"><span>🏆 Markah:</span> <strong>${gs.score}</strong></div>
+          <div class="rocket-stat"><span>✅ Betul:</span> <strong>${gs.correctCount}</strong></div>
+          <div class="rocket-stat"><span>❌ Salah:</span> <strong>${gs.wrongCount}</strong></div>
+          <div class="rocket-stat"><span>⭐ Streak Terbaik:</span> <strong>${gs.maxStreak}</strong></div>
+        </div>
+        <div class="rocket-end-actions">
+          <button class="rocket-btn-retry" onclick="initRocketMission(${gs.mission})">🔄 Cuba Lagi</button>
+          <button class="rocket-btn-back" onclick="initRocketMenu(); document.getElementById('app').innerHTML=renderRocket()">🗺️ Peta Mission</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // WON
+  if (gs.phase === 'won') {
+    const elapsed = Math.round((Date.now() - gs.startTime) / 1000);
+    const acc = gs.questions.length > 0 ? Math.round((gs.correctCount / gs.questions.length) * 100) : 0;
+    const stars = acc >= 90 ? 3 : acc >= 70 ? 2 : 1;
+
+    // Save progress
+    const prog = rocketLoadProgress();
+    if (!prog.unlocked.includes(gs.mission + 1) && gs.mission < 3) prog.unlocked.push(gs.mission + 1);
+    prog.bestScores[gs.mission] = Math.max(prog.bestScores[gs.mission] || 0, gs.score);
+    rocketSaveProgress(prog);
+
+    return `
+    <div class="rocket-game-page">
+      <div class="rocket-end-screen rocket-won">
+        <div class="rocket-end-emoji">🎉🚀</div>
+        <h2>Mission Berjaya!</h2>
+        <p>Roket berjaya dilancarkan!</p>
+        <div class="rocket-stars-earned">${'⭐'.repeat(stars)}</div>
+        <div class="rocket-end-stats">
+          <div class="rocket-stat"><span>🏆 Markah:</span> <strong>${gs.score}</strong></div>
+          <div class="rocket-stat"><span>✅ Betul:</span> <strong>${gs.correctCount}</strong></div>
+          <div class="rocket-stat"><span>❌ Salah:</span> <strong>${gs.wrongCount}</strong></div>
+          <div class="rocket-stat"><span>⭐ Streak:</span> <strong>${gs.maxStreak}</strong></div>
+          <div class="rocket-stat"><span>⏱️ Masa:</span> <strong>${elapsed}s</strong></div>
+        </div>
+        <div class="rocket-end-actions">
+          ${gs.mission < 3 ? `<button class="rocket-btn-next" onclick="initRocketMission(${gs.mission + 1})">Mission Seterusnya 🚀</button>` : ''}
+          <button class="rocket-btn-retry" onclick="initRocketMission(${gs.mission})">🔄 Main Lagi</button>
+          <button class="rocket-btn-back" onclick="initRocketMenu(); document.getElementById('app').innerHTML=renderRocket()">🗺️ Peta Mission</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return '';
+}
+
+function rocketSelect(idx) {
+  const gs = GameState.rocket;
+  if (gs.answers[gs.current] !== null) return;
+  gs.answers[gs.current] = idx;
+  const q = gs.questions[gs.current];
+  const correct = idx === q.ans;
+  gs.questionsDone++;
+  if (correct) {
+    gs.correctCount++;
+    gs.streak++;
+    gs.maxStreak = Math.max(gs.maxStreak, gs.streak);
+    gs.score += 100 + gs.streak * 25;
+    gs.fuel = Math.min(100, gs.fuel + 15);
+    SFX.correct();
+  } else {
+    gs.wrongCount++;
+    gs.streak = 0;
+    gs.lives--;
+    SFX.wrong();
+  }
+  document.getElementById("app").innerHTML = renderRocket();
+}
+
+function rocketNext() {
+  const gs = GameState.rocket;
+  if (gs.current < gs.questions.length - 1) {
+    gs.current++;
+    document.getElementById("app").innerHTML = renderRocket();
+  } else {
+    // All questions answered
+    if (gs.lives <= 0) {
+      gs.phase = 'lost';
+    } else {
+      gs.phase = 'won';
+    }
+    document.getElementById("app").innerHTML = renderRocket();
+  }
+}
+
+function rocketExit() {
+  if (confirm('Keluar mission? Progess tidak akan disimpan.')) {
+    initRocketMenu();
+    document.getElementById("app").innerHTML = renderRocket();
+  }
+}
+
+// ===========================================================================
+// ALGEBRA SPEED RACE
+// ===========================================================================
+
+function speedRaceLoadProgress() {
+  try {
+    return JSON.parse(localStorage.getItem('algebraHub.speedrace')) || { bestTime: {}, bestEndurance: {} };
+  } catch { return { bestTime: {}, bestEndurance: {} }; }
+}
+function speedRaceSaveProgress(data) {
+  try { localStorage.setItem('algebraHub.speedrace', JSON.stringify(data)); } catch {}
+}
+
+let _speedRaceTimer = null;
+let _speedRaceAnimation = null;
+
+function clearSpeedRaceTimers() {
+  if (_speedRaceTimer) { clearInterval(_speedRaceTimer); _speedRaceTimer = null; }
+  if (_speedRaceAnimation) { cancelAnimationFrame(_speedRaceAnimation); _speedRaceAnimation = null; }
+}
+
+function initSpeedRaceMenu() {
+  clearSpeedRaceTimers();
+  GameState.speedrace = { phase: 'menu', mode: 'time', questions: [], current: 0, score: 0, combo: 0, maxCombo: 0, mistakes: 3, answers: [], timeLeft: 60, startTime: null, qDone: 0, correctCount: 0, speed: 0 };
+}
+
+function initSpeedRace(mode) {
+  clearSpeedRaceTimers();
+  const pool = RACE_QUESTIONS;
+  const picked = gShuffle(pool).slice(0, 20);
+  GameState.speedrace = {
+    phase: 'playing', mode,
+    questions: picked, current: 0, score: 0, combo: 0, maxCombo: 0,
+    mistakes: mode === 'endurance' ? 3 : 0,
+    answers: new Array(picked.length).fill(null),
+    timeLeft: mode === 'time' ? 60 : 0,
+    startTime: Date.now(), qDone: 0, correctCount: 0, speed: 60
+  };
+  document.getElementById("app").innerHTML = renderSpeedRace();
+  startSpeedRaceLoop();
+}
+
+function startSpeedRaceLoop() {
+  const gs = GameState.speedrace;
+  clearSpeedRaceTimers();
+
+  if (gs.mode === 'time') {
+    _speedRaceTimer = setInterval(() => {
+      if (GameState.speedrace.phase !== 'playing') { clearSpeedRaceTimers(); return; }
+      GameState.speedrace.timeLeft--;
+      updateSpeedRaceHUD();
+      if (GameState.speedrace.timeLeft <= 0) {
+        GameState.speedrace.timeLeft = 0;
+        clearSpeedRaceTimers();
+        finishSpeedRace();
+      }
+    }, 1000);
+  }
+}
+
+function updateSpeedRaceHUD() {
+  const gs = GameState.speedrace;
+  const hud = document.getElementById('sr-hud');
+  if (!hud) return;
+  hud.innerHTML = `
+    <button class="rocket-hud-back" onclick="speedRaceExit()">${ICONS.arrowLeft}</button>
+    <div class="sr-hud-info">
+      <div class="sr-hud-mode">${gs.mode === 'time' ? '⏱️ Time Trial' : '💓 Endurance'}</div>
+      <div class="sr-hud-q">Soalan ${gs.qDone + 1} / ${gs.questions.length}</div>
+    </div>
+    <div class="sr-hud-right">
+      ${gs.mode === 'time' ? `<div class="sr-timer">⏱️ ${gs.timeLeft}s</div>` : `<div class="sr-lives">${'❤️'.repeat(gs.mistakes)}${'🖤'.repeat(3-gs.mistakes)}</div>`}
+      <div class="sr-score">⭐ ${gs.score}</div>
+      ${gs.combo > 1 ? `<div class="sr-combo">🔥 x${gs.combo}</div>` : ''}
+    </div>`;
+}
+
+function renderSpeedRace() {
+  const gs = GameState.speedrace;
+  const prog = speedRaceLoadProgress();
+
+  // MENU
+  if (gs.phase === 'menu') {
+    return `
+    <div class="speedrace-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="sr-menu">
+        <div class="sr-road-anim" aria-hidden="true">
+          <div class="sr-road"></div>
+          <div class="sr-car-wrap">
+            <svg class="sr-car-svg" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="20" width="80" height="20" rx="8" fill="#3B82F6"/>
+              <rect x="20" y="10" width="50" height="18" rx="6" fill="#60A5FA"/>
+              <rect x="25" y="13" width="18" height="10" rx="3" fill="#BFDBFE"/>
+              <rect x="48" y="13" width="18" height="10" rx="3" fill="#BFDBFE"/>
+              <circle cx="25" cy="40" r="8" fill="#1E293B"/>
+              <circle cx="25" cy="40" r="4" fill="#94A3B8"/>
+              <circle cx="75" cy="40" r="8" fill="#1E293B"/>
+              <circle cx="75" cy="40" r="4" fill="#94A3B8"/>
+              <rect x="78" y="24" width="8" height="5" rx="2" fill="#EF4444"/>
+              <rect x="12" y="24" width="8" height="5" rx="2" fill="#FCD34D"/>
+            </svg>
+          </div>
+        </div>
+        <h1 class="sr-game-title">Algebra Speed Race</h1>
+        <p class="sr-game-subtitle">Selesaikan soalan algebra untuk memecut kereta lumba!</p>
+        <div class="sr-modes">
+          <button class="sr-mode-btn" onclick="initSpeedRace('time')" style="--mc:#10B981">
+            <div class="sr-mode-icon">⏱️</div>
+            <div class="sr-mode-name">Time Trial</div>
+            <div class="sr-mode-desc">60 saat — jawab sebanyak mungkin!</div>
+            <div class="sr-mode-best">🏆 Terbaik: ${prog.bestTime.score || '-'}</div>
+          </button>
+          <button class="sr-mode-btn" onclick="initSpeedRace('endurance')" style="--mc:#EF4444">
+            <div class="sr-mode-icon">💓</div>
+            <div class="sr-mode-name">Endurance</div>
+            <div class="sr-mode-desc">3 nyawa — tahan selama mungkin!</div>
+            <div class="sr-mode-best">🏆 Terbaik: ${prog.bestEndurance.score || '-'}</div>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // PLAYING
+  if (gs.phase === 'playing') {
+    const q = gs.questions[gs.current];
+    const letters = ['A', 'B', 'C', 'D'];
+    const selected = gs.answers[gs.current];
+    const answered = selected !== null;
+
+    // Speed visual: 0-200 km/h mapped to animation speed
+    const roadOffset = (gs.speed * 0.5) % 100;
+
+    const optionsHTML = q.opts.map((opt, i) => {
+      let cls = 'rocket-opt';
+      if (answered) {
+        if (i === q.ans) cls += ' rocket-opt-correct';
+        else if (i === selected) cls += ' rocket-opt-wrong';
+        else cls += ' rocket-opt-dim';
+      }
+      return `<button class="${cls}" ${answered ? 'disabled' : `onclick="speedRaceSelect(${i})"`}>
+        <span class="rocket-opt-letter">${letters[i]}</span>
+        <span class="rocket-opt-text">${opt}</span>
+      </button>`;
+    }).join('');
+
+    return `
+    <div class="speedrace-game-page">
+      <div class="sr-hud" id="sr-hud">
+        <button class="rocket-hud-back" onclick="speedRaceExit()">${ICONS.arrowLeft}</button>
+        <div class="sr-hud-info">
+          <div class="sr-hud-mode">${gs.mode === 'time' ? '⏱️ Time Trial' : '💓 Endurance'}</div>
+          <div class="sr-hud-q">Soalan ${gs.qDone + 1} / ${gs.questions.length}</div>
+        </div>
+        <div class="sr-hud-right">
+          ${gs.mode === 'time' ? `<div class="sr-timer">⏱️ ${gs.timeLeft}s</div>` : `<div class="sr-lives">${'❤️'.repeat(gs.mistakes)}${'🖤'.repeat(3-gs.mistakes)}</div>`}
+          <div class="sr-score">⭐ ${gs.score}</div>
+          ${gs.combo > 1 ? `<div class="sr-combo">🔥 x${gs.combo}</div>` : ''}
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${(gs.qDone / gs.questions.length) * 100}%; background: var(--purple)"></div></div>
+
+      <div class="sr-race-scene">
+        <div class="sr-speed-display">🏎️ ${Math.round(gs.speed)} km/h</div>
+        <div class="sr-track-wrap">
+          <div class="sr-track">
+            <div class="sr-lane-markings" style="transform: translateY(${roadOffset}px)">
+              ${Array(8).fill(0).map(() => '<div class="sr-dash"></div>').join('')}
+            </div>
+            <div class="sr-scenery">
+              ${Array(6).fill(0).map((_,i) => `<div class="sr-tree" style="left:${10+i*18}%"></div>`).join('')}
+            </div>
+            <div class="sr-car-scene" style="left: 20%; bottom: 20px">
+              <svg class="sr-car-svg-scene" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="20" width="80" height="20" rx="8" fill="#3B82F6"/>
+                <rect x="20" y="10" width="50" height="18" rx="6" fill="#60A5FA"/>
+                <rect x="25" y="13" width="18" height="10" rx="3" fill="#BFDBFE"/>
+                <rect x="48" y="13" width="18" height="10" rx="3" fill="#BFDBFE"/>
+                <circle cx="25" cy="40" r="8" fill="#1E293B"/>
+                <circle cx="25" cy="40" r="4" fill="#94A3B8"/>
+                <circle cx="75" cy="40" r="8" fill="#1E293B"/>
+                <circle cx="75" cy="40" r="4" fill="#94A3B8"/>
+                <rect x="78" y="24" width="8" height="5" rx="2" fill="#EF4444"/>
+                <rect x="12" y="24" width="8" height="5" rx="2" fill="#FCD34D"/>
+              </svg>
+              ${gs.speed > 100 ? '<div class="sr-boost-effect"></div>' : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sr-question-area">
+        <div class="rocket-q-card">
+          <div class="rocket-q-text">${q.q}</div>
+          <div class="rocket-options">${optionsHTML}</div>
+          ${answered ? `<div class="rocket-feedback-wrap">
+            ${selected === q.ans
+              ? `<div class="rocket-feedback rocket-fb-correct">✅ Betul! +${100 + gs.combo * 25}</div>`
+              : `<div class="rocket-feedback rocket-fb-wrong">❌ ${q.exp}</div>`}
+            <button class="rocket-next-btn" onclick="speedRaceNext()">
+              ${gs.qDone < gs.questions.length - 1 ? 'Soalan Seterusnya →' : 'Lihat Keputusan 🎉'}
+            </button>
+          </div>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // FINISHED
+  if (gs.phase === 'finished') {
+    const elapsed = Math.round((Date.now() - gs.startTime) / 1000);
+    const acc = gs.qDone > 0 ? Math.round((gs.correctCount / gs.qDone) * 100) : 0;
+    const rating = acc >= 90 ? '🏆 Platinum' : acc >= 70 ? '🥈 Silver' : acc >= 50 ? '🥉 Bronze' : '😢 Keep Trying!';
+
+    // Save best
+    const prog = speedRaceLoadProgress();
+    const key = gs.mode === 'time' ? 'bestTime' : 'bestEndurance';
+    if (!prog[key].score || gs.score > prog[key].score) {
+      prog[key] = { score: gs.score, qDone: gs.qDone, acc, time: elapsed };
+      speedRaceSaveProgress(prog);
+    }
+
+    return `
+    <div class="speedrace-game-page">
+      <div class="rocket-end-screen rocket-won">
+        <div class="rocket-end-emoji">🏁</div>
+        <h2>Lumba Selesai!</h2>
+        <div class="rocket-stars-earned">${rating}</div>
+        <div class="rocket-end-stats">
+          <div class="rocket-stat"><span>🏆 Markah:</span> <strong>${gs.score}</strong></div>
+          <div class="rocket-stat"><span>✅ Betul:</span> <strong>${gs.correctCount}</strong></div>
+          <div class="rocket-stat"><span>❌ Salah:</span> <strong>${gs.qDone - gs.correctCount}</strong></div>
+          <div class="rocket-stat"><span>🔥 Combo Terbaik:</span> <strong>x${gs.maxCombo}</strong></div>
+          ${gs.mode === 'time' ? `<div class="rocket-stat"><span>⏱️ Masa:</span> <strong>${elapsed}s</strong></div>` : ''}
+          <div class="rocket-stat"><span>📊 Ketepatan:</span> <strong>${acc}%</strong></div>
+        </div>
+        <div class="rocket-end-actions">
+          <button class="rocket-btn-retry" onclick="initSpeedRace('${gs.mode}')">🔄 Lumba Lagi</button>
+          <button class="rocket-btn-back" onclick="initSpeedRaceMenu(); document.getElementById('app').innerHTML=renderSpeedRace()">← Menu</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return '';
+}
+
+function speedRaceSelect(idx) {
+  const gs = GameState.speedrace;
+  if (gs.answers[gs.current] !== null) return;
+  gs.answers[gs.current] = idx;
+  const q = gs.questions[gs.current];
+  const correct = idx === q.ans;
+  if (correct) {
+    gs.correctCount++;
+    gs.combo++;
+    gs.maxCombo = Math.max(gs.maxCombo, gs.combo);
+    gs.score += 100 + gs.combo * 25;
+    gs.speed = Math.min(200, gs.speed + 15);
+    SFX.correct();
+  } else {
+    gs.combo = 0;
+    gs.speed = Math.max(40, gs.speed - 20);
+    if (gs.mode === 'endurance') gs.mistakes--;
+    SFX.wrong();
+  }
+  updateSpeedRaceHUD();
+  document.getElementById('app').innerHTML = renderSpeedRace();
+}
+
+function speedRaceNext() {
+  const gs = GameState.speedrace;
+  if (gs.qDone < gs.questions.length - 1) {
+    gs.qDone++;
+    gs.current++;
+    gs.speed = Math.max(60, gs.speed - 5);
+    document.getElementById('app').innerHTML = renderSpeedRace();
+  } else {
+    finishSpeedRace();
+  }
+}
+
+function finishSpeedRace() {
+  clearSpeedRaceTimers();
+  GameState.speedrace.phase = 'finished';
+  document.getElementById('app').innerHTML = renderSpeedRace();
+}
+
+function speedRaceExit() {
+  if (confirm('Keluar lumba? Progress tidak akan disimpan.')) {
+    clearSpeedRaceTimers();
+    initSpeedRaceMenu();
+    document.getElementById('app').innerHTML = renderSpeedRace();
+  }
 }
 
 // ---------------------------------------------------------------------------

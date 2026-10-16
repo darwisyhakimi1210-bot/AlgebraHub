@@ -2213,3 +2213,473 @@ button { font: inherit; }
   .dd-targets, .wm-columns { grid-template-columns: 1fr; gap: 16px; }
   .owl-slot, .hero-art-glow { width: 240px; height: 240px; }
 }
+
+/* =========================================================
+   ROCKET ALGEBRA MISSION
+   ========================================================= */
+.rocket-page, .speedrace-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+.rocket-menu, .sr-menu {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.rocket-title-wrap, .sr-game-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.rocket-game-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 16px 0 8px;
+}
+.rocket-game-subtitle, .sr-game-subtitle {
+  color: #6B7280;
+  font-size: 17px;
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
+/* Rocket SVG */
+.rocket-rocket-anim {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+.rocket-svg { width: 80px; height: 130px; }
+.rocket-svg-small { width: 50px; height: 85px; }
+
+/* Stars background */
+.rocket-stars-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 300px;
+  background: linear-gradient(180deg, #0F0A2E 0%, #1a1060 60%, #2D1B69 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+.rocket-stars-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, white, transparent),
+    radial-gradient(1px 1px at 35% 15%, white, transparent),
+    radial-gradient(1.5px 1.5px at 55% 30%, white, transparent),
+    radial-gradient(1px 1px at 75% 10%, white, transparent),
+    radial-gradient(1px 1px at 90% 25%, white, transparent),
+    radial-gradient(1.5px 1.5px at 25% 40%, white, transparent),
+    radial-gradient(1px 1px at 65% 45%, white, transparent),
+    radial-gradient(1px 1px at 85% 50%, white, transparent),
+    radial-gradient(1px 1px at 5% 55%, white, transparent),
+    radial-gradient(1px 1px at 45% 60%, white, transparent);
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* Mission buttons */
+.rocket-missions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.rocket-mission-btn {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 2px solid #E5E7EB;
+  border-radius: 18px;
+  padding: 18px 22px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.rocket-mission-btn:not(.locked):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124,58,237,0.15);
+  border-color: var(--mc, #7C3AED);
+}
+.rocket-mission-btn.locked { opacity: 0.55; cursor: not-allowed; filter: grayscale(0.4); }
+.rocket-mission-icon { font-size: 36px; flex-shrink: 0; }
+.rocket-mission-info { flex: 1; }
+.rocket-mission-name { font-family: 'Fredoka', sans-serif; font-size: 13px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.5px; }
+.rocket-mission-title { font-family: 'Fredoka', sans-serif; font-size: 19px; font-weight: 700; color: #1F2937; margin: 2px 0; }
+.rocket-mission-best { font-size: 13px; color: #6B7280; margin-top: 2px; }
+.rocket-mission-locked { font-size: 13px; color: #9CA3AF; }
+
+/* Game HUD */
+.rocket-game-page, .speedrace-game-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+.rocket-hud {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  flex-wrap: wrap;
+}
+.rocket-hud-back {
+  background: #F3F4F6;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.rocket-hud-back:hover { background: #E5E7EB; }
+.rocket-hud-info { flex: 1; }
+.rocket-hud-mission { font-family: 'Fredoka', sans-serif; font-size: 14px; font-weight: 600; color: #374151; }
+.rocket-hud-progress { font-size: 13px; color: #6B7280; }
+.rocket-hud-stats { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.rocket-hud-hearts { font-size: 18px; letter-spacing: 2px; }
+.rocket-hud-score { font-family: 'Fredoka', sans-serif; font-weight: 700; color: #7C3AED; font-size: 15px; }
+.rocket-hud-streak { background: linear-gradient(135deg, #F59E0B, #F97316); color: white; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 700; }
+
+/* Game area */
+.rocket-game-area {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  margin-top: 16px;
+}
+@media (max-width: 680px) {
+  .rocket-game-area { grid-template-columns: 1fr; }
+}
+
+/* Rocket scene */
+.rocket-scene {
+  background: linear-gradient(180deg, #0F0A2E 0%, #1a1060 50%, #2D1B69 100%);
+  border-radius: 20px;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.rocket-fuel-bar { margin-bottom: 12px; }
+.rocket-fuel-label { font-size: 12px; color: #A78BFA; margin-bottom: 4px; }
+.rocket-fuel-track { background: rgba(255,255,255,0.15); border-radius: 10px; height: 10px; overflow: hidden; }
+.rocket-fuel-fill { height: 100%; background: linear-gradient(90deg, #10B981, #34D399); border-radius: 10px; transition: width 0.5s ease; }
+.rocket-rocket-scene {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 2;
+}
+.rocket-stars-field { position: absolute; inset: 0; pointer-events: none; }
+.star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: white;
+  border-radius: 50%;
+  top: var(--sy, 20%);
+  left: var(--sx, 10%);
+  animation: star-twinkle var(--sd, 2s) ease-in-out infinite alternate;
+}
+@keyframes star-twinkle {
+  from { opacity: 0.3; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+.rocket-flame-scene { transform-origin: center top; }
+
+/* Question area */
+.rocket-q-card {
+  background: #fff;
+  border: 1px solid #ECE7FB;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(91,33,182,0.08);
+}
+.rocket-q-text {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2E2A45;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.rocket-options { display: grid; gap: 10px; }
+.rocket-opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #F9FAFB;
+  border: 2px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 13px 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.15s;
+}
+.rocket-opt:not(:disabled):hover { border-color: #7C3AED; background: #F5F3FF; transform: translateX(3px); }
+.rocket-opt:disabled { cursor: not-allowed; }
+.rocket-opt-letter { background: #EDE9FE; color: #7C3AED; border-radius: 8px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+.rocket-opt-correct { border-color: #10B981 !important; background: #F0FDF4 !important; }
+.rocket-opt-correct .rocket-opt-letter { background: #10B981 !important; color: white !important; }
+.rocket-opt-correct .rocket-opt-text { color: #065F46 !important; }
+.rocket-opt-wrong { border-color: #EF4444 !important; background: #FEF2F2 !important; }
+.rocket-opt-wrong .rocket-opt-letter { background: #EF4444 !important; color: white !important; }
+.rocket-opt-wrong .rocket-opt-text { color: #991B1B !important; }
+.rocket-opt-dim { opacity: 0.4; }
+.rocket-opt-text { flex: 1; }
+
+/* Feedback */
+.rocket-feedback-wrap { margin-top: 16px; }
+.rocket-feedback {
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.rocket-fb-correct { background: #D1FAE5; color: #065F46; border: 1px solid #10B981; }
+.rocket-fb-wrong { background: #FEE2E2; color: #991B1B; border: 1px solid #EF4444; }
+.rocket-next-btn {
+  background: linear-gradient(135deg, #7C3AED, #6D28D9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(124,58,237,0.3);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.rocket-next-btn:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(124,58,237,0.4); }
+
+/* End screens */
+.rocket-end-screen {
+  text-align: center;
+  padding: 48px 20px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 36px rgba(91,33,182,0.1);
+  max-width: 520px;
+  margin: 20px auto;
+}
+.rocket-end-emoji { font-size: 72px; margin-bottom: 12px; }
+.rocket-end-screen h2 { font-family: 'Fredoka', sans-serif; font-size: 36px; color: #2E2A45; margin: 0 0 8px; }
+.rocket-end-screen p { color: #6B7280; font-size: 17px; margin: 0 0 20px; }
+.rocket-stars-earned { font-size: 36px; margin-bottom: 16px; letter-spacing: 4px; }
+.rocket-end-stats { background: #F9FAFB; border-radius: 16px; padding: 20px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+.rocket-stat { display: flex; justify-content: space-between; font-size: 16px; color: #374151; }
+.rocket-stat span { color: #6B7280; }
+.rocket-stat strong { color: #7C3AED; font-weight: 800; }
+.rocket-end-actions { display: flex; flex-direction: column; gap: 12px; }
+.rocket-btn-retry {
+  background: linear-gradient(135deg, #7C3AED, #6D28D9);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 28px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(124,58,237,0.3);
+}
+.rocket-btn-next {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 28px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(16,185,129,0.3);
+}
+.rocket-btn-back {
+  background: #F3F4F6;
+  color: #374151;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 28px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rocket-btn-back:hover { background: #E5E7EB; }
+
+/* =========================================================
+   ALGEBRA SPEED RACE
+   ========================================================= */
+.sr-menu { text-align: center; }
+.sr-road-anim {
+  position: relative;
+  height: 160px;
+  background: linear-gradient(180deg, #87CEEB 0%, #98D8AA 60%, #4A7C4E 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sr-road {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 70px;
+  background: #374151;
+}
+.sr-road::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #FCD34D 0px, #FCD34D 30px, transparent 30px, transparent 60px);
+  transform: translateY(-50%);
+  animation: road-move 0.5s linear infinite;
+}
+@keyframes road-move {
+  from { background-position: 0 0; }
+  to { background-position: 60px 0; }
+}
+.sr-car-wrap {
+  position: absolute;
+  bottom: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sr-car-svg { width: 100px; height: 52px; }
+
+.sr-modes { display: flex; gap: 16px; max-width: 560px; margin: 0 auto; justify-content: center; flex-wrap: wrap; }
+.sr-mode-btn {
+  flex: 1;
+  min-width: 200px;
+  background: #fff;
+  border: 2px solid #E5E7EB;
+  border-radius: 20px;
+  padding: 24px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.sr-mode-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(124,58,237,0.15); border-color: var(--mc, #7C3AED); }
+.sr-mode-icon { font-size: 40px; margin-bottom: 8px; }
+.sr-mode-name { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 700; color: #1F2937; margin-bottom: 4px; }
+.sr-mode-desc { font-size: 13px; color: #6B7280; margin-bottom: 8px; }
+.sr-mode-best { font-size: 13px; color: #7C3AED; font-weight: 700; }
+
+/* Speed race HUD */
+.sr-hud { display: flex; align-items: center; gap: 12px; padding: 10px 4px; flex-wrap: wrap; }
+.sr-hud-info { flex: 1; }
+.sr-hud-mode { font-family: 'Fredoka', sans-serif; font-size: 14px; font-weight: 600; color: #374151; }
+.sr-hud-q { font-size: 13px; color: #6B7280; }
+.sr-hud-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.sr-timer { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 800; color: #7C3AED; background: #F3F0FF; border-radius: 10px; padding: 4px 12px; }
+.sr-lives { font-size: 18px; letter-spacing: 2px; }
+.sr-score { font-family: 'Fredoka', sans-serif; font-weight: 700; color: #7C3AED; font-size: 15px; }
+.sr-combo { background: linear-gradient(135deg, #F97316, #EF4444); color: white; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 700; animation: combo-pulse 0.5s ease-in-out infinite alternate; }
+@keyframes combo-pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Race scene */
+.sr-race-scene { margin-top: 12px; }
+.sr-speed-display {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #7C3AED;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.sr-track-wrap { display: flex; justify-content: center; }
+.sr-track {
+  width: 100%;
+  max-width: 600px;
+  height: 160px;
+  background: #374151;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.sr-lane-markings {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sr-dash {
+  height: 24px;
+  border-bottom: 4px dashed #FCD34D;
+  flex-shrink: 0;
+}
+.sr-scenery { position: absolute; inset: 0; pointer-events: none; }
+.sr-tree {
+  position: absolute;
+  bottom: 72px;
+  width: 0; height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 24px solid #22C55E;
+}
+.sr-tree::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 18px solid #16A34A;
+}
+.sr-car-scene { position: absolute; transition: left 0.3s ease; }
+.sr-car-svg-scene { width: 80px; height: 42px; }
+.sr-boost-effect {
+  position: absolute;
+  bottom: -5px;
+  left: -20px;
+  width: 20px;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, #FCD34D);
+  border-radius: 4px;
+  animation: boost-flicker 0.1s infinite alternate;
+}
+@keyframes boost-flicker {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* Speed race question */
+.sr-question-area { margin-top: 16px; }
+
+/* Game card banners */
+.game-card-banner.rocket-banner { background: linear-gradient(135deg, #1a1060, #7C3AED); }
+.game-card-banner.speedrace-banner { background: linear-gradient(135deg, #064E3B, #10B981); }
+
+}
