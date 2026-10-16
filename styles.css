@@ -671,6 +671,12 @@ button { font: inherit; }
   flex-shrink: 0;
 }
 .quiz-option.selected .quiz-option-letter { background: var(--purple); color: #fff; }
+.quiz-option.selected-correct { border-color: var(--green) !important; background: #E2F5EA !important; }
+.quiz-option.selected-correct .quiz-option-letter { background: var(--green) !important; color: #fff !important; }
+.quiz-option.selected-correct .quiz-option-text { color: var(--green) !important; font-weight: 700; }
+.quiz-option.selected-wrong { border-color: var(--red) !important; background: #FEE2E2 !important; }
+.quiz-option.selected-wrong .quiz-option-letter { background: var(--red) !important; color: #fff !important; }
+.quiz-option.selected-wrong .quiz-option-text { color: var(--red) !important; font-weight: 700; }
 .quiz-option-text { font-size: 16px; }
 .quiz-option.selected .quiz-option-text { font-weight: 700; color: #5B21B6; }
 
@@ -1632,7 +1638,540 @@ button { font: inherit; }
 }
 
 /* =========================================================
-   Responsive
+   Quiz — live scoring
+   ========================================================= */
+.quiz-score-display {
+  text-align: right;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.card-wiggle {
+  animation: wiggle 0.4s ease;
+}
+@keyframes wiggle {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.card-shake {
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+/* =========================================================
+   Quiz Results
+   ========================================================= */
+.results-card {
+  background: #FFFFFF;
+  border: 1px solid #ECE7FB;
+  border-radius: 28px;
+  padding: 44px 36px;
+  box-shadow: 0 12px 36px rgba(91, 33, 182, 0.10);
+  text-align: center;
+  max-width: 480px;
+  margin: 40px auto;
+}
+.results-emoji { font-size: 72px; margin-bottom: 12px; }
+.results-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  color: #2E2A45;
+  margin-bottom: 18px;
+}
+.results-score {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.results-correct {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  color: var(--green);
+  line-height: 1;
+}
+.results-div {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 48px;
+  color: #B0A8C8;
+}
+.results-total {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #2E2A45;
+  line-height: 1;
+}
+.results-pct {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+.results-topic {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.results-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.quiz-btn-retry {
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(245,158,11,0.28);
+  animation: pulse-retry 0.6s ease-in-out infinite alternate;
+}
+@keyframes pulse-retry {
+  from { transform: scale(1); box-shadow: 0 6px 16px rgba(245,158,11,0.28); }
+  to { transform: scale(1.04); box-shadow: 0 8px 24px rgba(245,158,11,0.45); }
+}
+.quiz-correct-hint {
+  background: #F0FFF4;
+  border: 2px solid #48BB78;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px;
+  color: #276749;
+  text-align: center;
+}
+.quiz-correct-hint strong {
+  color: #2F855A;
+}
+.quiz-btn-home {
+  background: #F2EEFB;
+  color: var(--purple);
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn-trophy {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #F59E0B, #FBC04A);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(245,158,11,0.35);
+  margin-top: 6px;
+}
+.btn-trophy:hover { filter: brightness(1.07); }
+
+/* =========================================================
+   Scoreboard
+   ========================================================= */
+.scoreboard-link-wrap {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.scoreboard-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #F59E0B, #FBC04A);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 28px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(245,158,11,0.32);
+}
+.scoreboard-link-btn:hover { filter: brightness(1.07); }
+
+.scoreboard-page { max-width: 700px; margin: 0 auto; }
+
+.scoreboard-empty {
+  background: #FFFFFF;
+  border: 1px solid #ECE7FB;
+  border-radius: 24px;
+  padding: 60px 32px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(91,33,182,0.06);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2E2A45;
+  margin-bottom: 40px;
+}
+.scoreboard-empty-icon { font-size: 52px; margin-bottom: 12px; }
+.scoreboard-empty-sub { font-size: 14px; color: var(--text-muted); margin-top: 6px; font-weight: 400; }
+
+.scoreboard-header-row {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+}
+.sb-col-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9580C7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sb-list { display: flex; flex-direction: column; gap: 8px; }
+.sb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid #ECE7FB;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(91,33,182,0.05);
+}
+.sb-rank { font-size: 20px; width: 36px; flex-shrink: 0; text-align: center; }
+.sb-topic { flex: 1; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #2E2A45; }
+.sb-score { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--purple); }
+.sb-pct { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; min-width: 46px; text-align: center; }
+.sb-date { font-size: 12px; color: var(--text-muted); min-width: 80px; text-align: right; }
+
+.sb-clear-wrap { text-align: center; margin-top: 28px; }
+.sb-clear-btn {
+  background: #FEE2E2;
+  color: var(--red);
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Games — banner badges with icons
+   ========================================================= */
+.game-banner-icon { font-size: 36px; margin-bottom: 4px; }
+.game-banner-label {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  opacity: 0.9;
+}
+.game-card-banner.dragdrop { background: linear-gradient(135deg, #7C3AED, #A06BF5); flex-direction: column; }
+.game-card-banner.wordmatch { background: linear-gradient(135deg, #F59E0B, #FBC04A); flex-direction: column; }
+.game-card-banner.bubblepop { background: linear-gradient(135deg, #10B981, #34D399); flex-direction: column; }
+
+/* =========================================================
+   Drag & Drop — game page
+   ========================================================= */
+.dd-term-active {
+  background: #fff;
+  border: 2px solid #C9B6F6;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: #5B21B6;
+  box-shadow: 0 5px 12px rgba(124,58,237,0.14);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.dd-term-active:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: 0 10px 20px rgba(124,58,237,0.22); }
+.dd-term-active:active { cursor: grabbing; }
+.dd-term-dragging { opacity: 0.4; transform: scale(0.95); }
+.dd-term-used {
+  background: #E2F5EA;
+  border: 2px solid #6FCF8E;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: #1F9D55;
+  opacity: 0.7;
+}
+.dd-target-done {
+  background: #F2FBF5;
+  border: 2px solid #6FCF8E;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.dd-target-icon { font-size: 22px; flex-shrink: 0; }
+.dd-target-def { flex: 1; font-size: 14px; color: #2E2A45; }
+.dd-target-matched { font-family: 'Fredoka', sans-serif; font-weight: 600; color: #1F9D55; font-size: 14px; white-space: nowrap; }
+.dd-target-over { border-color: #7C3AED !important; background: #FAF8FF !important; }
+.dd-drop-zone { border: 2px dashed #D3C6F4; border-radius: 12px; min-width: 120px; height: 46px; display: flex; align-items: center; justify-content: center; color: #B6A8DE; font-family: 'Fredoka', sans-serif; font-size: 13px; }
+
+/* =========================================================
+   Word Match — game page
+   ========================================================= */
+.wm-columns-wm { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: start; }
+.wm-col-wm { display: flex; flex-direction: column; gap: 10px; }
+.wm-col-label { font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 700; color: #9580C7; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.wm-divider { display: flex; align-items: center; justify-content: center; padding: 0 16px; margin-top: 36px; }
+.wm-item-term {
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  background: #fff;
+  border: 2px solid #ECE7FB;
+  color: #2E2A45;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+.wm-item-term:hover { border-color: #C9B6F6; background: #FAF8FF; transform: translateX(4px); }
+.wm-item-def {
+  border-radius: 14px;
+  padding: 13px 16px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background: #fff;
+  border: 2px solid #ECE7FB;
+  color: #5A566F;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+.wm-item-def:hover { border-color: #C9B6F6; background: #FAF8FF; transform: translateX(-4px); }
+.wm-item-sel { border-color: var(--purple) !important; background: #F4EFFE !important; box-shadow: 0 4px 12px rgba(124,58,237,0.2); }
+.wm-item-matched { border-radius: 14px; padding: 13px 16px; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; background: var(--green); color: #fff; }
+.wm-item.wm-item-def.wm-item-matched { background: #E2F5EA; color: #1F9D55; border: 2px solid #6FCF8E; }
+
+/* =========================================================
+   Bubble Pop — game page
+   ========================================================= */
+.bubble-card {
+  background: #FFFFFF;
+  border: 1px solid #ECE7FB;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 12px 36px rgba(91,33,182,0.09);
+  text-align: center;
+}
+.bubble-question {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #2E2A45;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+.bubble-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.bubble-btn {
+  min-width: 140px;
+  padding: 18px 28px;
+  border-radius: 20px;
+  border: 3px solid #ECE7FB;
+  background: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #5B21B6;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 6px 18px rgba(124,58,237,0.12);
+}
+.bubble-btn:hover:not(:disabled) {
+  border-color: #C9B6F6;
+  background: #FAF8FF;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(124,58,237,0.22);
+}
+.bubble-btn:active:not(:disabled) { transform: scale(0.97); }
+.bubble-btn.bubble-selected { border-color: var(--purple); background: #F4EFFE; }
+.bubble-btn.bubble-correct { border-color: var(--green); background: #E2F5EA; color: var(--green); animation: bubblePop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+.bubble-btn.bubble-wrong { border-color: var(--red); background: #FEE2E2; color: var(--red); animation: shake 0.4s ease; }
+@keyframes bubblePop {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.bubble-feedback {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 20px;
+  animation: fadeSlideUp 0.35s ease;
+}
+.bubble-feedback-correct { color: var(--green); }
+.bubble-feedback-wrong { color: var(--red); }
+.bubble-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 32px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(124,58,237,0.35);
+  transition: filter 0.15s;
+  animation: fadeSlideUp 0.35s ease 0.1s both;
+}
+.bubble-next-btn:hover { filter: brightness(1.07); }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   Game complete / results card
+   ========================================================= */
+.game-complete-card {
+  background: #FFFFFF;
+  border: 1px solid #ECE7FB;
+  border-radius: 28px;
+  padding: 48px 36px;
+  box-shadow: 0 12px 36px rgba(91,33,182,0.10);
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  animation: fadeSlideUp 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.game-complete-emoji { font-size: 80px; margin-bottom: 12px; }
+.game-complete-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #2E2A45;
+  margin-bottom: 10px;
+}
+.game-complete-score {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.game-complete-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 28px; }
+.game-complete-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.game-btn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 13px 24px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(124,58,237,0.35);
+  transition: filter 0.15s;
+}
+.game-btn-play:hover { filter: brightness(1.07); }
+.game-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F2EEFB;
+  color: var(--purple);
+  border: none;
+  border-radius: 14px;
+  padding: 13px 24px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.game-btn-back:hover { filter: brightness(0.97); }
+
+
+.quiz-popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+}
+.quiz-popup.popup-show {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+.quiz-popup .popup-text {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  padding: 18px 40px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.quiz-popup.tahniah .popup-text {
+  background: linear-gradient(135deg, #10B981, #34D399);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(16,185,129,0.45);
+}
+.quiz-popup.salah .popup-text {
+  background: linear-gradient(135deg, #EF4444, #F87171);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(239,68,68,0.35);
+}
+
+/* =========================================================
+   Practice section header badge fix (use consistent badge)
    ========================================================= */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }

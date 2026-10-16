@@ -1,4 +1,4 @@
-/**
+﻿/**
  * AlgebraHub — vanilla JS single-page app.
  *
  * How this works (for learning purposes):
@@ -19,23 +19,23 @@ const DATA = {
     bab: "Bab 5",
     tag: "ax + b",
     intro:
-      "Ungkapan algebra ialah gabungan pemboleh ubah (huruf), pekali (nombor di hadapan pemboleh ubah) dan pemalar. Operasi seperti tambah, tolak, dan kembangkan kurungan boleh dilakukan ke atas ungkapan algebra.",
-    formula: "a(x + y) = ax + ay",
+      "Ungkapan algebra ialah gabungan nombor, pemboleh ubah (huruf) dan operasi matematik seperti tambah, tolak, darab dan bahagi. Ungkapan algebra digunakan untuk mewakili nilai yang tidak diketahui.",
+    formula: "ax+bx=(a+b)x",
     concepts: [
       {
         n: "1",
-        title: "Pemboleh ubah & Pekali",
-        body: "Pemboleh ubah ialah huruf seperti x atau y yang mewakili nilai tidak diketahui. Pekali ialah nombor yang didarab dengan pemboleh ubah. Dalam 3x, pekali = 3. Pemalar ialah nombor tetap tanpa pemboleh ubah.",
+        title: "Pemboleh Ubah, Pekali dan Pemalar",
+        body: "Pemboleh ubah ialah huruf yang mewakili nilai, seperti \(x\) dan \(y\). Pekali ialah nombor yang mendarab pemboleh ubah. Pemalar ialah nombor tanpa pemboleh ubah. Contoh: Dalam \(3x+5\), pekali ialah 3 dan pemalar ialah 5.",
       },
       {
         n: "2",
-        title: "Mengembangkan Kurungan",
-        body: "Darab setiap sebutan dalam kurungan dengan faktor di luar. Contoh: 2(3x + 4) = 6x + 8. Kaedah ini juga dipanggil 'taburan'.",
+        title: "Sebutan Serupa dan Sebutan Tidak Serupa",
+        body: "Sebutan serupa mempunyai pemboleh ubah dan kuasa yang sama. Contoh: \(2x+4x=6x\). Sebutan tidak serupa tidak boleh digabungkan, contohnya \(2x+3y\).",
       },
       {
         n: "3",
-        title: "Pemfaktoran — kebalikan pengembangan",
-        body: "Cari faktor sepunya terbesar (FCS), kemudian keluarkan dari ungkapan. Contoh: 6x + 9 = 3(2x + 3). Semak dengan kembangkan semula.",
+        title: "Operasi Asas Ungkapan Algebra",
+        body: "Ungkapan algebra boleh ditambah, ditolak, didarab dan dibahagi mengikut peraturan matematik. Contoh: \(5x-2x=3x\) dan \(3(x+2)=3x+6\).",
       },
     ],
     exampleQ: "Kembangkan dan permudahkan 3(2x + 4) − 2x.",
@@ -55,7 +55,7 @@ const DATA = {
     tag: "S = ...",
     intro:
       "Rumus algebra ialah persamaan yang menghubungkan beberapa pemboleh ubah. Perkara rumus ialah pemboleh ubah yang bersendirian di satu sisi dengan pekali 1. Menukar perkara rumus bermaksud mengasingkan pemboleh ubah berbeza sebagai subjek baharu.",
-    formula: "v = u + at  →  t = (v − u) / a",
+    formula: "p= mx + c",
     concepts: [
       {
         n: "1",
@@ -89,23 +89,23 @@ const DATA = {
     bab: "Bab 9",
     tag: "y = mx + c",
     intro:
-      "Persamaan garis lurus ialah y = mx + c, di mana m ialah kecerunan dan c ialah pintasan-y. Kecerunan diukur sebagai jarak mencancang dibahagi jarak mengufuk antara dua titik pada garis.",
+      "Garis lurus boleh diwakilkan pada satah Cartesan menggunakan persamaan yang menghubungkan koordinat \(x\) dan \(y\).",
     formula: "y = mx + c  ,  m = (y₂ − y₁) / (x₂ − x₁)",
     concepts: [
       {
         n: "1",
-        title: "Kecerunan (m)",
-        body: "m = jarak mencancang ÷ jarak mengufuk = (y₂ − y₁) / (x₂ − x₁). Garis condong ke atas: m > 0. Garis condong ke bawah: m < 0.",
+        title: "Persamaan Garis Lurus",
+        body: "Persamaan garis lurus boleh ditulis dalam bentuk \(y=mx+c\), dengan \(m\) ialah kecerunan dan \(c\) ialah pintasan paksi-\(y\)",
       },
       {
         n: "2",
-        title: "Pintasan-y (c) & Pintasan-x",
+        title: "Kecerunan Garis Lurus",
         body: "Pintasan-y ialah nilai y apabila x = 0 — tempat garis memotong paksi-y. Pintasan-x ialah nilai x apabila y = 0 — tempat garis memotong paksi-x.",
       },
       {
         n: "3",
-        title: "Garis Selari",
-        body: "Dua garis selari mempunyai kecerunan yang SAMA. Contoh: y = 2x + 1 dan y = 2x − 5 adalah selari kerana m₁ = m₂ = 2.",
+        title: "Melukis dan Mentafsir Graf Garis Lurus",
+        body: "Gunakan beberapa pasangan koordinat yang memenuhi persamaan, plot titik pada satah Cartesan dan sambungkan titik menggunakan garis lurus.",
       },
     ],
     exampleQ: "Cari kecerunan garis melalui titik (1, 2) dan (3, 8).",
@@ -124,23 +124,23 @@ const DATA = {
     bab: "Bab 6",
     tag: "a < x < b",
     intro:
-      "Ketaksamaan linear menunjukkan julat nilai yang mungkin bagi pemboleh ubah. Diselesaikan dengan kaedah 'pindah' — sama seperti persamaan linear — tetapi ada 1 peraturan istimewa: tanda TERBALIK apabila darab atau bahagi dengan nombor NEGATIF.",
-    formula: "Kaedah Pindah — tukar operasi apabila melintas tanda =",
+      "Ketaksamaan linear menunjukkan julat nilai yang mungkin bagi pemboleh ubah. Diselesaikan dengan kaedah 'pindah'  sama seperti persamaan linear  tetapi ada 1 peraturan istimewa: tanda TERBALIK apabila darab atau bahagi dengan nombor NEGATIF.",
+    formula: "ax+by\leq c",
     concepts: [
       {
         n: "1",
-        title: "Tanda Ketaksamaan",
-        body: "Cara mudah ingat: > = '>esar' (lebih besar), < = '<urang' (kurang). Simbol ≥ bermaksud lebih besar ATAU sama. Simbol ≤ bermaksud kurang ATAU sama.",
+        title: "Mewakilkan ketaksamaan Linear",
+        body: "Ketaksamaan linear menggunakan simbol seperti \(<\), \(>\), \(\leq\) dan \(\geq\). Contoh: \(y\leq2x+3\).",
       },
       {
         n: "2",
-        title: "Kaedah 'Pindah' + Peraturan Negatif",
-        body: "Selesaikan seperti persamaan. PERHATIAN: apabila darab atau bahagi dengan nombor negatif, SONGSANGKAN simbol ketaksamaan. Contoh: −2x > 4 → x < −2.",
+        title: "Melukis Garis Sempadan dan Rantau",
+        body: "Garis penuh digunakan bagi simbol \(\leq\) atau \(\geq\), manakala garis putus-putus digunakan bagi simbol \(<\) atau \(>\). Lorek rantau yang memenuhi ketaksamaan.",
       },
       {
         n: "3",
-        title: "Garis Nombor & Ketaksamaan Serentak",
-        body: "Wakili pada garis nombor: ● (bulatan penuh) untuk ≤ atau ≥, ○ (bulatan kosong) untuk < atau >. Untuk serentak, selesaikan setiap bahagian berasingan, kemudian gabungkan julat.",
+        title: "Sistem Ketaksamaan Linear",
+        body: "Sistem ketaksamaan linear menggabungkan dua atau lebih ketaksamaan. Rantau penyelesaian ialah kawasan yang memenuhi semua ketaksamaan tersebut.",
       },
     ],
     exampleQ: "Selesaikan 7y − 4 < 15 dan senaraikan nilai y.",
@@ -159,22 +159,22 @@ const DATA = {
     bab: "Bab 1",
     tag: "aᵐ × aⁿ",
     intro:
-      "Indeks (atau kuasa) menunjukkan bilangan kali sesuatu nombor (asas) didarab dengan dirinya sendiri. Hukum-hukum indeks membolehkan kita memudahkan ungkapan berkuasa dengan cepat dan tepat.",
+      "Indeks ialah cara ringkas untuk menulis pendaraban berulang bagi nombor yang sama. Indeks terdiri daripada asas dan kuasa.",
     formula: "aᵐ × aⁿ = aᵐ⁺ⁿ  |  aᵐ ÷ aⁿ = aᵐ⁻ⁿ  |  (aᵐ)ⁿ = aᵐⁿ",
     concepts: [
       {
         n: "1",
-        title: "Hukum Pendaraban & Pembahagian",
-        body: "Asas SAMA: aᵐ × aⁿ = aᵐ⁺ⁿ (tambah indeks). aᵐ ÷ aⁿ = aᵐ⁻ⁿ (tolak indeks). Asas berlainan: tidak boleh digabungkan terus.",
+        title: "Asas dan Indeks",
+        body: "Asas ialah nombor yang didarab berulang kali, manakala indeks menunjukkan bilangan pendaraban. Contoh: \(2^3=2\times2\times2=8\).",
       },
       {
         n: "2",
-        title: "Indeks Sifar & Negatif",
+        title: "Hukum Indeks",
         body: "a⁰ = 1 untuk semua a ≠ 0. a⁻ⁿ = 1/aⁿ — indeks negatif bermaksud songsang (pecahan). Contoh: 2⁻³ = 1/2³ = 1/8.",
       },
       {
         n: "3",
-        title: "Indeks Pecahan",
+        title: "Indeks sifar dan Indeks Negatif",
         body: "a^(1/n) = ⁿ√a (punca ke-n). a^(m/n) = ⁿ√aᵐ. Contoh: 8^(2/3) = ³√8² = ³√64 = 4. Indeks pecahan bermaksud punca dan kuasa.",
       },
     ],
@@ -225,26 +225,26 @@ const DATA = {
     iconClass: "gold-bg",
   },
   fungsi: {
-    title: "Fungsi dan Graf",
+    title: "Fungsi dan Persamaan Kuadratik dalam Satu Pemboleh Ubah",
     bab: "Bab 1",
     tag: "f(x), f⁻¹(x)",
     intro:
-      "Fungsi ialah pemetaan khas — setiap objek dalam domain mempunyai TEPAT SATU imej dalam kodomain. Jenis-jenis fungsi termasuk linear, kuadratik, kubik, dan salingan. Fungsi gubahan dan songsang merupakan kemahiran lanjutan.",
-    formula: "fg(x) = f(g(x))  ,  ff⁻¹(x) = x",
+      "Fungsi dan persamaan kuadratik melibatkan ungkapan yang mempunyai kuasa tertinggi dua bagi pemboleh ubah. Graf fungsi kuadratik berbentuk parabola.",
+    formula: "ax² + bx + c = 0",
     concepts: [
       {
         n: "1",
-        title: "Tatatanda & Jenis Fungsi",
-        body: "f(x) = nilai fungsi f pada x. Jenis: linear f(x) = mx + c, kuadratik f(x) = ax² + bx + c, kubik f(x) = x³, salingan f(x) = k/x. Graf setiap jenis berbeza bentuk.",
+        title: "Bentuk Am Fungsi Kuadratik",
+        body: "Bentuk am fungsi kuadratik ialah \(f(x)=ax² + bx + c\), dengan \(a\neq0\). Nilai \(a\), \(b\) dan \(c\) ialah pemalar.",
       },
       {
         n: "2",
-        title: "Fungsi Gubahan fg(x)",
-        body: "fg(x) = f(g(x)) — terapkan g DAHULU, kemudian terapkan f pada hasilnya. BACA dari kanan ke kiri. Contoh: fg(3) → kira g(3) dahulu, kemudian masukkan hasilnya ke dalam f.",
+        title: "Graf Fungsi Kuadratik",
+        body: "Graf fungsi kuadratik berbentuk parabola. Jika \(a>0\), graf membuka ke atas. Jika \(a<0\), graf membuka ke bawah.",
       },
       {
         n: "3",
-        title: "Fungsi Songsang f⁻¹(x)",
+        title: "Menyelesaikan Persamaan Kuadratik",
         body: "f⁻¹(x) membalikkan tindakan f. Cara cari: (1) Tulis y = f(x). (2) Ungkapkan x sebagai perkara rumus. (3) Tukar simbol x dan y. Semak: ff⁻¹(x) = x.",
       },
     ],
@@ -299,7 +299,7 @@ const DATA = {
     bab: "Bab 1",
     tag: "y ∝ x",
     intro:
-      "Ubahan menghuraikan bagaimana satu kuantiti berubah apabila kuantiti lain berubah. k ialah PEMALAR — nilainya tetap dan tidak berubah. Terdapat empat jenis: langsung, songsang, tercantum, dan bergabung.",
+      "Ubahan menerangkan hubungan antara dua atau lebih kuantiti, iaitu bagaimana perubahan satu kuantiti mempengaruhi kuantiti yang lain.",
     formula: "y = kx  (ubahan langsung)  |  y = k/x  (ubahan songsang)",
     concepts: [
       {
@@ -334,23 +334,23 @@ const DATA = {
     bab: "Bab 2",
     tag: "[A][B]",
     intro:
-      "Matriks ialah susunan nombor dalam baris dan lajur. Peringkat matriks ditulis sebagai m × n (m = bilangan baris, n = bilangan lajur). Matriks digunakan untuk menyelesaikan persamaan linear serentak dengan lebih cekap.",
-    formula: "A⁻¹ = (1 / det A) × [[d, −b], [−c, a]]",
+      "Matriks ialah susunan nombor dalam baris dan lajur. Matriks digunakan untuk menyusun maklumat dan menyelesaikan masalah matematik dengan lebih sistematik.",
+    formula: "AI = IA = A",
     concepts: [
       {
         n: "1",
-        title: "Peringkat & Operasi Matriks",
-        body: "Peringkat = m × n. Tambah/tolak: saiz MESTI sama. Darab A × B: bilangan lajur A mesti sama dengan bilangan baris B. Matriks identiti I: AI = IA = A.",
+        title: "Pengenalan kepada Matriks",
+        body: "Matriks mempunyai baris dan lajur. Peringkat matriks ditulis sebagai bilangan baris × bilangan lajur.",
       },
       {
         n: "2",
-        title: "Penentu (Determinant)",
-        body: "Untuk matriks 2×2 = [[a, b], [c, d]], det = ad − bc. PENTING: Jika det = 0, matriks songsang TIDAK WUJUD. Matriks itu dipanggil matriks singular.",
+        title: "Penambahan dan Penolakan Matriks",
+        body: "Matriks boleh ditambah atau ditolak jika mempunyai peringkat yang sama. Operasi dilakukan terhadap unsur yang sepadan.",
       },
       {
         n: "3",
-        title: "Matriks Songsang & Persamaan Serentak",
-        body: "A⁻¹ = (1/det) × [[d, −b], [−c, a]]. Untuk selesaikan AX = B: X = A⁻¹B. Ini kaedah matriks untuk persamaan linear serentak.",
+        title: "Pendaraban Matriks",
+        body: "Pendaraban matriks dengan nombor melibatkan pendaraban setiap unsur dengan nombor tersebut. Pendaraban dua matriks pula memerlukan bilangan lajur matriks pertama sama dengan bilangan baris matriks kedua.",
       },
     ],
     exampleQ: "Cari penentu matriks [[3, 1], [2, 4]].",
@@ -369,23 +369,23 @@ const DATA = {
     bab: "Bab 6",
     tag: "ax = b",
     intro:
-      "Persamaan linear dalam satu pemboleh ubah diselesaikan dengan kaedah pindah — guna operasi songsang pada kedua-dua belah sehingga pemboleh ubah bersendirian di sebelah kiri.",
+      "Persamaan linear ialah persamaan matematik yang mengandungi pemboleh ubah dengan kuasa tertinggi satu. Persamaan ini diselesaikan dengan mencari nilai pemboleh ubah yang menjadikan kedua-dua belah persamaan sama.",
     formula: "ax + b = c  →  x = (c − b) / a",
     concepts: [
       {
         n: "1",
-        title: "Persamaan Linear Mudah",
-        body: "Bentuk paling mudah: x + 5 = 12. Selesaikan dengan menolak nilai yang sama dari kedua-dua belah. x = 12 − 5 = 7.",
+        title: "Memahami Persamaan Linear",
+        body: "Persamaan linear mempunyai tanda sama dengan (\(=\)) dan pemboleh ubah. Contoh: \(2x+3=9\). Matlamatnya ialah mencari nilai \(x\) yang memenuhi persamaan tersebut.",
       },
       {
         n: "2",
-        title: "Anu Bercabang & Dua Langkah",
-        body: "Persamaan dua langkah seperti 3x − 4 = 11. Mula-mula pindah pemalar (±), kemudian pindah pekali (× ÷). x = (11 + 4) / 3 = 5.",
+        title: "Menyelesaikan Persamaan Linear",
+        body: "Gunakan operasi songsang untuk mencari nilai pemboleh ubah, contohnya \(x+4=10\), maka \(x=10-4=6\).",
       },
       {
         n: "3",
-        title: "Persamaan Dengan Kurungan",
-        body: "Kembangkan kurungan dahulu, atau darab kedua-dua belah dengan penyebut pecahan. Contoh: 2(x − 3) = 10 → 2x − 6 = 10 → x = 8.",
+        title: "Menyelesaikan Persamaan dengan Operasi Darab dan Bahagi",
+        body: "Asingkan pemboleh ubah menggunakan operasi songsang, contohnya \(3x=12\), maka \(x=\{12}/{3}=4\).",
       },
     ],
     exampleQ: "Selesaikan 5x − 7 = 23.",
@@ -504,10 +504,380 @@ const VIDEO_DATA = {
 };
 
 // ---------------------------------------------------------------------------
+// SOUND FX — Web Audio API synthesizer (no external files needed)
+// ---------------------------------------------------------------------------
+const SFX = (() => {
+  let ctx = null;
+  const getCtx = () => {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    return ctx;
+  };
+  return {
+    correct() {
+      const c = getCtx();
+      const o = c.createOscillator();
+      const g = c.createGain();
+      o.connect(g); g.connect(c.destination);
+      o.type = 'sine';
+      o.frequency.setValueAtTime(523, c.currentTime);
+      o.frequency.setValueAtTime(659, c.currentTime + 0.1);
+      o.frequency.setValueAtTime(784, c.currentTime + 0.2);
+      g.gain.setValueAtTime(0.35, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.5);
+      o.start(c.currentTime); o.stop(c.currentTime + 0.5);
+    },
+    wrong() {
+      const c = getCtx();
+      const o = c.createOscillator();
+      const g = c.createGain();
+      o.connect(g); g.connect(c.destination);
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(200, c.currentTime);
+      o.frequency.setValueAtTime(150, c.currentTime + 0.15);
+      g.gain.setValueAtTime(0.25, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.4);
+      o.start(c.currentTime); o.stop(c.currentTime + 0.4);
+    },
+    success() {
+      const c = getCtx();
+      const notes = [523, 659, 784, 1047];
+      notes.forEach((freq, i) => {
+        const o = c.createOscillator();
+        const g = c.createGain();
+        o.connect(g); g.connect(c.destination);
+        o.type = 'sine';
+        o.frequency.value = freq;
+        const t = c.currentTime + i * 0.18;
+        g.gain.setValueAtTime(0.35, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+        o.start(t); o.stop(t + 0.4);
+      });
+    }
+  };
+})();
+
+// ---------------------------------------------------------------------------
+// QUIZ DATA — extra questions per topic beyond what's in DATA.opts
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// QUIZ DATA â€” based on user's 10-page notes (2026)
+// Page 1: Ungkapan Algebra + Kuasa Dua + Nisbah Kadaran
+// Pages 2-10: full topic questions
+// ---------------------------------------------------------------------------
+const QUIZ_QUESTIONS = {
+  // PAGE 1: Ungkapan Algebra (Bab 5)
+  ungkapan: [
+    { q: "Kembangkan 3(2x âˆ’ 5).", opts: ["6x + 15","6x âˆ’ 15","5x âˆ’ 15","6x âˆ’ 8"], ans: 1 },
+    { q: "Kembangkan 4(x + 3).", opts: ["4x + 12","4x + 7","x + 12","4x + 3"], ans: 0 },
+    { q: "Faktorkan 6x + 9.", opts: ["3(2x + 3)","2(3x + 4)","6(x + 9)","3(2x âˆ’ 3)"], ans: 0 },
+    { q: "Kembangkan 2(5x âˆ’ 1).", opts: ["10x + 2","10x âˆ’ 2","7x âˆ’ 1","10x âˆ’ 1"], ans: 1 },
+    { q: "Faktorkan 8x + 12.", opts: ["4(2x + 3)","2(4x + 6)","8(x + 1)","4(2x âˆ’ 3)"], ans: 0 },
+    { q: "Kembangkan 5(2x + 3y).", opts: ["10x + 3y","10x + 15y","7x + 3y","10x âˆ’ 15y"], ans: 1 },
+    { q: "Faktorkan 12x âˆ’ 18.", opts: ["6(2x âˆ’ 3)","3(4x âˆ’ 6)","4(3x âˆ’ 4)","12(x âˆ’ 2)"], ans: 0 },
+    { q: "Kembangkan 3(4x + 2).", opts: ["12x + 6","7x + 2","12x + 2","12x âˆ’ 6"], ans: 0 },
+    { q: "Faktorkan 5x + 10.", opts: ["5(x + 2)","5(x + 10)","x(x + 10)","5(x âˆ’ 2)"], ans: 0 },
+    { q: "Kembangkan âˆ’2(3x + 4).", opts: ["âˆ’6x + 8","âˆ’6x âˆ’ 8","6x âˆ’ 8","âˆ’6x + 4"], ans: 1 },
+    { q: "Faktorkan 6xÂ² + 9x.", opts: ["3x(2x + 3)","3(2xÂ² + 3x)","6x(x + 9)","x(6x + 9)"], ans: 0 },
+    { q: "Kembangkan 7(2x âˆ’ 3).", opts: ["14x âˆ’ 21","14x + 21","9x âˆ’ 21","14x âˆ’ 3"], ans: 0 },
+    { q: "Faktorkan 14x + 21.", opts: ["7(2x + 3)","7(2x âˆ’ 3)","14(x + 21)","3(4x + 7)"], ans: 0 },
+    { q: "Kembangkan x(x + 4).", opts: ["xÂ² + 4x","xÂ² + 4","2x + 4","xÂ² + x + 4"], ans: 0 },
+    { q: "Faktorkan xÂ² + 7x + 12.", opts: ["(x+3)(x+4)","(x+2)(x+5)","(x+1)(x+12)","(x+6)(x+2)"], ans: 0 },
+    { q: "Kembangkan 2x(x âˆ’ 5).", opts: ["2xÂ² âˆ’ 10x","2xÂ² + 10x","2x âˆ’ 10x","xÂ² âˆ’ 10x"], ans: 0 },
+    { q: "Faktorkan 4x + 8.", opts: ["4(x + 2)","2(2x + 4)","4(x + 8)","8(x + 1)"], ans: 0 },
+    { q: "Kembangkan 3(2x + 5) âˆ’ x.", opts: ["5x + 15","6x + 15","5x âˆ’ 15","6x âˆ’ 5"], ans: 0 },
+    { q: "Punca kuasa dua sempurna seterusnya selepas 36.", opts: ["49","45","48","42"], ans: 0 },
+    { q: "3Â² + 4Â² = ?", opts: ["25","7","12","49"], ans: 0 },
+    { q: "Kuasa dua sempurna: 1, 4, 9, 16, 25, ?", opts: ["36","35","32","49"], ans: 0 },
+    { q: "Kuasa tiga sempurna: 1, 8, 27, 64, ?", opts: ["125","100","121","216"], ans: 0 },
+    { q: "1Â² = ?", opts: ["1","2","0","âˆ’1"], ans: 0 },
+    { q: "4Â³ = ?", opts: ["64","12","43","48"], ans: 0 },
+    { q: "âˆš144 = ?", opts: ["12","11","14","13"], ans: 0 },
+    { q: "Â³âˆš27 = ?", opts: ["3","9","6","2"], ans: 0 },
+  ],
+
+  // PAGE 2: Persamaan Linear (Bab 6) â€” satu pemboleh ubah
+  persamaan_linear: [
+    { q: "Selesaikan: x âˆ’ 8 = 2.", opts: ["x = 6","x = 10","x = âˆ’6","x = 16"], ans: 1 },
+    { q: "Selesaikan: 5x + 3 = 18.", opts: ["x = 2","x = 3","x = 4","x = 5"], ans: 1 },
+    { q: "Selesaikan: 3x âˆ’ 2 = 5x.", opts: ["x = âˆ’1","x = 1","x = 2","x = âˆ’2"], ans: 0 },
+    { q: "Selesaikan: 2(x + 3) = 10.", opts: ["x = 2","x = 4","x = 1","x = 5"], ans: 0 },
+    { q: "Lily beli 5 pen RM y sebatang dan buku RM3. Jumlah RM7. Bentukkan.", opts: ["5y + 3 = 7","y + 3 = 7","5y = 7","5 + 3y = 7"], ans: 0 },
+    { q: "Selesaikan: (5x + 8)/2 = 9.", opts: ["x = 2","x = 10","x = 1","x = 5"], ans: 0 },
+    { q: "Selesaikan: 4x âˆ’ 7 = 3x + 5.", opts: ["x = 12","x = âˆ’12","x = 2","x = 1"], ans: 0 },
+    { q: "Selesaikan: 7 âˆ’ 2x = 3.", opts: ["x = 2","x = âˆ’2","x = 5","x = âˆ’5"], ans: 0 },
+    { q: "Selesaikan: 6x + 1 = 4x + 9.", opts: ["x = 4","x = 3","x = 2","x = 1"], ans: 0 },
+    { q: "Selesaikan: x/3 + 2 = 7.", opts: ["x = 12","x = 15","x = 9","x = 6"], ans: 0 },
+    { q: "Selesaikan: 5x = 35.", opts: ["x = 7","x = 5","x = 6","x = 8"], ans: 0 },
+    { q: "Selesaikan: 8 âˆ’ 3x = 2.", opts: ["x = 2","x = âˆ’2","x = 3","x = 1"], ans: 0 },
+    { q: "Selesaikan: 2x + 4 = x âˆ’ 3.", opts: ["x = âˆ’7","x = 7","x = âˆ’3","x = 3"], ans: 0 },
+    { q: "Selesaikan: 3(x âˆ’ 2) = 12.", opts: ["x = 6","x = 4","x = 2","x = 8"], ans: 0 },
+    { q: "Selesaikan: 4x + 5 = 2x + 11.", opts: ["x = 3","x = 2","x = 4","x = 1"], ans: 0 },
+    { q: "Suatu nombor ditolak dengan 8, bakinya 2. Bentukkan.", opts: ["x âˆ’ 8 = 2","8 âˆ’ x = 2","x + 8 = 2","x/8 = 2"], ans: 0 },
+    { q: "Selesaikan: 2x âˆ’ 3 = 5.", opts: ["x = 4","x = 3","x = 2","x = 1"], ans: 0 },
+    { q: "Selesaikan: 9x âˆ’ 2 = 7x + 4.", opts: ["x = 3","x = 2","x = 1","x = 4"], ans: 0 },
+    { q: "Selesaikan: 3(x + 1) = 2(x + 4).", opts: ["x = 5","x = 3","x = 2","x = 1"], ans: 0 },
+  ],
+
+  // PAGE 2: Persamaan Linear Serentak
+  system: [
+    { q: "Selesaikan: x + y = 5, x âˆ’ y = 1. Nilai x?", opts: ["2","3","4","5"], ans: 1 },
+    { q: "Selesaikan: x âˆ’ 3y = 7 dan 5x + 2y = 1. Nilai y?", opts: ["âˆ’2","2","âˆ’1","1"], ans: 0 },
+    { q: "Selesaikan: 2x + y = 7 dan x âˆ’ y = 2.", opts: ["x=3, y=1","x=2, y=3","x=1, y=5","x=4, y=âˆ’1"], ans: 0 },
+    { q: "Kaedah ketiga selesaikan persamaan linear serentak?", opts: ["Kalkulator EQN","Pemfaktoran","Graf","Substitusi"], ans: 0 },
+    { q: "Selesaikan: x + 2y = 6 dan 2x âˆ’ y = 3.", opts: ["x=3, y=1.5","x=2, y=2","x=4, y=1","x=1, y=2"], ans: 0 },
+    { q: "Sistem x + y = 5 dan 2x + 2y = 10 mempunyai...", opts: ["Infiniti penyelesaian","Satu penyelesaian","Tiada penyelesaian","Dua penyelesaian"], ans: 0 },
+    { q: "Selesaikan: 3x + 4y = 16 dan x = 2y.", opts: ["x=4, y=2","x=6, y=3","x=2, y=4","x=8, y=1"], ans: 0 },
+    { q: "Darab persamaan pertama dengan 5 untuk selesaikan: 2x âˆ’ 3y = 7 dan 5x + 2y = 1.", opts: ["10x âˆ’ 15y = 35","10x + 15y = 35","10x âˆ’ 15y = âˆ’35","7x âˆ’ 15y = 35"], ans: 0 },
+    { q: "Kaedah penghapusan digunakan untuk...", opts: ["Hapuskan satu pemboleh ubah","Darab kedua-dua persamaan","Faktorkan persamaan","Lukis graf"], ans: 0 },
+    { q: "Kaedah penggantian â€” langkah pertama...", opts: ["Jadikan satu pemboleh ubah perkara rumus","Darab kedua-dua persamaan","Tolak kedua-dua persamaan","Cari pintasan"], ans: 0 },
+    { q: "Selesaikan: 4x + 3y = 17 dan x = 3.", opts: ["x=3, y=1.67","x=3, y=2","x=3, y=5","x=3, y=3"], ans: 0 },
+    { q: "Jika x = 7 + 3y, gantikan ke 2x + y = 1. Nilai y?", opts: ["y = âˆ’2","y = 2","y = âˆ’1","y = 1"], ans: 0 },
+    { q: "Selesaikan: x + y = 8 dan x âˆ’ y = 4.", opts: ["x=6, y=2","x=5, y=3","x=4, y=4","x=7, y=1"], ans: 0 },
+    { q: "Selesaikan: 3x + 2y = 12 dan x = 2.", opts: ["x=2, y=3","x=2, y=2","x=2, y=6","x=2, y=1"], ans: 0 },
+    { q: "Kalkulator EQN Unknowns 2 â€” cara masukkan?", opts: ["MODE â†’ EQN â†’ Unknowns 2","MODE â†’ CALC â†’ 2","MODE â†’ GRAPH â†’ 2","SHIFT â†’ SOLVE â†’ 2"], ans: 0 },
+  ],
+
+  // PAGE 3: Pemfaktoran & Pecahan Algebra (Bab 2)
+  pemfaktoran: [
+    { q: "Faktorkan xÂ² âˆ’ 5x + 6.", opts: ["(xâˆ’2)(xâˆ’3)","(xâˆ’1)(xâˆ’6)","(x+2)(x+3)","(xâˆ’3)(x+2)"], ans: 0 },
+    { q: "Faktorkan xÂ² âˆ’ 9.", opts: ["(xâˆ’3)(x+3)","(xâˆ’9)(x+1)","(xâˆ’3)Â²","(x+3)Â²"], ans: 0 },
+    { q: "Faktorkan 2xÂ² + 6x.", opts: ["2x(x+3)","x(2x+6)","2(xÂ²+3x)","(2x+6)(x)"], ans: 0 },
+    { q: "Faktorkan xÂ² + 4x + 4.", opts: ["(x+2)Â²","(x+1)(x+4)","(x+2)(xâˆ’2)","(x+4)(x+1)"], ans: 0 },
+    { q: "FST bagi 12x + 18.", opts: ["6","3","2","12"], ans: 0 },
+    { q: "Faktorkan xÂ² âˆ’ 4x âˆ’ 12.", opts: ["(xâˆ’6)(x+2)","(xâˆ’3)(x+4)","(x+6)(xâˆ’2)","(xâˆ’2)(x+6)"], ans: 0 },
+    { q: "Faktorkan 3xÂ² + 9x.", opts: ["3x(x+3)","3(xÂ²+3x)","x(3x+9)","(3x+3)(x+3)"], ans: 0 },
+    { q: "Faktorkan xÂ² + 6x + 8.", opts: ["(x+2)(x+4)","(x+1)(x+8)","(x+3)(x+3)","(x+8)(xâˆ’1)"], ans: 0 },
+    { q: "FST bagi 8xÂ² âˆ’ 12x.", opts: ["4x","4","2x","8"], ans: 0 },
+    { q: "Faktorkan xÂ² âˆ’ 1.", opts: ["(xâˆ’1)(x+1)","(xâˆ’1)Â²","(x+1)Â²","(xâˆ’1)(xâˆ’1)"], ans: 0 },
+    { q: "Faktorkan xÂ² + 7x + 12.", opts: ["(x+3)(x+4)","(x+2)(x+5)","(x+1)(x+12)","(x+6)(x+2)"], ans: 0 },
+    { q: "Faktorkan 18 + 24x (FSTB).", opts: ["6(3+4x)","3(6+8x)","12(1.5+2x)","2(9+12x)"], ans: 0 },
+    { q: "Faktorkan 5xÂ² âˆ’ 80 (FSTB dulu).", opts: ["5(xÂ²âˆ’16)","5(xâˆ’4)(x+4)","5(xâˆ’4)Â²","5x(xâˆ’16)"], ans: 0 },
+    { q: "Faktorkan xÂ² + 2x.", opts: ["x(x+2)","x(xâˆ’2)","(x+1)(x+1)","2(x+xÂ²)"], ans: 0 },
+    { q: "Faktorkan 25 âˆ’ xÂ².", opts: ["(5âˆ’x)(5+x)","(xâˆ’5)(x+5)","(5âˆ’x)Â²","(xâˆ’25)(x+1)"], ans: 0 },
+    { q: "Kembangkan (3x + 2)Â².", opts: ["9xÂ² + 12x + 4","6xÂ² + 12x + 4","9xÂ² + 4","3xÂ² + 12x + 4"], ans: 0 },
+    { q: "Kembangkan (x âˆ’ 4)Â².", opts: ["xÂ² âˆ’ 8x + 16","xÂ² âˆ’ 8x âˆ’ 16","xÂ² âˆ’ 4x + 16","xÂ² âˆ’ 16"], ans: 0 },
+    { q: "Faktorkan xÂ² + 8x + 15.", opts: ["(x+3)(x+5)","(x+1)(x+15)","(x+3)(x+3)","(x+8)(x+7)"], ans: 0 },
+    { q: "FST bagi 6xÂ² âˆ’ 9x.", opts: ["3x","3","6x","9x"], ans: 0 },
+    { q: "Kembangkan 4(3x âˆ’ 5).", opts: ["12x âˆ’ 20","12x + 20","7x âˆ’ 5","12x âˆ’ 5"], ans: 0 },
+  ],
+
+  // PAGE 3: Pecahan Algebra
+  pecahan: [
+    { q: "Permudahkan: 2/(x+1) + 3/(x+2)", opts: ["(5x+7)/((x+1)(x+2))","(5x+5)/((x+1)(x+2))","(2x+3)/((x+1)(x+2))","(5x+7)/(xÂ²+3x+2)"], ans: 0 },
+    { q: "Permudahkan: (7x+2)/(2x) âˆ’ (xâˆ’5)/(2x)", opts: ["(6x+7)/(2x)","(6xâˆ’3)/(2x)","(8xâˆ’3)/(2x)","(6x+7)/(4x)"], ans: 0 },
+    { q: "Permudahkan: (xÂ²âˆ’9)/(xâˆ’3)", opts: ["x+3","xâˆ’3","xÂ²âˆ’9","x"], ans: 0 },
+    { q: "Darab: (x/2) Ã— (4/x)", opts: ["2","x/2","4","2/x"], ans: 0 },
+    { q: "Bahagi: (xÂ²âˆ’4) Ã· (xâˆ’2)", opts: ["x+2","xâˆ’2","xÂ²âˆ’4","x"], ans: 0 },
+    { q: "Permudahkan: (3x+6)/3", opts: ["x+2","3x+2","x+6","3x+6"], ans: 0 },
+    { q: "Faktorkan dan permudahkan: (xÂ²âˆ’4)/(x+2)", opts: ["xâˆ’2","x+2","xÂ²âˆ’4","x"], ans: 0 },
+    { q: "Permudahkan: 4/(x+1) + 2/(x+1)", opts: ["6/(x+1)","6x+6","2/(x+1)","6x/(x+1)"], ans: 0 },
+  ],
+
+  // PAGE 4: Rumus Algebra (Bab 3)
+  rumus: [
+    { q: "Diberi A = Â½bh, ungkapkan h sebagai perkara rumus.", opts: ["h = 2A/b","h = A/2b","h = Ab/2","h = 2b/A"], ans: 0 },
+    { q: "Diberi y = mx + c, ungkapkan m sebagai perkara rumus.", opts: ["m = (y âˆ’ c)/x","m = y âˆ’ c/x","m = y/x âˆ’ c","m = (y + c)/x"], ans: 0 },
+    { q: "Diberi v = u + at, ungkapkan t sebagai perkara rumus.", opts: ["t = (v âˆ’ u)/a","t = v + u âˆ’ a","t = v/a âˆ’ u","t = v âˆ’ u + a"], ans: 0 },
+    { q: "Diberi K = 2Ï€r, ungkapkan r sebagai perkara rumus.", opts: ["r = K/2Ï€","r = 2Ï€/K","r = KÏ€/2","r = 2K/Ï€"], ans: 0 },
+    { q: "Diberi P = 2(L + W), ungkapkan L sebagai perkara rumus.", opts: ["L = P/2 âˆ’ W","L = P âˆ’ 2W","L = P/(2W)","L = 2P âˆ’ W"], ans: 0 },
+    { q: "Diberi V = Ï€rÂ²h, ungkapkan h sebagai perkara rumus.", opts: ["h = V/Ï€rÂ²","h = Ï€rÂ²/V","h = VÏ€rÂ²","h = V âˆ’ Ï€rÂ²"], ans: 0 },
+    { q: "Diberi E = mcÂ², ungkapkan m sebagai perkara rumus.", opts: ["m = E/cÂ²","m = cÂ²/E","m = EcÂ²","m = E + cÂ²"], ans: 0 },
+    { q: "Diberi s = ut + Â½atÂ², ungkapkan a sebagai perkara rumus.", opts: ["a = 2(s âˆ’ ut)/tÂ²","a = s/t âˆ’ u","a = 2s/tÂ²","a = (s âˆ’ u)/t"], ans: 0 },
+    { q: "Diberi d = vt, ungkapkan v sebagai perkara rumus.", opts: ["v = d/t","v = dt","v = t/d","v = d + t"], ans: 0 },
+    { q: "Diberi A = Ï€rÂ², ungkapkan r sebagai perkara rumus.", opts: ["r = âˆš(A/Ï€)","r = A/Ï€","r = âˆšAÏ€","r = Ï€/âˆšA"], ans: 0 },
+    { q: "Perkara rumus ialah pemboleh ubah yang...", opts: ["Hanya ada 1 di hadapan dengan pekali 1","Mempunyai pekali terbesar","Berada di penyebut","Mempunyai kuasa 2"], ans: 0 },
+    { q: "Kaedah pindah: + â†” âˆ’ dan Ã— â†” Ã·. Betul atau salah?", opts: ["Betul","Salah","Bergantung","Hanya Ã— â†” Ã·"], ans: 0 },
+    { q: "Rumus algebra menghubungkan...", opts: ["Beberapa pemboleh ubah","Hanya satu pemboleh ubah","Nombor sahaja","Tiada pemboleh ubah"], ans: 0 },
+    { q: "Diberi K = 3a + 2b, ungkapkan a sebagai perkara rumus.", opts: ["a = (K âˆ’ 2b)/3","a = K/3 âˆ’ 2b","a = K âˆ’ 2b/3","a = 3K âˆ’ 2b"], ans: 0 },
+    { q: "Diberi s = ut + Â½atÂ², cari s apabila u = 5, t = 2, a = 3.", opts: ["s = 16","s = 14","s = 10","s = 12"], ans: 0 },
+    { q: "Diberi y = 7t âˆ’ 5, cari y apabila t = 3.", opts: ["y = 16","y = 26","y = 7","y = 11"], ans: 0 },
+    { q: "Diberi 3z = 4t + u, cari z apabila t = âˆ’1 dan u = âˆ’11.", opts: ["z = 2","z = âˆ’2","z = 1","z = âˆ’1"], ans: 0 },
+    { q: "Kaedah pindah: apabila pindah kawasan, operasi bertukar.", opts: ["+ â†” âˆ’ dan Ã— â†” Ã·","+ â†” Ã— dan âˆ’ â†” Ã·","Semua tetap","Hanya + â†” âˆ’"], ans: 0 },
+  ],
+
+  // PAGE 5: Indeks (Bab 1)
+  indeks: [
+    { q: "Nilai 2â´.", opts: ["8","16","6","4"], ans: 1 },
+    { q: "Permudahkan xâ¶ Ã— xÂ².", opts: ["xâ¸","xâ´","xÂ¹Â²","xÂ³"], ans: 0 },
+    { q: "Permudahkan (xÂ³)Â².", opts: ["xâµ","xâ¶","xâ¹","xÂ¹"], ans: 1 },
+    { q: "Nilai 3â°.", opts: ["0","1","3","9"], ans: 1 },
+    { q: "Permudahkan yâ· Ã· yÂ³.", opts: ["yâ´","yÂ¹â°","yÂ²","yâ»â´"], ans: 0 },
+    { q: "Nilai 2â»Â³.", opts: ["âˆ’8","1/8","8","âˆ’1/8"], ans: 1 },
+    { q: "Permudahkan aÂ² Ã— aâ´ Ã· aÂ³.", opts: ["aÂ³","aâµ","aÂ²","aâ´"], ans: 0 },
+    { q: "Nilai 5Â¹.", opts: ["1","5","0","25"], ans: 1 },
+    { q: "Permudahkan 10â¶ Ã· 10Â².", opts: ["10â´","10Â³","10â¸","10â»â´"], ans: 0 },
+    { q: "Permudahkan mâµ Ã— m.", opts: ["mâ¶","mâµ","2mâµ","mâ´"], ans: 0 },
+    { q: "Nilai 4Â².", opts: ["8","16","6","4"], ans: 1 },
+    { q: "Permudahkan (pÂ³)â´.", opts: ["pâ·","pÂ¹Â²","pâ¸â´","pÂ³â´"], ans: 1 },
+    { q: "Nilai 7â°.", opts: ["0","1","7","14"], ans: 1 },
+    { q: "Permudahkan xâ¸ Ã· xÂ³.", opts: ["xâµ","xÂ¹Â¹","xÂ³","xâ»âµ"], ans: 0 },
+    { q: "Nilai 3â»Â².", opts: ["âˆ’9","1/9","9","âˆ’1/9"], ans: 1 },
+    { q: "Permudahkan 5Â² Ã— 5Â³.", opts: ["5âµ","5â¶","25âµ","5Â²âºÂ³"], ans: 0 },
+    { q: "Nilai 10â° + 2Â³.", opts: ["9","11","8","10"], ans: 0 },
+    { q: "Permudahkan (2x)Â³.", opts: ["8xÂ³","6xÂ³","2xÂ³","8x"], ans: 0 },
+    { q: "Nilai âˆš144.", opts: ["11","12","13","14"], ans: 1 },
+    { q: "Nilai 3Â³.", opts: ["9","27","6","12"], ans: 1 },
+  ],
+
+  // PAGE 6: Garis Lurus (Bab 9)
+  linear: [
+    { q: "Apakah kecerunan garis y = 4x âˆ’ 7?", opts: ["âˆ’7","4","7","âˆ’4"], ans: 1 },
+    { q: "Apakah pintasan-y bagi garis y = 3x + 5?", opts: ["3","5","âˆ’3","âˆ’5"], ans: 1 },
+    { q: "Cari kecerunan garis melalui (1,2) dan (3,8).", opts: ["2","3","1","4"], ans: 1 },
+    { q: "Garis y = 2x + c melalui (1,5). Cari c.", opts: ["3","2","5","1"], ans: 0 },
+    { q: "Apakah kecerunan garis x = 7?", opts: ["0","1","7","tak terdefinisi"], ans: 3 },
+    { q: "Garis selari dengan y = 3x + 1 mestilah mempunyai kecerunan...", opts: ["1","3","âˆ’3","0"], ans: 1 },
+    { q: "Cari kecerunan garis melalui (âˆ’2,3) dan (2,11).", opts: ["2","1","4","3"], ans: 0 },
+    { q: "Persamaan garis dengan kecerunan 2 dan pintasan-y âˆ’3.", opts: ["y = 2x âˆ’ 3","y = âˆ’2x + 3","y = 3x âˆ’ 2","y = 2x + 3"], ans: 0 },
+    { q: "Kecerunan garis 2y = 6x + 4.", opts: ["2","3","6","4"], ans: 1 },
+    { q: "Titik persilangan y = x + 1 dan y = 2x âˆ’ 2.", opts: ["(3, 4)","(1, 2)","(2, 3)","(âˆ’3, âˆ’2)"], ans: 0 },
+    { q: "Pintasan-y bagi garis 3x + 2y = 12.", opts: ["6","4","3","2"], ans: 0 },
+    { q: "Kecerunan garis melalui (0,0) dan (5,15).", opts: ["3","5","1","2"], ans: 0 },
+    { q: "Persamaan garis selari dengan y = âˆ’2x + 3 melalui (0,5).", opts: ["y = âˆ’2x + 5","y = âˆ’2x âˆ’ 5","y = 2x + 5","y = âˆ’2x + 3"], ans: 0 },
+    { q: "Jika dua garis selari, maka...", opts: ["mâ‚ = mâ‚‚","mâ‚ Ã— mâ‚‚ = âˆ’1","mâ‚ + mâ‚‚ = 0","mâ‚ = âˆ’mâ‚‚"], ans: 0 },
+    { q: "Cari pintasan-x bagi garis 2x + y = 8.", opts: ["4","2","8","âˆ’4"], ans: 0 },
+    { q: "Graf y = mx + c, c ialah...", opts: ["Pintasan-y","Pintasan-x","Kecerunan","Titik asalan"], ans: 0 },
+    { q: "Titik (2,5) pada garis y = 3x âˆ’ 1?", opts: ["Betul","Salah","Bergantung","Tak tentu"], ans: 0 },
+    { q: "Kecerunan garis mendatar.", opts: ["0","1","âˆž","âˆ’1"], ans: 0 },
+    { q: "Cari m jika garis melalui (2,3) dan (4,7).", opts: ["2","1","4","3"], ans: 0 },
+  ],
+
+  // PAGE 7: Fungsi & Persamaan Kuadratik (Bab 1)
+  quadratic: [
+    { q: "Bentuk am fungsi kuadratik.", opts: ["f(x) = axÂ² + bx + c","f(x) = ax + b","f(x) = axÂ³ + bx","f(x) = a/x"], ans: 0 },
+    { q: "Faktorkan xÂ² âˆ’ 5x + 6.", opts: ["(xâˆ’2)(xâˆ’3)","(xâˆ’1)(xâˆ’6)","(x+2)(x+3)","(xâˆ’3)(x+2)"], ans: 0 },
+    { q: "Selesaikan xÂ² = 9.", opts: ["x = 3","x = Â±3","x = 9","x = Â±9"], ans: 1 },
+    { q: "Punca xÂ² âˆ’ 3x + 2 = 0.", opts: ["1, 2","1, âˆ’2","âˆ’1, 2","0, 2"], ans: 0 },
+    { q: "Faktorkan xÂ² + 5x + 6.", opts: ["(x+2)(x+3)","(x+1)(x+5)","(xâˆ’2)(xâˆ’3)","(x+6)(xâˆ’1)"], ans: 0 },
+    { q: "Selesaikan xÂ² âˆ’ 4 = 0.", opts: ["x = 2","x = Â±2","x = 4","x = Â±4"], ans: 1 },
+    { q: "Faktorkan 2xÂ² + 5x + 3.", opts: ["(2x+3)(x+1)","(2x+1)(x+3)","(x+3)(2x+1)","(2xâˆ’1)(xâˆ’3)"], ans: 0 },
+    { q: "Punca xÂ² âˆ’ 9 = 0.", opts: ["3","Â±3","9","Â±9"], ans: 1 },
+    { q: "Faktorkan xÂ² âˆ’ 7x + 10.", opts: ["(xâˆ’2)(xâˆ’5)","(xâˆ’1)(xâˆ’10)","(x+2)(x+5)","(xâˆ’2)(x+5)"], ans: 0 },
+    { q: "Selesaikan xÂ² âˆ’ x = 6.", opts: ["x = 3 atau x = âˆ’2","x = 2 atau x = âˆ’3","x = 6 atau x = âˆ’1","x = 1 atau x = 6"], ans: 0 },
+    { q: "Jika a > 0, parabola terbuka ke...", opts: ["Atas","Bawah","Kiri","Kanan"], ans: 0 },
+    { q: "Jika a < 0, parabola mempunyai...", opts: ["Titik maksimum","Titik minimum","Pintasan-x","Pintasan-y"], ans: 0 },
+    { q: "Persamaan paksi simetri bagi xÂ² + 4x + 3 = 0.", opts: ["x = âˆ’2","x = 2","x = âˆ’4","x = 4"], ans: 0 },
+    { q: "Faktorkan xÂ² + 6x + 8.", opts: ["(x+2)(x+4)","(x+1)(x+8)","(x+3)(x+3)","(xâˆ’2)(xâˆ’4)"], ans: 0 },
+    { q: "Selesaikan xÂ² + 4x + 3 = 0.", opts: ["x = âˆ’1 atau x = âˆ’3","x = 1 atau x = 3","x = âˆ’1 atau x = 3","x = 1 atau x = âˆ’3"], ans: 0 },
+    { q: "Punca bagi xÂ² âˆ’ 4x + 4 = 0.", opts: ["x = 2 (punca sama)","x = 4","x = âˆ’2","tiada punca"], ans: 0 },
+    { q: "Cari punca xÂ² âˆ’ 2x âˆ’ 8 = 0.", opts: ["x = 4 atau x = âˆ’2","x = 2 atau x = âˆ’4","x = 8 atau x = âˆ’1","x = 1 atau x = âˆ’8"], ans: 0 },
+    { q: "MODE â†’ EQN â†’ DEGREE 2 untuk...", opts: ["Persamaan kuadratik","Persamaan linear","3 pemboleh ubah","Matriks 2Ã—2"], ans: 0 },
+    { q: "Bentuk am persamaan kuadratik.", opts: ["axÂ² + bx + c = 0","ax + b = 0","axÂ³ + bxÂ² + c = 0","axÂ² + bx = 0"], ans: 0 },
+  ],
+
+  // PAGE 8: Ketaksamaan Linear (Bab 6) â€” dua pemboleh ubah
+  ketaksamaan: [
+    { q: "Rantau > (lebih daripada) menggunakan garis...", opts: ["Sempang (putus-putus)","Padu","Lurus","Lengkung"], ans: 0 },
+    { q: "Rantau â‰¥ (lebih daripada atau sama dengan) menggunakan garis...", opts: ["Padu (penuh)","Sempang (putus-putus)","Lengkung","Tiada garis"], ans: 0 },
+    { q: "Titik (2,5) pada y > 2x + 1?", opts: ["5 > 5 âœ“ (memuaskan)","5 < 5 âœ—","5 = 5","Tak boleh tentukan"], ans: 0 },
+    { q: "Titik (0,8) pada y < âˆ’3x + 6?", opts: ["8 < 6 âœ“ (memuaskan)","8 > 6 âœ—","8 = 6","Tak boleh tentukan"], ans: 0 },
+    { q: "Ketaksamaan linear dalam 2 pemboleh ubahä¸€å®šæœ‰...", opts: ["2 pemboleh ubah","3 pemboleh ubah","Tiada pemboleh ubah","1 pemboleh ubah"], ans: 0 },
+    { q: "Rantau besar > atau kecil <?", opts: ["Besar = > (lebih daripada)","Besar = < (kurang daripada)","Sama saja","Bergantung pada nilai"], ans: 0 },
+    { q: "Titik (âˆ’1,9) pada y â‰¥ âˆ’3x + 6?", opts: ["9 â‰¥ 9 âœ“ (memuaskan)","9 < 9 âœ—","9 > 9 âœ—","9 = 9"], ans: 0 },
+    { q: "Rantau penyelesaian sistem ketaksamaan ialah...", opts: ["Titik yang memuaskan semua","Mana-mana titik","Hanya titik pada garis","Tiada titik"], ans: 0 },
+    { q: "Jika titik pada garis penuh (padu), maka simbol...", opts: ["â‰¥ atau â‰¤","> atau <","â‰ ","Semua"], ans: 0 },
+    { q: "Lorek rantau besar >: garis origo atau bukan?", opts: ["Jauh dari asalan","Dekati asalan","Mana-mana","Tiada lorekan"], ans: 0 },
+  ],
+
+  // PAGE 9: Ubahan (Bab 1)
+  ubahan: [
+    { q: "y berubah langsung dengan x (y âˆ x). Jika y = 12 apabila x = 4, cari k.", opts: ["3","48","4","8"], ans: 0 },
+    { q: "y âˆ x. Jika y = 15 apabila x = 3, cari y apabila x = 7.", opts: ["35","30","21","25"], ans: 0 },
+    { q: "y berubah songsang dengan x. Jika y = 8 apabila x = 3, cari y apabila x = 6.", opts: ["16","4","24","6"], ans: 1 },
+    { q: "y âˆ 1/x. Jika y = 5 apabila x = 2, cari k.", opts: ["10","2.5","5","7"], ans: 0 },
+    { q: "y berubah langsung dengan xÂ². Jika y = 36 apabila x = 3, cari y apabila x = 2.", opts: ["16","12","24","8"], ans: 0 },
+    { q: "z âˆ xy. Jika z = 12, x = 3, y = 4, cari k.", opts: ["1","2","3","4"], ans: 0 },
+    { q: "y berubah songsang dengan x. Jika y = 3 apabila x = 4, cari y apabila x = 6.", opts: ["2","4.5","1.5","3"], ans: 0 },
+    { q: "y âˆ x. Jika y = 8 apabila x = 2, cari y apabila x = 5.", opts: ["20","16","12","10"], ans: 0 },
+    { q: "y berubah langsung dengan âˆšx. Jika y = 6 apabila x = 9, cari y apabila x = 4.", opts: ["4","3","2","8"], ans: 0 },
+    { q: "Pemalar ubahan songsang xy = k. Jika x = 2 dan y = 7, nilai k = ?", opts: ["14","3.5","9","5"], ans: 0 },
+    { q: "Graf ubahan langsung berbentuk...", opts: ["Garis lurus melalui asalan","Lengkung hiperbola","Parabola","Garis mendatar"], ans: 0 },
+    { q: "Graf ubahan songsang berbentuk...", opts: ["Lengkung hiperbola","Garis lurus","Parabola","Garis mendatar"], ans: 0 },
+    { q: "Ubahan tercantum: y âˆ xâ¿, rumus ialah...", opts: ["y = kxâ¿","y = k/x","y = kx + c","y = x/k"], ans: 0 },
+    { q: "Ubahan bergabung: z âˆ xy, rumus ialah...", opts: ["z = kxy","z = kx/y","z = x + y","z = xy/k"], ans: 0 },
+    { q: "Cari k bagi y = kx. Jika y = 20 dan x = 4, k = ?", opts: ["5","4","20","0.2"], ans: 0 },
+  ],
+
+  // PAGE 10: Matriks (Bab 2)
+  matriks: [
+    { q: "Peringkat matriks [[1,2],[3,4],[5,6]].", opts: ["3Ã—2","2Ã—3","2Ã—2","3Ã—3"], ans: 0 },
+    { q: "Cari penentu [[3, 1], [2, 4]].", opts: ["12","10","14","8"], ans: 1 },
+    { q: "Cari penentu [[5, 2], [1, 4]].", opts: ["22","18","20","16"], ans: 0 },
+    { q: "Matriks songsang wujud jika penentu...", opts: ["â‰  0","= 0","< 0","> 0"], ans: 0 },
+    { q: "[[2,0],[0,3]] + [[1,0],[0,1]] = ?", opts: ["[[3,0],[0,4]]","[[1,0],[0,2]]","[[2,0],[0,3]]","[[3,0],[0,2]]"], ans: 0 },
+    { q: "Cari penentu [[4, 3], [2, 1]].", opts: ["âˆ’2","2","10","âˆ’10"], ans: 0 },
+    { q: "3 Ã— [[2, 1], [4, 3]] = ?", opts: ["[[6,3],[12,9]]","[[5,4],[7,6]]","[[2,1],[4,3]]","[[6,1],[4,3]]"], ans: 0 },
+    { q: "Penentu matriks 2Ã—2 [[a,b],[c,d]] ialah...", opts: ["ad âˆ’ bc","ad + bc","ab + cd","ac + bd"], ans: 0 },
+    { q: "Jika det = 0, matriks songsang...", opts: ["Tidak wujud","Wujud","Sama dengan 0","Merge"], ans: 0 },
+    { q: "Matriks identiti I mempunyai...", opts: ["Unsur 1 pada pepenjuru, 0 elsewhere","Semua 1","Semua 0","Simetri"], ans: 0 },
+    { q: "Matriks A Ã— songsang Aâ»Â¹ = ?", opts: ["I (matriks identiti)","A","0","AÂ²"], ans: 0 },
+    { q: "Unsur aâ‚‚â‚ƒ dalam [[1,5],[8,4],[2,9]].", opts: ["4","9","2","8"], ans: 0 },
+    { q: "A = B jika...", opts: ["Sama peringkat dan unsur sepadan sama","Mempunyai penentu sama","Kedua-duanya matriks 2Ã—2","Mempunyai songsang"], ans: 0 },
+    { q: "2 matriks boleh ditambah jika...", opts: ["Sama peringkat","Songsang antara satu sama lain","Determinan sama","Kuasa dua"], ans: 0 },
+    { q: "Peringkat [[a,b],[c,d]].", opts: ["2Ã—2","2Ã—1","1Ã—2","1Ã—1"], ans: 0 },
+    { q: "Cari penentu [[2, 4], [1, 3]].", opts: ["2","6","10","âˆ’2"], ans: 0 },
+    { q: "Matriks segi empat sama mempunyai...", opts: ["Bil. baris = bil. lajur","Semua unsur sama","det = 1","Tiada songsang"], ans: 0 },
+    { q: "Aâ»Â¹ = (1/det A) Ã— [[d, âˆ’b],[âˆ’c, a]] untuk [[3,1],[2,4]].", opts: ["1/10 Ã— [[4,âˆ’1],[âˆ’2,3]]","1/10 Ã— [[3,âˆ’1],[âˆ’2,4]]","1/10 Ã— [[4,1],[2,3]]","1/12 Ã— [[4,âˆ’1],[âˆ’2,3]]"], ans: 0 },
+  ],
+
+  // PAGE 1: Kuasa Dua & Kuasa Tiga Sempurna
+  kuasa: [
+    { q: "Kuasa dua sempurna: 1, 4, 9, 16, 25, ?", opts: ["36","35","32","49"], ans: 0 },
+    { q: "Kuasa tiga sempurna: 1, 8, 27, 64, ?", opts: ["125","100","121","216"], ans: 0 },
+    { q: "1Â² = ?", opts: ["1","2","0","âˆ’1"], ans: 0 },
+    { q: "3Â² = ?", opts: ["9","6","12","3"], ans: 0 },
+    { q: "4Â³ = ?", opts: ["64","12","43","48"], ans: 0 },
+    { q: "5Â² = ?", opts: ["25","10","15","20"], ans: 0 },
+    { q: "âˆš144 = ?", opts: ["12","11","14","13"], ans: 0 },
+    { q: "Â³âˆš27 = ?", opts: ["3","9","6","2"], ans: 0 },
+    { q: "2Â³ = ?", opts: ["8","6","12","4"], ans: 0 },
+    { q: "6Â² = ?", opts: ["36","12","63","6"], ans: 0 },
+    { q: "7Â² = ?", opts: ["49","14","42","7"], ans: 0 },
+    { q: "3Â³ = ?", opts: ["27","9","6","12"], ans: 1 },
+    { q: "Punca kuasa dua bagi 144.", opts: ["12","14","11","13"], ans: 0 },
+    { q: "Punca kuasa tiga bagi 125.", opts: ["5","25","15","3"], ans: 0 },
+    { q: "Kuasa dua sempurna yang seterusnya selepas 36.", opts: ["49","45","48","50"], ans: 0 },
+  ],
+
+  // PAGE 1: Nisbah, Kadar dan Kadaran
+  nisbah: [
+    { q: "Nisbah x : y = 3 : 5 dan x = 9, cari y.", opts: ["15","5","10","3"], ans: 0 },
+    { q: "Nisbah a : b = 2 : 3 dan jumlah a + b = 25, cari a.", opts: ["10","15","8","12"], ans: 0 },
+    { q: "Kadar = nilai perubahan bagi setiap...", opts: ["1 unit","10 unit","100 unit","Perubahan itu sendiri"], ans: 0 },
+    { q: "Jika nisbah 4 : 7 dan nilai pertama = 20, nilai kedua = ?", opts: ["35","28","14","7"], ans: 0 },
+    { q: "Kadaran: a/b = c/d. Apakah bentuk silang?", opts: ["ad = bc","ac = bd","ab = cd","a + b = c + d"], ans: 0 },
+    { q: "Nisbah 1 : 4 sama dengan 25% ?", opts: ["Betul","Salah","Bergantung","50%"], ans: 0 },
+    { q: "Jika x : y = 3 : 4 dan x + y = 28, cari y.", opts: ["16","12","20","8"], ans: 0 },
+    { q: "Perkadaran: a:b = c:d bermaksud...", opts: ["a/b = c/d","aÃ—b = cÃ—d","a + b = c + d","a âˆ’ b = c âˆ’ d"], ans: 0 },
+    { q: "Nisbah perimeter : Jejari = ?, untuk bulatan.", opts: ["2Ï€ : 1","Ï€ : 1","1 : 2Ï€","Ï€ : 2"], ans: 0 },
+    { q: "Jika kadar = 60 km/j, maka dalam 2 jam perjalanan = ?", opts: ["120 km","30 km","62 km","58 km"], ans: 0 },
+  ],
+
+  // PAGE 4: Fungsi (bab 1 Ting 4)
+  fungsi: [
+    { q: "Diberi f(x) = x + 3, cari fâ»Â¹(x).", opts: ["x âˆ’ 3","x + 3","3 âˆ’ x","3x"], ans: 0 },
+    { q: "Diberi f(x) = 2x âˆ’ 1, cari f(3).", opts: ["5","7","4","6"], ans: 0 },
+    { q: "fg(x) bermaksud...", opts: ["f(g(x))","f(x) + g(x)","f(x) Ã— g(x)","f(x) âˆ’ g(x)"], ans: 0 },
+    { q: "Diberi f(x) = 3x + 2, cari fâ»Â¹(8).", opts: ["2","3","1","4"], ans: 0 },
+    { q: "fâ»Â¹(x) dipanggil...", opts: ["Fungsi songsang","Fungsi darab","Fungsi tambah","Fungsi kuadratik"], ans: 0 },
+    { q: "fg(2) jika f(x) = x + 1 dan g(x) = 3x.", opts: ["7","9","6","5"], ans: 0 },
+    { q: "Diberi f(x) = 5x, nilai fâ»Â¹(25).", opts: ["5","25","125","1"], ans: 0 },
+    { q: "ffâ»Â¹(x) sentiasa sama dengan...", opts: ["x","1","0","f(x)"], ans: 0 },
+    { q: "Diberi g(x) = xÂ², cari g(4).", opts: ["16","8","4","2"], ans: 0 },
+    { q: "fg(3) jika f(x) = 2x dan g(x) = x + 4.", opts: ["14","10","12","8"], ans: 0 },
+    { q: "Cari gubahan fg(x) jika f(x) = x + 2 dan g(x) = 3x.", opts: ["3x + 2","2x + 3","4x","x + 5"], ans: 0 },
+    { q: "fg(x) = f(g(x)). Kira dalam urutan...", opts: ["g dulu, kemudian f","f dulu, kemudian g","Serentak","Mana-mana"], ans: 0 },
+    { q: "fâ»Â¹(f(x)) = ?", opts: ["x","1","0","f(x)"], ans: 0 },
+    { q: "Jika f(x) = 4x + 1, cari f(2).", opts: ["9","8","7","6"], ans: 0 },
+    { q: "Diberi f(x) = x âˆ’ 5, maka fâ»Â¹(x) = x + 5. Betul atau salah?", opts: ["Betul","Salah","Bergantung","Tak pasti"], ans: 0 },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // APP STATE
 // ---------------------------------------------------------------------------
 const state = {
-  view: "home",        // home | learning | topics | lesson | practice | quiz | game | dragdrop | wordmatch
+  view: "home",        // home | learning | topics | lesson | practice | quiz | game | dragdrop | wordmatch | scoreboard
   topic: "linear",    // key into DATA
   tingkatan: "3",     // id from TINGKATAN_DATA
 };
@@ -600,7 +970,7 @@ function renderNav() {
     ${navBtn("Utama",     ICONS.home,     "home",     ["home"])}
     ${navBtn("Pelajaran", ICONS.learning, "learning", ["learning", "topics", "lesson"])}
     ${navBtn("Latihan",   ICONS.practice, "practice", ["practice", "quiz"])}
-    ${navBtn("Permainan", ICONS.game,     "game",     ["game", "dragdrop", "wordmatch"])}
+    ${navBtn("Permainan", ICONS.game,     "game",     ["game", "dragdrop", "wordmatch", "bubblepop", "scoreboard"])}
   `;
 }
 
@@ -936,7 +1306,7 @@ function renderPractice() {
     const cards = tData.topics.map(key => {
       const d = DATA[key];
       return `
-        <button class="quiz-topic-card" onclick="App.go('quiz', '${key}')">
+        <button class="quiz-topic-card" onclick="startQuiz('${key}')">
           <div class="quiz-topic-icon ${d.iconClass}">${d.icon}</div>
           <div class="quiz-topic-title">${d.title}</div>
           <div class="quiz-topic-meta">10 soalan · Pilihan berganda</div>
@@ -979,46 +1349,410 @@ function renderPractice() {
 }
 
 // ---------------------------------------------------------------------------
-// QUIZ mockup — answers not scored (preview intent)
+// QUIZ STATE
 // ---------------------------------------------------------------------------
-function renderQuiz() {
-  const t = DATA[state.topic];
-  const letters = ["A", "B", "C", "D"];
-  const options = t.opts
-    .map(
-      (opt, i) => `
-    <div class="quiz-option ${i === 1 ? "selected" : ""}">
+const QuizState = {
+  questions: [],
+  current: 0,
+  score: 0,
+  answers: [],   // -1 = unanswered, 0..3 = selected index
+  answered: false,
+  topic: '',
+  started: false,
+};
+
+// Fisher-Yates shuffle
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz(topic) {
+  const pool = QUIZ_QUESTIONS[topic] || [];
+  // Pick 5 random questions
+  const picked = shuffle(pool).slice(0, 5);
+  QuizState.questions = picked;
+  QuizState.current = 0;
+  QuizState.score = 0;
+  QuizState.answers = new Array(picked.length).fill(-1);
+  QuizState.answered = false;
+  QuizState.topic = topic;
+  QuizState.started = true;
+  App.go('quiz', topic);
+}
+
+function renderQuizPage() {
+  const { questions, current, answers, answered } = QuizState;
+  if (current >= questions.length) {
+    // Show results screen
+    const score = QuizState.score;
+    const total = questions.length;
+    const pct = Math.round((score / total) * 100);
+    const topic = DATA[QuizState.topic];
+    let emoji = '😢';
+    let msg = 'Cuba lagi!';
+    if (pct >= 80) { emoji = '🎉'; msg = 'Hebat!'; }
+    else if (pct >= 60) { emoji = '😊'; msg = 'Bagus!'; }
+    else if (pct >= 40) { emoji = '🙂'; msg = 'Tidak bahaya!'; }
+    return `
+    <div class="quiz-page">
+      <div class="results-card">
+        <div class="results-emoji">${emoji}</div>
+        <div class="results-title">${msg}</div>
+        <div class="results-score">
+          <span class="results-correct">${score}</span>
+          <span class="results-div">/</span>
+          <span class="results-total">${total}</span>
+        </div>
+        <div class="results-pct">${pct}%</div>
+        <div class="results-topic">${topic?.title || 'Kuiz'}</div>
+        <div class="results-actions">
+          <button class="quiz-btn-retry" onclick="startQuiz('${QuizState.topic}')">🔄 Cuba Lagi</button>
+          <button class="quiz-btn-home" onclick="App.go('practice')">← Menu Latihan</button>
+        </div>
+        ${pct >= 60 ? `<button class="btn-trophy" onclick="App.go('scoreboard')">🏆 Carta Markah</button>` : ''}
+      </div>
+    </div>`;
+  }
+
+  const q = questions[current];
+  const letters = ['A', 'B', 'C', 'D'];
+  const pct = Math.round(((current) / questions.length) * 100);
+  const selectedIdx = answers[current];
+  const isAnswered = answered && selectedIdx !== -1;
+  const isCorrect = isAnswered && selectedIdx === q.ans;
+
+  // Build options HTML based on answer state
+  let options;
+  if (!isAnswered) {
+    // Not answered yet — options are clickable
+    options = q.opts.map((opt, i) => `
+    <div class="quiz-option" onclick="selectOption(${i})">
       <div class="quiz-option-letter">${letters[i]}</div>
       <div class="quiz-option-text">${opt}</div>
-    </div>`,
-    )
-    .join("");
+    </div>`).join('');
+  } else {
+    // Answered — show locked options with correct/wrong highlight
+    options = q.opts.map((opt, i) => {
+      let cls = 'quiz-option';
+      if (i === selectedIdx) {
+        cls += isCorrect ? ' selected-correct' : ' selected-wrong';
+      } else if (!isCorrect && i === q.ans) {
+        cls += ' selected-correct'; // show correct answer when wrong
+      } else if (i !== selectedIdx && i !== q.ans) {
+        cls += ' dimmed';
+      }
+      return `<div class="${cls}">
+        <div class="quiz-option-letter">${letters[i]}</div>
+        <div class="quiz-option-text">${opt}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Bottom action button
+  let actionBtn;
+  if (!isAnswered) {
+    // No answer yet — show "Seterusnya" (skip) button
+    actionBtn = `<button class="quiz-btn-next" onclick="advanceQuestion()">Seterusnya →</button>`;
+  } else if (isCorrect) {
+    // Correct — show "Seterusnya" to go to next question
+    actionBtn = current < questions.length - 1
+      ? `<button class="quiz-btn-next" onclick="advanceQuestion()">Seterusnya →</button>`
+      : `<button class="quiz-btn-next" onclick="advanceQuestion()">Lihat Keputusan →</button>`;
+  } else {
+    // Wrong — show "Cuba Lagi!" button
+    actionBtn = `<button class="quiz-btn-retry" onclick="retryQuestion()">🔄 Cuba Lagi!</button>`;
+  }
+
+  // Show correct answer hint when wrong
+  let correctHint = '';
+  if (isAnswered && !isCorrect) {
+    correctHint = `<div class="quiz-correct-hint">✅ Jawapan betulkan: <strong>${letters[q.ans]}. ${q.opts[q.ans]}</strong></div>`;
+  }
 
   return `
     <div class="quiz-page">
       <button class="back-btn" onclick="App.go('practice')">${ICONS.arrowLeft} Keluar kuiz</button>
       <div class="quiz-header-row">
-        <div class="quiz-header-title">${t.title}</div>
-        <div class="quiz-header-count">Soalan 3 daripada 10</div>
+        <div class="quiz-header-title">${DATA[QuizState.topic]?.title || 'Kuiz'}</div>
+        <div class="quiz-header-count">Soalan ${current + 1} daripada ${questions.length}</div>
       </div>
-      <div class="progress-track"><div class="progress-fill"></div></div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="quiz-score-display">⭐ Markah: ${QuizState.score}</div>
 
       <div class="quiz-card">
         <div class="quiz-question-label">Soalan</div>
-        <div class="quiz-question">${t.question}</div>
+        <div class="quiz-question">${q.q}</div>
+        ${correctHint}
         <div class="quiz-options">${options}</div>
         <div class="quiz-actions">
-          <button class="quiz-btn-prev">Sebelumnya</button>
-          <button class="quiz-btn-next">Seterusnya →</button>
+          <button class="quiz-btn-prev" ${current === 0 ? 'disabled' : ''} onclick="prevQuestion()">← Sebelumnya</button>
+          ${actionBtn}
         </div>
       </div>
-      <div class="mockup-note">Pratonton mockup · jawapan tidak dinilai</div>
-    </div>
-  `;
+    </div>`;
+}
+
+// Retry current question (called when student clicks "Cuba Lagi")
+function retryQuestion() {
+  QuizState.answered = false;
+  // Reset the answer for current question so they can try again
+  QuizState.answers[QuizState.current] = -1;
+  // Re-render the whole quiz page
+  document.getElementById("app").innerHTML = renderQuizPage();
+}
+
+function selectOption(idx) {
+  if (QuizState.answered) return; // prevent double-click
+  QuizState.answers[QuizState.current] = idx;
+  const q = QuizState.questions[QuizState.current];
+  const isCorrect = idx === q.ans;
+
+  if (isCorrect) {
+    QuizState.answered = true;
+    QuizState.score++;
+    SFX.correct();
+    showPopup('✅ Betul!', 'tahniah');
+    setTimeout(() => {
+      const card = document.querySelector('.quiz-card');
+      if (card) card.classList.add('card-wiggle');
+    }, 50);
+  } else {
+    SFX.wrong();
+    showPopup(`❌ Salah! Cuba lagi!`, 'salah');
+    setTimeout(() => {
+      const card = document.querySelector('.quiz-card');
+      if (card) card.classList.add('card-shake');
+    }, 50);
+  }
+
+  // Re-render the whole quiz page to show correct/wrong state + appropriate button
+  document.getElementById("app").innerHTML = renderQuizPage();
+}
+
+function advanceQuestion() {
+  QuizState.answered = false;
+  if (QuizState.current < QuizState.questions.length - 1) {
+    QuizState.current++;
+  } else {
+    // Last question — show results
+    QuizState.current = QuizState.questions.length;
+  }
+  // Re-render the whole quiz page
+  document.getElementById("app").innerHTML = renderQuizPage();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextQuestion() {
+  advanceQuestion();
+}
+
+function prevQuestion() {
+  if (QuizState.current > 0) {
+    QuizState.current--;
+    // Restore answered state based on whether this question was already answered
+    QuizState.answered = QuizState.answers[QuizState.current] !== -1;
+    renderQuizPage();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showPopup(text, type) {
+  const existing = document.getElementById('quiz-popup');
+  if (existing) existing.remove();
+  const div = document.createElement('div');
+  div.id = 'quiz-popup';
+  div.className = `quiz-popup ${type}`;
+  div.innerHTML = `<div class="popup-text">${text}</div>`;
+  document.body.appendChild(div);
+  setTimeout(() => div.classList.add('popup-show'), 10);
+  setTimeout(() => { div.classList.remove('popup-show'); setTimeout(() => div.remove(), 400); }, 1200);
+}
+
+// Replace renderQuiz with working version
+function renderQuiz() {
+  // If no quiz active, start one for current topic
+  if (!QuizState.started) {
+    startQuiz(state.topic);
+    return '';
+  }
+  return renderQuizPage();
 }
 
 // ---------------------------------------------------------------------------
-// GAME — landing + drag&drop / word match mockups
+// SCOREBOARD
+// ---------------------------------------------------------------------------
+const ScoreBoard = {
+  data: JSON.parse(localStorage.getItem('algebrahub_scores') || '[]'),
+  save() {
+    localStorage.setItem('algebrahub_scores', JSON.stringify(this.data));
+  },
+  add(topic, score, total) {
+    this.data.unshift({ topic, score, total, date: new Date().toLocaleDateString('ms-MY'), pct: Math.round((score/total)*100) });
+    if (this.data.length > 50) this.data = this.data.slice(0, 50);
+    this.save();
+  },
+  clear() {
+    this.data = [];
+    this.save();
+  }
+};
+
+function renderScoreBoard() {
+  const entries = ScoreBoard.data;
+  if (entries.length === 0) {
+    return `
+    <div class="scoreboard-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="section-heading">
+        <h1>🏆 Carta <span class="g">Markah</span></h1>
+        <p>Semua keputusan latihan anda disimpan di sini.</p>
+      </div>
+      <div class="scoreboard-empty">
+        <div class="scoreboard-empty-icon">📋</div>
+        <div>Belum ada keputusan lagi.</div>
+        <div class="scoreboard-empty-sub">Cuba buat latihan dulu!</div>
+        <button class="quiz-btn-next" onclick="App.go('practice')" style="margin-top:18px">Mula Latihan →</button>
+      </div>
+    </div>`;
+  }
+
+  const rows = entries.map((e, i) => {
+    const pct = e.pct;
+    let color = '#EF4444';
+    if (pct >= 80) color = '#10B981';
+    else if (pct >= 60) color = '#F59E0B';
+    else if (pct >= 40) color = '#3B82F6';
+    return `
+    <div class="sb-row">
+      <div class="sb-rank">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i+1}`}</div>
+      <div class="sb-topic">${DATA[e.topic]?.title || e.topic}</div>
+      <div class="sb-score">${e.score}/${e.total}</div>
+      <div class="sb-pct" style="color:${color}">${pct}%</div>
+      <div class="sb-date">${e.date}</div>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="scoreboard-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="section-heading">
+        <h1>🏆 Carta <span class="g">Markah</span></h1>
+        <p>Semua keputusan latihan anda disimpan di sini.</p>
+      </div>
+      <div class="scoreboard-header-row">
+        <div class="sb-col-title">Topik</div>
+        <div class="sb-col-title">Skor</div>
+        <div class="sb-col-title">Peratus</div>
+        <div class="sb-col-title">Tarikh</div>
+      </div>
+      <div class="sb-list">${rows}</div>
+      <div class="sb-clear-wrap">
+        <button class="sb-clear-btn" onclick="if(confirm('Padam semua rekod?')){ScoreBoard.clear();render();}">🗑 Padam Rekod</button>
+      </div>
+    </div>`;
+}
+
+// When quiz finishes, save score
+const _origGo = App.go.bind(App);
+App.go = function(view, param) {
+  if (QuizState.started && view !== 'quiz' && view !== 'scoreboard') {
+    // Navigating away — save score if quiz was in progress
+    if (QuizState.questions.length > 0) {
+      ScoreBoard.add(QuizState.topic, QuizState.score, QuizState.questions.length);
+    }
+    QuizState.started = false;
+  }
+  _origGo(view, param);
+};
+
+// ---------------------------------------------------------------------------
+// GAME DATA — drag & drop terms + definitions (from notes pages)
+// ---------------------------------------------------------------------------
+const GAME_DATA = {
+  dragdrop: [
+    { term: "Kecerunan", def: "Nisbah jarak mencancang dengan jarak mengufuk garis", icon: "📈" },
+    { term: "Punca", def: "Nilai x di mana graf memotong paksi-x", icon: "✖" },
+    { term: "Pintasan-y", def: "Nilai y di mana garis memotong paksi-y", icon: "📍" },
+    { term: "Pekali", def: "Nombor yang mendarab pemboleh ubah", icon: "🔢" },
+    { term: "Pemalar", def: "Nilai tetap tanpa pemboleh ubah", icon: "🔒" },
+    { term: "Parabola", def: "Graf berbentuk U bagi fungsi kuadratik", icon: "⌣" },
+    { term: "Indeks", def: "Kuasa atau eksponen suatu nombor", icon: "ⁿ" },
+    { term: "Matriks", def: "Susunan nombor dalam baris dan lajur", icon: "▦" },
+    { term: "Punca Kuasa Dua", def: "Nombor yang didarab dengan dirinya sendiri", icon: "√" },
+    { term: "Kuasa Dua Sempurna", def: "Hasil darab nombor dengan dirinya sendiri: 1, 4, 9, 16, 25...", icon: "²" },
+    { term: "Nisbah", def: "Perbandingan dua kuantiti, contoh a : b", icon: "⚖" },
+  ],
+  wordmatch: [
+    { term: "Cerun", def: "Kecerunan garis, naik atas turun", icon: "📐" },
+    { term: "Punca", def: "Di mana graf memotong paksi-x", icon: "✖" },
+    { term: "Puncak", def: "Titik pusingan maksimum atau minimum parabola", icon: "⬆" },
+    { term: "Pemalar", def: "Istilah tanpa pemboleh ubah", icon: "🔒" },
+    { term: "Pintasan-y", def: "Titik garis memotong paksi-y", icon: "📍" },
+    { term: "Indeks", def: "Kuasa dalam pendaraban berulang (aⁿ)", icon: "ⁿ" },
+    { term: "Faktor", def: "Pembahagi yang tepat bagi suatu ungkapan", icon: "÷" },
+    { term: "Ubahan", def: "Hubungan antara dua kuantiti yang berubah", icon: "↗" },
+    { term: "Kadar", def: "Nilai perubahan bagi setiap 1 unit", icon: "⚡" },
+    { term: "Kadaran", def: "a/b = c/d → ad = bc", icon: "📐" },
+    { term: "FSTB", def: "Faktor Sepunya Terbesar", icon: "🔢" },
+    { term: "Perkara Rumus", def: "Pemboleh ubah yang berdiri sendiri di hadapan persamaan", icon: "S=" },
+  ],
+  // 3rd game: algebra bubble pop
+  bubblepop: [
+    // Ungkapan Algebra
+    { q: "Kembangkan 3(2x + 4) = ?", ans: "6x + 12", alt: ["3x + 12","6x + 4","6x + 7"] },
+    { q: "Faktorkan 6x + 9 = ?", ans: "3(2x + 3)", alt: ["6(x + 9)","2(3x + 4)","3(2x − 3)"] },
+    { q: "Kembangkan −2(3x + 4) = ?", ans: "−6x − 8", alt: ["−6x + 8","6x − 8","−6x + 4"] },
+    { q: "Faktorkan x² − 9 = ?", ans: "(x−3)(x+3)", alt: ["(x−9)(x+1)","(x−3)²","(x+3)²"] },
+    // Kuasa Dua & Tiga
+    { q: "Nilai 2³ = ?", ans: "8", alt: ["6","9","5"] },
+    { q: "³√27 = ?", ans: "3", alt: ["9","6","2"] },
+    { q: "√144 = ?", ans: "12", alt: ["11","14","13"] },
+    { q: "4² = ?", ans: "16", alt: ["8","6","12"] },
+    // Indeks
+    { q: "Nilai 5⁰ = ?", ans: "1", alt: ["0","5","10"] },
+    { q: "Permudahkan x⁶ ÷ x² = ?", ans: "x⁴", alt: ["x⁸","x³","x⁻⁴"] },
+    { q: "Nilai 2⁻³ = ?", ans: "1/8", alt: ["−8","8","−1/8"] },
+    { q: "Permudahkan (x³)² = ?", ans: "x⁶", alt: ["x⁵","x⁹","x¹"] },
+    // Garis Lurus
+    { q: "Kecerunan y = 3x − 5 = ?", ans: "3", alt: ["−5","5","−3"] },
+    { q: "Pintasan-y bagi y = 2x + 7 = ?", ans: "7", alt: ["2","−7","14"] },
+    // Rumus
+    { q: "A = ½bh → h = ?", ans: "2A/b", alt: ["A/2b","Ab/2","2b/A"] },
+    { q: "v = u + at → a = ?", ans: "(v−u)/t", alt: ["v−u+t","v/u−t","v+t/u"] },
+    // Kuadratik
+    { q: "Faktorkan x² − 5x + 6 = ?", ans: "(x−2)(x−3)", alt: ["(x−1)(x−6)","(x+2)(x+3)","(x−3)²"] },
+    { q: "Selesaikan x² = 25.", ans: "x = ±5", alt: ["x = 5","x = 25","x = ±25"] },
+    { q: "Punca x² − 4 = 0.", ans: "x = ±2", alt: ["x = 2","x = 4","x = ±4"] },
+    // Matriks
+    { q: "det [[3,1],[2,4]] = ?", ans: "10", alt: ["12","14","8"] },
+    { q: "det [[4,3],[2,1]] = ?", ans: "−2", alt: ["2","10","−10"] },
+    // Sistem Persamaan
+    { q: "Selesaikan: x + y = 6, x − y = 2. x = ?", ans: "4", alt: ["2","3","6"] },
+    // Ubahan
+    { q: "y ∝ x. Jika y = 12, x = 4, k = ?", ans: "3", alt: ["48","4","8"] },
+    // Ketaksamaan
+    { q: "Selesaikan 3x − 6 > 9.", ans: "x > 5", alt: ["x > 1","x > 3","x < 5"] },
+    // Fungsi
+    { q: "fg(2) jika f(x) = x+1, g(x) = 3x.", ans: "7", alt: ["9","6","5"] },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// GAME STATE
+// ---------------------------------------------------------------------------
+const GameState = {
+  dragdrop: { score: 0, matched: 0, total: 0, items: [], selected: null },
+  wordmatch: { score: 0, matched: 0, total: 0, items: [], selTerm: null, selDef: null },
+  bubblepop: { score: 0, qIndex: 0, questions: [], selected: null, answered: false },
+};
+
+// ---------------------------------------------------------------------------
+// GAME — landing
 // ---------------------------------------------------------------------------
 function renderGame() {
   return `
@@ -1026,32 +1760,40 @@ function renderGame() {
       <h1>Algebra <span class="g">Permainan</span></h1>
       <p>Belajar sambil bermain — pilih permainan untuk dimulakan.</p>
     </div>
+    <div class="scoreboard-link-wrap">
+      <button class="scoreboard-link-btn" onclick="App.go('scoreboard')">
+        🏆 Carta Markah
+      </button>
+    </div>
     <div class="games-grid">
-      <button class="game-card" onclick="App.go('dragdrop')">
+      <button class="game-card" onclick="initDragDrop();App.go('dragdrop')">
         <div class="game-card-banner dragdrop">
-          <div class="dd-chip">cerun</div>
-          <div class="dd-chip-drop">drop</div>
+          <div class="game-banner-icon">🖱️</div>
+          <div class="game-banner-label">SERET & LEPAS</div>
         </div>
         <div class="game-card-body">
           <div class="game-card-title">Seret &amp; Lepas</div>
           <div class="game-card-desc">Seret setiap istilah algebra ke definisi yang sepadan.</div>
         </div>
       </button>
-      <button class="game-card" onclick="App.go('wordmatch')">
+      <button class="game-card" onclick="initWordMatch();App.go('wordmatch')">
         <div class="game-card-banner wordmatch">
-          <div class="wm-stack">
-            <div class="wm-chip">Cerun</div>
-            <div class="wm-chip">Punca</div>
-          </div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.5"><path d="M2 12h36M2 28h36" stroke-dasharray="4 4"/></svg>
-          <div class="wm-stack">
-            <div class="wm-chip">naik/turun</div>
-            <div class="wm-chip">x-sifar</div>
-          </div>
+          <div class="game-banner-icon">🎯</div>
+          <div class="game-banner-label">PADANAN</div>
         </div>
         <div class="game-card-body">
           <div class="game-card-title">Padanan Kata</div>
           <div class="game-card-desc">Hubungkan setiap istilah di kiri dengan maknanya di kanan.</div>
+        </div>
+      </button>
+      <button class="game-card" onclick="initBubblePop();App.go('bubblepop')">
+        <div class="game-card-banner bubblepop">
+          <div class="game-banner-icon">🎈</div>
+          <div class="game-banner-label">BUBBLE POP</div>
+        </div>
+        <div class="game-card-body">
+          <div class="game-card-title">Bubble Pop</div>
+          <div class="game-card-desc">Pasang jawapan yang betul untuk memecahkan gelembung!</div>
         </div>
       </button>
     </div>
@@ -1075,78 +1817,350 @@ function initGameOwl() {
   initPageOwl("Sudahkah anda bersedia? Jom kita bermain.", "main-audio");
 }
 
+// Fisher-Yates shuffle
+function gShuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ---------------------------------------------------------------------------
+// DRAG & DROP — fully working
+// ---------------------------------------------------------------------------
+function initDragDrop() {
+  const pool = gShuffle(GAME_DATA.dragdrop).slice(0, 6);
+  const defs = gShuffle(pool.map(i => ({ ...i })));
+  GameState.dragdrop = {
+    items: pool,
+    defs,
+    matched: 0,
+    total: pool.length,
+    score: 0,
+    dragged: null,
+  };
+}
+
 function renderDragDrop() {
+  const gs = GameState.dragdrop;
+  if (!gs.items.length) { initDragDrop(); return renderDragDrop(); }
+
+  const termsHTML = gs.items.map((item, i) => {
+    const matched = gs.defs.find(d => d.term === item.term && d.matched);
+    return matched
+      ? `<div class="dd-term dd-term-used" title="${item.def}">${item.icon} ${item.term} ✓</div>`
+      : `<div class="dd-term dd-term-active" draggable="true" data-term="${item.term}"
+          ondragstart="ddDragStart(event)" ondragend="ddDragEnd(event)">${item.icon} ${item.term}</div>`;
+  }).join('');
+
+  const defsHTML = gs.defs.map((item, i) => {
+    if (item.matched) {
+      return `<div class="dd-target dd-target-done">
+        <div class="dd-target-icon">${item.icon}</div>
+        <div class="dd-target-def">${item.def}</div>
+        <div class="dd-target-matched">${item.term} ✓</div>
+      </div>`;
+    }
+    return `<div class="dd-target ${gs.dragover === i ? 'dd-target-over' : ''}"
+      ondragover="ddDragOver(event,${i})" ondrop="ddDrop(event,${i})"
+      ondragleave="ddDragLeave(event)">
+      <div class="dd-target-icon">${item.icon}</div>
+      <div class="dd-target-def">${item.def}</div>
+      <div class="dd-drop-zone">⬇ Seret ke sini</div>
+    </div>`;
+  }).join('');
+
+  const done = gs.matched === gs.total;
   return `
     <div class="game-page">
-      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali ke permainan</button>
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
       <div class="game-page-header">
-        <div class="game-page-title">Seret &amp; Lepas</div>
+        <div class="game-page-title">🖱️ Seret &amp; Lepas</div>
         <div class="stat-badges">
-          <div class="stat-badge gold">⭐ Markah 20</div>
-          <div class="stat-badge purple">⏱ 01:24</div>
+          <div class="stat-badge gold">⭐ ${gs.score} markah</div>
+          <div class="stat-badge purple">✅ ${gs.matched}/${gs.total}</div>
         </div>
       </div>
 
-      <div class="dd-card">
-        <div class="dd-instructions">Seret istilah ke kotak yang sepadan</div>
-        <div class="dd-bank">
-          <div class="dd-term">titik potong-y</div>
-          <div class="dd-term">parabola</div>
-          <div class="dd-term">pekali</div>
-        </div>
-        <div class="dd-targets">
-          <div class="dd-target">
-            <div class="dd-target-def">Nilai y di mana garis memotong paksi-y</div>
-            <div class="dd-drop-zone">drop di sini</div>
+      ${done ? `
+        <div class="game-complete-card">
+          <div class="game-complete-emoji">🎉</div>
+          <div class="game-complete-title">Tahniah!</div>
+          <div class="game-complete-score">Markah: ${gs.score} / ${gs.total * 10}</div>
+          <div class="game-complete-sub">Semua istilah telah dipadankan!</div>
+          <div class="game-complete-actions">
+            <button class="game-btn-play" onclick="initDragDrop();render();">🔄 Main Lagi</button>
+            <button class="game-btn-back" onclick="App.go('game')">← Menu</button>
           </div>
-          <div class="dd-target filled">
-            <div class="dd-target-def">Graf berbentuk U bagi kuadratik</div>
-            <div class="dd-drop-zone filled">parabola ✓</div>
-          </div>
-          <div class="dd-target">
-            <div class="dd-target-def">Nombor yang didarab dengan pembolehubah</div>
-            <div class="dd-drop-zone">drop di sini</div>
-          </div>
-          <div class="dd-target">
-            <div class="dd-target-def">Di mana fungsi sama dengan sifar</div>
-            <div class="dd-drop-zone">drop di sini</div>
-          </div>
-        </div>
-      </div>
-      <div class="mockup-note">Pratonton mockup · interaksi adalah illustratif</div>
-    </div>
-  `;
+        </div>` : `
+        <div class="dd-card">
+          <div class="dd-instructions">Seret istilah di bawah ke kotak definisi yang sepadan</div>
+          <div class="dd-bank">${termsHTML}</div>
+          <div class="dd-targets">${defsHTML}</div>
+        </div>`}
+    </div>`;
+}
+
+function ddDragStart(e) {
+  GameState.dragdrop.dragged = e.target.dataset.term;
+  e.target.classList.add('dd-term-dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+function ddDragEnd(e) {
+  e.target.classList.remove('dd-term-dragging');
+  GameState.dragdrop.dragover = null;
+}
+function ddDragOver(e, i) {
+  e.preventDefault();
+  GameState.dragdrop.dragover = i;
+  e.dataTransfer.dropEffect = 'move';
+}
+function ddDragLeave(e) {}
+function ddDrop(e, defIndex) {
+  e.preventDefault();
+  const gs = GameState.dragdrop;
+  const term = gs.dragged;
+  if (!term) return;
+  const def = gs.defs[defIndex];
+  if (def.matched) return;
+
+  if (def.term === term) {
+    def.matched = true;
+    gs.matched++;
+    gs.score += 10;
+    SFX.correct();
+    showPopup('✅ Betul!', 'tahniah');
+  } else {
+    gs.score = Math.max(0, gs.score - 2);
+    SFX.wrong();
+    showPopup('❌ Cuba lagi!', 'salah');
+  }
+  gs.dragged = null;
+  gs.dragover = null;
+  render();
+}
+
+// ---------------------------------------------------------------------------
+// WORD MATCH — fully working
+// ---------------------------------------------------------------------------
+function initWordMatch() {
+  const pool = gShuffle(GAME_DATA.wordmatch).slice(0, 6);
+  GameState.wordmatch = {
+    items: pool,
+    matched: 0,
+    total: pool.length,
+    score: 0,
+    selTerm: null,
+    selDef: null,
+    termPairs: pool.map(i => i.term),
+    defPairs: gShuffle(pool.map(i => i.def)),
+  };
 }
 
 function renderWordMatch() {
-  return `
-    <div class="lesson-page">
-      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali ke permainan</button>
-      <div class="game-page-header">
-        <div class="game-page-title">Padanan Kata</div>
-        <div class="stat-badge gold">Dipadankan 2 / 4</div>
-      </div>
+  const gs = GameState.wordmatch;
+  if (!gs.items.length) { initWordMatch(); return renderWordMatch(); }
 
-      <div class="wm-card">
-        <div class="wm-instructions">Tekan istilah, kemudian tekan definisi yang sepadan</div>
-        <div class="wm-columns">
-          <div class="wm-col">
-            <div class="wm-item matched-green">Cerun</div>
-            <div class="wm-item matched-purple">Punca</div>
-            <div class="wm-item term-default">Puncak</div>
-            <div class="wm-item term-default">Pemalar</div>
-          </div>
-          <div class="wm-col">
-            <div class="wm-item matched-purple def-matched">Di mana graf memotong paksi-x</div>
-            <div class="wm-item def-default">Titik pusingan parabola</div>
-            <div class="wm-item matched-green def-matched">Kecerunan, diukur sebagai naik atas turun</div>
-            <div class="wm-item def-default">Istilah tanpa pembolehubah</div>
-          </div>
+  const termsHTML = gs.termPairs.map((term, i) => {
+    const item = gs.items.find(x => x.term === term);
+    const isMatched = gs.items.some(x => x.term === term && x.matched);
+    const isSelected = gs.selTerm === term;
+    if (isMatched) return `<div class="wm-item wm-item-matched">${item.icon} ${term} ✓</div>`;
+    return `<div class="wm-item wm-item-term ${isSelected ? 'wm-item-sel' : ''}" onclick="wmSelectTerm('${term}')">${item.icon} ${term}</div>`;
+  }).join('');
+
+  const defsHTML = gs.defPairs.map((def, i) => {
+    const isMatched = gs.items.some(x => x.def === def && x.matched);
+    const isSelected = gs.selDef === def;
+    const item = gs.items.find(x => x.def === def);
+    if (isMatched) return `<div class="wm-item wm-item-matched wm-item-def">${item.icon} ${def} ✓</div>`;
+    return `<div class="wm-item wm-item-def ${isSelected ? 'wm-item-sel' : ''}" onclick="wmSelectDef('${def}')">${item.icon} ${def}</div>`;
+  }).join('');
+
+  const done = gs.matched === gs.total;
+  return `
+    <div class="game-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="game-page-header">
+        <div class="game-page-title">🎯 Padanan Kata</div>
+        <div class="stat-badges">
+          <div class="stat-badge gold">⭐ ${gs.score} markah</div>
+          <div class="stat-badge purple">✅ ${gs.matched}/${gs.total}</div>
         </div>
       </div>
-      <div class="mockup-note">Pratonton mockup · interaksi adalah illustratif</div>
-    </div>
-  `;
+
+      ${done ? `
+        <div class="game-complete-card">
+          <div class="game-complete-emoji">🎉</div>
+          <div class="game-complete-title">Tahniah!</div>
+          <div class="game-complete-score">Markah: ${gs.score} / ${gs.total * 10}</div>
+          <div class="game-complete-sub">Semua padanan selesai!</div>
+          <div class="game-complete-actions">
+            <button class="game-btn-play" onclick="initWordMatch();render();">🔄 Main Lagi</button>
+            <button class="game-btn-back" onclick="App.go('game')">← Menu</button>
+          </div>
+        </div>` : `
+        <div class="wm-card">
+          <div class="wm-instructions">${gs.selTerm && gs.selDef ? '✔ Padankan sekarang!' : gs.selTerm ? '▶ Pilih definisi di kanan' : gs.selDef ? '▶ Pilih istilah di kiri' : 'Pilih istilah di kiri, kemudian definisi di kanan'}</div>
+          <div class="wm-columns-wm">
+            <div class="wm-col-wm">
+              <div class="wm-col-label">📝 Istilah</div>
+              ${termsHTML}
+            </div>
+            <div class="wm-divider">
+              <svg width="24" height="120" viewBox="0 0 24 120" fill="none" stroke="#C9B6F6" stroke-width="2" stroke-dasharray="4 4"><path d="M4 10h16M4 60h16M4 110h16"/></svg>
+            </div>
+            <div class="wm-col-wm">
+              <div class="wm-col-label">📖 Definisi</div>
+              ${defsHTML}
+            </div>
+          </div>
+        </div>`}
+    </div>`;
+}
+
+function wmSelectTerm(term) {
+  const gs = GameState.wordmatch;
+  if (gs.items.some(x => x.term === term && x.matched)) return;
+  gs.selTerm = gs.selTerm === term ? null : term;
+  if (gs.selTerm && gs.selDef) tryMatchWM();
+  render();
+}
+
+function wmSelectDef(def) {
+  const gs = GameState.wordmatch;
+  if (gs.items.some(x => x.def === def && x.matched)) return;
+  gs.selDef = gs.selDef === def ? null : def;
+  if (gs.selTerm && gs.selDef) tryMatchWM();
+  render();
+}
+
+function tryMatchWM() {
+  const gs = GameState.wordmatch;
+  const term = gs.selTerm;
+  const def = gs.selDef;
+  const item = gs.items.find(x => x.term === term);
+
+  if (item && item.def === def) {
+    item.matched = true;
+    gs.matched++;
+    gs.score += 10;
+    SFX.correct();
+    showPopup('✅ Betul!', 'tahniah');
+  } else {
+    gs.score = Math.max(0, gs.score - 2);
+    SFX.wrong();
+    showPopup('❌ Cuba lagi!', 'salah');
+  }
+  gs.selTerm = null;
+  gs.selDef = null;
+}
+
+// ---------------------------------------------------------------------------
+// BUBBLE POP — fully working
+// ---------------------------------------------------------------------------
+function initBubblePop() {
+  const pool = gShuffle(GAME_DATA.bubblepop);
+  GameState.bubblepop = {
+    questions: pool,
+    qIndex: 0,
+    score: 0,
+    selected: null,
+    answered: false,
+  };
+}
+
+function renderBubblePop() {
+  const gs = GameState.bubblepop;
+  if (gs.qIndex >= gs.questions.length) {
+    const pct = Math.round((gs.score / gs.questions.length) * 10);
+    let emoji = '😢', msg = 'Cuba Lagi!';
+    if (pct >= 8) { emoji = '🎉'; msg = 'Hebat!'; }
+    else if (pct >= 6) { emoji = '😊'; msg = 'Bagus!'; }
+    else if (pct >= 4) { emoji = '🙂'; msg = 'Tidak Bad!'; }
+    return `
+    <div class="game-page">
+      <div class="game-complete-card">
+        <div class="game-complete-emoji">${emoji}</div>
+        <div class="game-complete-title">${msg}</div>
+        <div class="game-complete-score">Skor: ${gs.score} / ${gs.questions.length}</div>
+        <div class="game-complete-sub">${gs.questions.length} soalan dijawab!</div>
+        <div class="game-complete-actions">
+          <button class="game-btn-play" onclick="initBubblePop();render();">🔄 Main Lagi</button>
+          <button class="game-btn-back" onclick="App.go('game')">← Menu</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  const q = gs.questions[gs.qIndex];
+  const opts = gShuffle([q.ans, ...q.alt]);
+
+  const bubblesHTML = opts.map((opt, i) => {
+    let cls = 'bubble-btn';
+    if (gs.selected === opt) {
+      if (gs.answered) {
+        cls = opt === q.ans ? 'bubble-btn bubble-correct' : (gs.selected === opt ? 'bubble-btn bubble-wrong' : 'bubble-btn');
+      } else {
+        cls = 'bubble-btn bubble-selected';
+      }
+    }
+    return `<button class="${cls}" onclick='bubbleSelect("${opt.replace(/"/g, '&quot;')}")' ${gs.answered ? 'disabled' : ''}>${opt}</button>`;
+  }).join('');
+
+  const feedbackHTML = gs.answered ? (gs.selected === q.ans
+    ? `<div class="bubble-feedback bubble-feedback-correct">✅ Betul! +1</div>`
+    : `<div class="bubble-feedback bubble-feedback-wrong">❌ Jawapan: ${q.ans}</div>`
+  ) : '';
+
+  const progress = Math.round((gs.qIndex / gs.questions.length) * 100);
+
+  return `
+    <div class="game-page">
+      <button class="back-btn" onclick="App.go('game')">${ICONS.arrowLeft} Kembali</button>
+      <div class="game-page-header">
+        <div class="game-page-title">🎈 Bubble Pop</div>
+        <div class="stat-badges">
+          <div class="stat-badge gold">⭐ ${gs.score} markah</div>
+          <div class="stat-badge purple">🔢 ${gs.qIndex + 1}/${gs.questions.length}</div>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${progress}%"></div></div>
+
+      <div class="bubble-card">
+        <div class="bubble-question">${q.q}</div>
+        <div class="bubble-options">${bubblesHTML}</div>
+        ${feedbackHTML}
+        ${gs.answered ? `<button class="bubble-next-btn" onclick="bubbleNext()">Soalan Seterusnya →</button>` : ''}
+      </div>
+    </div>`;
+}
+
+function bubbleSelect(opt) {
+  const gs = GameState.bubblepop;
+  if (gs.answered) return;
+  gs.selected = opt;
+  gs.answered = true;
+  render();
+  const q = gs.questions[gs.qIndex];
+  if (opt === q.ans) {
+    gs.score++;
+    SFX.correct();
+    showPopup('✅ Betul!', 'tahniah');
+  } else {
+    SFX.wrong();
+    showPopup(`❌ ${q.ans}`, 'salah');
+  }
+}
+
+function bubbleNext() {
+  const gs = GameState.bubblepop;
+  gs.qIndex++;
+  gs.selected = null;
+  gs.answered = false;
+  render();
 }
 
 // ---------------------------------------------------------------------------
@@ -1165,6 +2179,8 @@ function render() {
     game:      renderGame,
     dragdrop:  renderDragDrop,
     wordmatch: renderWordMatch,
+    bubblepop: renderBubblePop,
+    scoreboard: renderScoreBoard,
   };
 
   document.getElementById("app").innerHTML = (
