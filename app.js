@@ -11,6 +11,123 @@
  */
 
 // ---------------------------------------------------------------------------
+// FRACTION FORMATTER — converts inline "a/b" text into proper stacked
+// fractions. The CSS for `.frac` lives in styles.css.
+//   "2A/b"            -> <span class="frac"><span class="num">2A</span><span class="den">b</span></span>
+//   "(y − c)/x"       -> a fraction with paren-wrapped num/den
+//   "((x+1)(x+2))"    -> grouped paren-wrapped num/den (depth 2)
+// Multi-pass regex so nested parentheses match the deepest level first.
+// ---------------------------------------------------------------------------
+function fracFmt(text) {
+  if (text == null) return text;
+  let s = String(text);
+
+  // ---- Mask URLs / file paths so we never slice them up ----
+  // Replace them with invisible placeholders that contain no slash, run the
+  // fraction passes, then restore them at the end.
+  const MASK = [];
+  const MASK_TOKEN = (i) => `\u0001URL${i}\u0001`;
+  s = s.replace(
+    /\bhttps?:\/\/[^\s)<>]+/gi,
+    (m) => { MASK.push(m); return MASK_TOKEN(MASK.length - 1); }
+  );
+  s = s.replace(
+    /\b[a-z0-9][a-z0-9_\-./]*\.(?:png|jpg|jpeg|svg|mp3|wav|gif|webp|css|js|html|json|ico|woff2?|ttf|otf)(?:\?[^\s)<>]*)?/gi,
+    (m) => { MASK.push(m); return MASK_TOKEN(MASK.length - 1); }
+  );
+
+  // Pass 1: deeply nested parens on both sides  ((a)(b)) / ((c)(d))
+  s = s.replace(
+    /\(\(([^()]+)\)\)\s*\/\s*\(\(([^()]+)\)\)/g,
+    (_, n, d) => `<span class="frac"><span class="num">(${n})</span><span class="den">(${d})</span></span>`
+  );
+
+  // Pass 1b: paren-wrapped fraction with slash INSIDE  (a/b)
+  //   Lets us turn "(1/det)" into a stacked fraction instead of leaving it
+  //   as the ambiguous "1/det" inside parens.
+  s = s.replace(
+    /\(([^()]+)\/([^()]+)\)/g,
+    (m, n, d) => {
+      if (/^(https?|ftp|file|data)$/i.test(n) || /^(https?|ftp|file|data)$/i.test(d)) return m;
+      return `<span class="frac"><span class="num">${n}</span><span class="den">${d}</span></span>`;
+    }
+  );
+
+  // Pass 2: single parens on BOTH sides  (a + b) / (c - d)
+  s = s.replace(
+    /\(([^()]+)\)\s*\/\s*\(([^()]+)\)/g,
+    (_, n, d) => `<span class="frac"><span class="num">${n}</span><span class="den">${d}</span></span>`
+  );
+
+  // Pass 3: paren on one side only  (a + b) / c  or  c / (a + b)
+  s = s.replace(
+    /\(([^()]+)\)\s*\/\s*([A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ]+)\??\)?/g,
+    (_, n, d) => `<span class="frac"><span class="num">${n}</span><span class="den">${d}</span></span>`
+  );
+  s = s.replace(
+    /([A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ]+)\s*\/\s*\(([^()]+)\)/g,
+    (_, n, d) => `<span class="frac"><span class="num">${n}</span><span class="den">${d}</span></span>`
+  );
+
+  // Pass 4: simple a/b with letters, digits, and Unicode math symbols.
+  s = s.replace(
+    /([A-Za-z][A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ₀-₉_\-]*|[0-9]+[A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ_\-]*)\s*\/\s*([A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ₀-₉][A-Za-z0-9⁻⁰¹²³ⁿᵐⁱπ₀-₉._\-]*)/g,
+    (m, n, d) => {
+      // Mask tokens like " URL0 " should never be converted
+      if (m.includes('\u0001')) return m;
+      return `<span class="frac"><span class="num">${n}</span><span class="den">${d}</span></span>`;
+    }
+  );
+
+  // ---- Restore the masked URLs / paths ----
+  s = s.replace(/\u0001URL(\d+)\u0001/g, (_, i) => MASK[parseInt(i, 10)]);
+
+  return s;
+}
+
+// ---------------------------------------------------------------------------
+// applyFractionFormat — walks every text node inside `root` and runs
+// fracFmt() on it. After running, inner text like "2A/b" is replaced by
+// <span class="frac"><span class="num">2A</span><span class="den">b</span></span>.
+// We collect text nodes first so we can mutate the DOM safely.
+// ---------------------------------------------------------------------------
+function applyFractionFormat(root) {
+  if (!root) return;
+  const walker = document.createTreeWalker(
+    root,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        const parent = node.parentNode;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        const tag = parent.nodeName;
+        if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+        // Skip text already inside a stacked fraction (defensive — fracFmt's
+        // output has no slash, so this is a no-op in practice).
+        if (parent.classList && (parent.classList.contains('num') || parent.classList.contains('den'))) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (!node.nodeValue || !node.nodeValue.includes('/')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
+  );
+  const targets = [];
+  let n;
+  while ((n = walker.nextNode())) targets.push(n);
+  for (const node of targets) {
+    const parent = node.parentNode;
+    if (!parent) continue;
+    const converted = fracFmt(node.nodeValue);
+    if (converted === node.nodeValue) continue;
+    const tmp = document.createElement('span');
+    tmp.innerHTML = converted;
+    while (tmp.firstChild) parent.insertBefore(tmp.firstChild, node);
+    parent.removeChild(node);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // DATA — one entry per topic, organised by Tingkatan below in TINGKATAN_DATA
 // ---------------------------------------------------------------------------
 const DATA = {
@@ -2187,6 +2304,9 @@ function render() {
     renderers[state.view] || renderHome
   )();
 
+  // Convert every "a/b" on the freshly rendered page into a stacked fraction.
+  applyFractionFormat(document.getElementById("app"));
+
   if (state.view === "home")     setTimeout(initOwlGreeting,  200);
   if (state.view === "learning") setTimeout(initLearningOwl,  300);
   if (state.view === "topics")   setTimeout(initLearningOwl,  300);
@@ -2289,6 +2409,8 @@ const ChatBot = {
     div.className = `chat-msg chat-msg--${who}`;
     div.innerHTML = `<div class="chat-bubble">${text}</div>`;
     msgs.appendChild(div);
+    // Format any fractions inside this new chat bubble too
+    applyFractionFormat(div);
     msgs.scrollTop = msgs.scrollHeight;
   },
 };

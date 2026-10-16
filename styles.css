@@ -2171,6 +2171,37 @@ button { font: inherit; }
 }
 
 /* =========================================================
+   Vertical fractions (a/b → a over b)
+   The fracFmt() helper in app.js converts inline "a/b"
+   strings into this markup so that 2A/b renders as a
+   proper stacked fraction instead of 2A/b.
+   ========================================================= */
+.frac {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.1;
+  margin: 0 2px;
+  /* Block children stretch to fill this, and shrink-wrap keeps both
+     numerator & denominator the same width (= wider of the two). */
+}
+.frac > .num,
+.frac > .den {
+  display: block;
+  padding: 0 0.4em;
+  /* `display:block` inside the `.frac` container makes both halves
+     the same width — that gives the fractions their look. */
+}
+.frac > .num {
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 0.12em;
+}
+.frac > .den {
+  padding-top: 0.12em;
+}
+
+/* =========================================================
    Practice section header badge fix (use consistent badge)
    ========================================================= */
 @media (max-width: 900px) {
